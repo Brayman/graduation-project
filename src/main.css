@@ -1,15 +1,17 @@
 body{
-  background-color: #CFD8DC;
+  background-color: #B5BAAB;
 }
 .right{
+  text-align: center;
   float: right;
 }
 
 .left{
+  text-align: center;
   float: left;
 }
 .center{
-  
+  text-align: center;
 }
 
 .ImageSmall{
@@ -36,9 +38,56 @@ body{
   border-radius: 5px;
 }
 
-.black{
+.block{
   border: solid 0px black;
   border-radius: 5px;
   box-shadow: -4px 4px 10px rgba(0,0,0,0.5);
   background-color: white;
+  margin-bottom: 10px;
+}
+
+.icon{
+  object-fit:cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar{
+  box-shadow: -4px 4px 10px rgba(0,0,0,0.5);
+  background-color: #FF5022;
+  border-color: #FD7C16;
+}
+
+.hover:hover{
+  background-color:#FD7C16;
+  height: 50px;
+  width: auto;
+}
+
+.fuck1{
+  width: 50px;
+  height: 50px;
+  padding-left: 15px;
+}
+
+.fuck2{
+  height: 5px;
+}
+
+.colorWhite{
+  color: white;
+  text-decoration-color: white;
+  text-emphasis-color: white;
+}
+
+.PositionBegin{
+  margin-top: 60px;
+}
+
+.badge{
+  background-color: #FD7C16;
+  border-color: #FF5022 ;
 }
