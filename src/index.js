@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './components/HomePage';
+import {Provider} from 'react-redux'
+import App from './components/HomePage';
+import store from './state'
 
-ReactDOM.render(<HomePage />, document.getElementById('root'));
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);

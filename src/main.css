@@ -38,7 +38,7 @@ body{
   border-radius: 5px;
 }
 
-.block{
+.black{
   border: solid 0px black;
   border-radius: 5px;
   box-shadow: -4px 4px 10px rgba(0,0,0,0.5);
