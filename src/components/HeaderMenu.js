@@ -3,26 +3,35 @@ var React = require('react');
 var HeaderMenu = React.createClass({
 render: function() {
 return (
-  <nav className="navbar navbar-inverse nav-pills navbar-fixed-top">
-    <div className="container-fluid">
-      <div className="navbar-header fuck1 hover">
-        <a className="navbar-brand hover" href="#"><img className="icon" src="http://www.max4.pl/allegro/imagesdg/package.png" alt="icon"/> </a>
-      </div>
-      <div className="collapse navbar-collapse">
-        <ul className="nav navbar-nav navbar-right">
-          <li className="hover">
-            <a href="#"><p className="glyphicon glyphicon-search colorWhite fuck2"></p></a>
-          </li>
-          <li className="hover">
-            <a href="#"><span className="glyphicon glyphicon-envelope badge"> 1</span></a>
-          </li>
-          <li className="dropdown hover">
-            <a href="#"><p className="colorWhite fuck2">Name <img className="icon" src="http://i2.wp.com/forum.assassin.ir/public/style_images/bluegiant/profile/default_large.png" alt="avatar"/></p></a>
-          </li>
-        </ul>
+  <div className="Nav">
+    <div className="Menu">
+        <div className="Hover"><img className="LolImage"
+          src="https://lh6.googleusercontent.com/-IzoUthdKiYA/Vull4PO5fXI/AAAAAAAAAA4/zDoB0OTDEg4sO06rl02kuvvFuENEq9_-Q/s256-p/logo.png"
+          alt="Logo"/>
+        </div>
+        <div className="MenuRight">
+          <div className="Hover">
+            <img className="LolImage"
+            src="https://lh3.googleusercontent.com/-_s9ls0NuuBs/Vull4W1SYrI/AAAAAAAAABA/6wERcNgCmZoQbRWEZ6OUSkipE970gMbaw/w126-h125-p/search.png"
+            alt="Searsh"/>
+          </div>
+        <div className="Hover">
+          <div className="Sms"></div>
+          <div className="MenuTextSms">
+            1
+          </div>
+        </div>
+        <div className="Hover">
+          <span className="MenuTextName">
+            name
+          </span>
+          <img className="LolImage Square Circle"
+          src="https://lh3.googleusercontent.com/-2ISHLNjuIts/Vull4KcLT-I/AAAAAAAAAA8/iC8vzN3ycTU8McfvZzA5iZ700Sezpddiw/w595-h334-no/Non.png"
+          alt="Ava"/>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
     );
   }
 });

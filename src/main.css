@@ -1,93 +1,141 @@
-body{
-  background-color: #B5BAAB;
+@font-face {
+  font-family:Ubuntu-M;
+  src:url(ubuntu/Ubuntu.ttf);
 }
-.right{
-  text-align: center;
+body{
+  margin: 0px;
+  background-color: #B5BAAB;
+  font-family: Ubuntu-M;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0px;
+}
+.MenuRight{
+  display: flex;
+}
+.Right{
   float: right;
 }
-
-.left{
-  text-align: center;
+.Left{
   float: left;
 }
-.center{
+.Center{
+  display: flex;
+  align-items:center;
+  align-content:center;
+}
+.TextHome{
   text-align: center;
+  margin: 5px;
 }
-
-.ImageSmall{
-  box-shadow: 0 0 7px rgba(0,0,0,0.5);
-  object-fit: cover;
-  width: 75px;
-  height: 75px;
-  border-radius: 5px;
-}
-
-.ImageMedium{
-  box-shadow: 0 0 7px rgba(0,0,0,0.5);
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-}
-
-.ImageBig{
-  box-shadow: 0 0 7px rgba(0,0,0,0.5);
-  object-fit: cover;
-  width: 125px;
-  height: 125px;
-  border-radius: 5px;
-}
-
-.black{
-  border: solid 0px black;
-  border-radius: 5px;
-  box-shadow: -4px 4px 10px rgba(0,0,0,0.5);
-  background-color: white;
-  margin-bottom: 10px;
-}
-
-.icon{
-  object-fit:cover;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar{
-  box-shadow: -4px 4px 10px rgba(0,0,0,0.5);
-  background-color: #FF5022;
-  border-color: #FD7C16;
-}
-
-.hover:hover{
-  background-color:#FD7C16;
+.Nav{
   height: 50px;
-  width: auto;
+  margin: 0px;
+  padding: 0px;
 }
-
-.fuck1{
+.Menu{
+  text-transform: uppercase;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+  height: 50px;
+  background-color: #FD7C16;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.TinyImage{
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+.LolImage{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  margin:7.5px;
+  vertical-align: middle;
+}
+.Sms{
+  background-image: url(img/mail.png);
+  width: 35px;
+  height: 35px;
+  background-size: 105%;
+  margin:7.5px;
+  z-index:1;
+}
+.SmallImage{
   width: 50px;
   height: 50px;
-  padding-left: 15px;
+  object-fit: cover;
 }
-
-.fuck2{
-  height: 5px;
+.MediumImage{
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
 }
-
-.colorWhite{
+.HighImage{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.MassiveImage{
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+}
+.BigImage{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.Square{
+  border-radius: 20%;
+}
+.Circle{
+  border-radius: 50%;
+}
+.Hover:hover{
+  cursor: pointer;
+  background-color: #FF5022;
+}
+.MenuTextName{
   color: white;
-  text-decoration-color: white;
-  text-emphasis-color: white;
+  margin:0 5px;
+  text-transform: capitalize;
 }
-
-.PositionBegin{
-  margin-top: 60px;
+.MenuTextSms{
+  color: white;
+  background-color: #A54253;
+  margin: -44px 0px 0px 30px;
+  border-radius: 20%;
+  z-index:2;
 }
-
-.badge{
-  background-color: #FD7C16;
-  border-color: #FF5022 ;
+.Block{
+  background-color: white;
+  margin:10px 0px;
+  width:100%;
+  height: 75px;
+  overflow: hidden;
+}
+.Post{
+  margin:0px 10px;
+}
+.PostText{
+  margin:5px;
+}
+.RowAll{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.Marker{
+  color: white;
+  font-weight: 600;
+  background-color: #A54253;
+  margin:0 2px;
+  border-radius: 5px;
 }

@@ -6,41 +6,26 @@ import {connect} from 'react-redux'
 var HomePage = React.createClass({
   render: function () {
     return (
-        <div className="container-fluid">
-            <HeaderMenu/>
-          <div className="row PositionBegin">
-            <div className="col-lg-4 col-md-4">
-              <h3 className="center">News project</h3>
-              <NewsColumn posts={this.props.news}/>
-            </div>
-            <div className="col-lg-4 col-md-4">
-              <h3 className="center">News project</h3>
-              <NewsColumn posts={this.props.newCompany}/>
-            </div>
-            <div className="col-lg-4 col-md-4">
-              <h3 className="center">News project</h3>
-            </div>
+      <div>
+        <HeaderMenu/>
+        <div className="RowAll">
+          <div className="Post">
+            <h2 className="TextHome">Project</h2>
+            <ListInfo/>
+          </div>
+          <div className="Post">
+            <h2 className="TextHome">Company</h2>
+            <ListInfo/>
+          </div>
+          <div className="Post">
+            <h2>Employee</h2>
+            <ListInfo/>
+            <ListInfo/>
           </div>
         </div>
+      </div>
     )
   }
 });
-var NewsColumn = React.createClass({
-  render: function () {
-    var posts=this.props.posts;
-    return (
-        <div>
-          {posts.map(function(post){
-            return (
-                <ListInfo key={post.id} data={post}/>
-            )
-          })}
-        </div>
-    )
-  }
-});
-export default connect(
-    (state)=> {return{
-      news: state.news,
-      newCompany: state.newCompany
-    }})(HomePage)
+
+export default HomePage;
