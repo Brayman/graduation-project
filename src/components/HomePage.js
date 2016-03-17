@@ -11,21 +11,37 @@ var HomePage = React.createClass({
         <div className="RowAll">
           <div className="Post">
             <h2 className="TextHome">Project</h2>
-            <ListInfo/>
+            <NewsColumn posts={this.props.news}/>
           </div>
           <div className="Post">
             <h2 className="TextHome">Company</h2>
-            <ListInfo/>
+            <NewsColumn posts={this.props.newCompany}/>
           </div>
           <div className="Post">
-            <h2>Employee</h2>
-            <ListInfo/>
-            <ListInfo/>
+            <h2 className="TextHome">Employee</h2>
+            <NewsColumn posts={this.props.news}/>
           </div>
         </div>
       </div>
     )
   }
 });
-
-export default HomePage;
+var NewsColumn = React.createClass({
+  render: function () {
+    var post=this.props.posts;
+    return (
+       <div>
+         {post.map(function(post){
+          return (
+              <ListInfo key={post.id} data={post}/>
+          )
+        })}
+      </div>
+    )
+  }
+});
+export default connect(
+    (state)=> {return{
+    news: state.news,
+    newCompany: state.newCompany
+    }})(HomePage)

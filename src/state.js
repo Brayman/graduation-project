@@ -3,26 +3,6 @@ import * as reducers from '../src/reducers'
 
 const reducer = combineReducers(reducers);
 
-var data=[
-    {
-        id:1,
-        username: "Белакт",
-        description: "новое вкусное молочко",
-        rating: 10
-    },
-    {
-        id:2,
-        username: "Ваня Усачёв",
-        description: "вышел из запоя. Первым 20 клиентам 50% скидка",
-        rating: 5
-    },
-    {
-        id:3,
-        username: "Савушкин",
-        description: "новый швеицарский сыр тепер дешевле на 30%",
-        rating: 25
-    }
-];
 const store = createStore(reducer,{
     news: [
         {
