@@ -4,7 +4,7 @@
 }
 body{
   margin: 0px;
-  background-color: #B5BAAB;
+  background-color: #E9E9E9;
   font-family: Ubuntu-M;
 }
 h1,h2,h3,h4,h5,h6{
@@ -109,7 +109,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .MenuTextSms{
   color: white;
-  background-color: #A54253;
+  background-color: #FF5022;
   margin: -44px 0px 0px 30px;
   border-radius: 20%;
   z-index:2;
@@ -135,7 +135,7 @@ h1,h2,h3,h4,h5,h6{
 .Marker{
   color: white;
   font-weight: 600;
-  background-color: #A54253;
+  background-color: #FF5022;
   margin:0 2px;
   border-radius: 5px;
 }
