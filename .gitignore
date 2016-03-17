@@ -9,4 +9,5 @@ semantic
 LICENSE
 *rc
 !src
+!.babelrc
 .idea

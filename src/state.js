@@ -1,9 +1,12 @@
-import {createStore, combineReducers} from 'redux'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
 import * as reducers from '../src/reducers'
+import createLogger from 'redux-logger';
 
 const reducer = combineReducers(reducers);
+const logger = createLogger();
+const cswm=applyMiddleware(logger)(createStore);
 
-const store = createStore(reducer,{
+const store = cswm(reducer,{
     news: [
         {
             id:1,

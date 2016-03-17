@@ -11,7 +11,7 @@ var ListInfo = React.createClass({
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
-                    Name
+                    {this.props.data.username}
                 </h4>
               </div>
               <div>
