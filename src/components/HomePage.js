@@ -8,7 +8,7 @@ var HomePage = React.createClass({
     return (
       <div>
         <HeaderMenu/>
-        <div className="RowAll">
+        <div className="NewsColumn">
           <div className="Post">
             <h2 className="TextHome">Project</h2>
             <NewsColumn posts={this.props.news}/>
