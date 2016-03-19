@@ -7,7 +7,6 @@ var HomePage = React.createClass({
   render: function () {
     return (
       <div>
-        <HeaderMenu/>
         <div className="NewsColumn">
           <div className="Post">
             <h2 className="TextHome">Project</h2>
