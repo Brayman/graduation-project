@@ -7,7 +7,17 @@ const logger = createLogger();
 const cswm=applyMiddleware(logger)(createStore);
 
 const store = cswm(reducer,{
-    news: [
+    userData:{
+        username: null,
+        name: null,
+        type: null,
+        contact: {
+            twitter: null,
+            mail: null,
+            phone: null
+        }
+    },
+    posts:[
         {
             id:1,
             username: "Белакт",
@@ -25,23 +35,21 @@ const store = cswm(reducer,{
             username: "Савушкин",
             description: "новый швеицарский сыр тепер дешевле на 30%",
             rating: 25
-        }
-    ],
-    newCompany: [
+        },
         {
-            id:1,
+            id:4,
             username: "БурРилка",
             description: "Компания занимающаяся берением скважен и окопов",
             rating: 0
         },
         {
-            id:2,
+            id:5,
             username: "Виктор Друзь",
             description: "отвечаю на любые вопросы ещё с 88 года",
             rating: 0
         },
         {
-            id:3,
+            id:6,
             username: "Капатель",
             description: "Лучшие мастера отделыки, специалисты по электрике",
             rating: 0
