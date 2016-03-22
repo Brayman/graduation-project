@@ -1,4 +1,5 @@
 var React = require('react');
+import {connect} from 'react-redux'
 import {Link} from 'react-router'
 var HeaderMenu = React.createClass({
 render: function() {
@@ -26,14 +27,15 @@ return (
                           1
                       </div>
                   </div>
+                  <Link to="/registr">
                   <div className="Hover">
-          <span className="MenuTextName">
-            name
-          </span>
+                    <span className="MenuTextName">
+                        {this.props.userData.name || this.props.userData.username}
+                      </span>
                       <img className="LolImage Square Circle"
                            src="https://lh3.googleusercontent.com/-2ISHLNjuIts/Vull4KcLT-I/AAAAAAAAAA8/iC8vzN3ycTU8McfvZzA5iZ700Sezpddiw/w595-h334-no/Non.png"
                            alt="Ava"/>
-                  </div>
+                  </div></Link>
               </div>
           </div>
       </div>
@@ -43,4 +45,7 @@ return (
   }
 });
 
-export default HeaderMenu;
+export default connect(
+    (state)=> {return{
+        userData: state.userData
+    }})(HeaderMenu)
