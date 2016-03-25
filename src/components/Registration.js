@@ -1,10 +1,10 @@
 var React = require('react');
 import {connect} from 'react-redux'
-import {newUser} from '../actions'
+import {newUser, registrUser, registr} from '../actions'
+import {Link} from 'react-router'
 
 var Registration = React.createClass({
     render: function() {
-        var post=this.props.news;
         return (
             <div className="RegBlok">
                 <div className="text">
@@ -12,7 +12,7 @@ var Registration = React.createClass({
                     <div className="TextRegInfo">Frilans info service for employee </div>
                     <div className="TextRegInfo">and company.</div>
                 </div>
-                <Inputs  registrData={text => this.props.dispatch(newUser(text))}/>
+                <Inputs  registrData={data => this.props.dispatch(registr(data))}/>
             </div>
         )
     }
@@ -40,7 +40,9 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="password" ref="password" placeholder="Create a password"/>
                 </div>
                 <div>
-                    <button onClick={this.GetValues} className="BtnReg">Sign up for JobBox</button>
+                    <Link to="/">
+                        <button onClick={this.GetValues} className="BtnReg">Sign up for JobBox</button>
+                    </Link>
                 </div>
             </div>
         )

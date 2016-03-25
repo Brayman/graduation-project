@@ -1,16 +1,19 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import * as reducers from '../src/reducers'
 import createLogger from 'redux-logger';
+import middleware from './middleware/getPostMiddleware';
+import registrat from './middleware/postRegistrDataMiddleware';
 
 const reducer = combineReducers(reducers);
 const logger = createLogger();
-const cswm=applyMiddleware(logger)(createStore);
+const cswm=applyMiddleware(middleware,registrat ,logger)(createStore);
 
 const store = cswm(reducer,{
     userData:{
         username: null,
         name: null,
         type: null,
+        description: null,
         contact: {
             twitter: null,
             mail: null,
@@ -18,42 +21,7 @@ const store = cswm(reducer,{
         }
     },
     posts:[
-        {
-            id:1,
-            username: "Белакт",
-            description: "новое вкусное молочко",
-            rating: 10
-        },
-        {
-            id:2,
-            username: "Ваня Усачёв",
-            description: "вышел из запоя. Первым 20 клиентам 50% скидка",
-            rating: 5
-        },
-        {
-            id:3,
-            username: "Савушкин",
-            description: "новый швеицарский сыр тепер дешевле на 30%",
-            rating: 25
-        },
-        {
-            id:4,
-            username: "БурРилка",
-            description: "Компания занимающаяся берением скважен и окопов",
-            rating: 0
-        },
-        {
-            id:5,
-            username: "Виктор Друзь",
-            description: "отвечаю на любые вопросы ещё с 88 года",
-            rating: 0
-        },
-        {
-            id:6,
-            username: "Капатель",
-            description: "Лучшие мастера отделыки, специалисты по электрике",
-            rating: 0
-        }
+
     ]
 });
 export default store;

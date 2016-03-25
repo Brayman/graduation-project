@@ -1,8 +1,12 @@
 import React from 'react';
 import ListInfo from './ListInfo';
+import {loadPostData} from '../actions'
 import {connect} from 'react-redux'
 
 var HomePage = React.createClass({
+    componentWillMount(){
+        //this.props.dispatch(loadPostData())
+    },
   render: function () {
     return (
       <div>
@@ -40,6 +44,5 @@ var NewsColumn = React.createClass({
 });
 export default connect(
     (state)=> {return{
-    userData: state.userData,
     posts: state.posts
     }})(HomePage)
