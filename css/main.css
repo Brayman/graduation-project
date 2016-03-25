@@ -258,5 +258,69 @@ h1,h2,h3,h4,h5,h6{
   margin:0px;
   padding-bottom: 10px;
 }
-
-
+ul.menu {
+margin:0px;
+padding: 0px;
+height: auto;
+width: auto;
+}
+ul.menu li {
+  float: left;
+  list-style: none;
+}
+ul.menu li a {
+  color: #ffffff;
+  display: block;
+  padding:12px;
+  margin: 0px;
+  text-decoration: none;
+}
+ul.menu li ul {
+  display: none;
+  margin: 0px;
+  background: #ffffff;
+  padding: 0px;
+  border:solid 2px #919191;
+  border-radius: 5px;
+}
+ul.menu li:hover ul {
+  display: block;
+  position: absolute;
+  color:#000000;
+  margin: 0px;
+  padding: 0px;
+  margin-left:-190px;
+}
+ul.menu ul li  {
+  padding: 0px;
+}
+.Whiteee{
+  background-color: #ffffff;
+  border:none;
+  width: 80px;
+  padding:10px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9em;
+  outline: none;
+}
+.Whiteee:hover{
+  background-color: #E9E9E9;
+}
+.Greennn{
+  background-color: #74C658;
+  width: 80px;
+  padding:10px 0px;
+  border:none;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 0.9em;
+  outline: none;
+}
+.Greennn:hover{
+  background-color: #0BC759;
+}
+.MenuBtnMargin{
+    margin: 6px;
+}

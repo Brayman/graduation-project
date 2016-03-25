@@ -45,10 +45,11 @@ var Login = React.createClass({
     render: function() {
         var login;
         if(this.props.userData.username==null){
-            login=<div className="Hover">
-                    <button onClick={this.onLogInClick}>Sign in</button>
+
+            login=<div>
+                    <button onClick={this.onLogInClick} className="Whiteee MenuBtnMargin">Sign in</button>
                     <Link to="/signin">
-                        <button>Sign up</button>
+                        <button className="Greennn MenuBtnMargin">Sign up</button>
                     </Link>
                 </div>
         }
