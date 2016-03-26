@@ -9,7 +9,7 @@ h1,h2,h3,h4,h5,h6,p{
   margin-bottom: 6px;
 }
 .RegBlok{
-  background-color: #767676;
+  background-color: rgba(118, 118, 118, 0.59);
   display: flex;
   flex-direction:row;
   justify-content:space-around;
@@ -47,10 +47,11 @@ h1,h2,h3,h4,h5,h6,p{
   font-size: 1em;
   width: 20em;
   border-radius: 5px;
+  border: 0.225em solid #E9E9E9;
 }
 .InputReg:focus{
   outline-color: #48c9b0;
-  border: 2px solid #1abc9c;
+  border: 0.225em solid #1abc9c;
   outline: -webkit-focus-ring-color auto 0px;
 }
 .BtnReg{
