@@ -5,36 +5,25 @@ import {Link} from 'react-router'
 var HeaderMenu = React.createClass({
     render: function() {
         return (
-          <div>
-              <div className="Nav">
-                  <div className="Menu">
-                      <div className="Hover">
-                          <Link to="/">
-                              <img className="LolImage"
-                                   src="https://lh6.googleusercontent.com/-IzoUthdKiYA/Vull4PO5fXI/AAAAAAAAAA4/zDoB0OTDEg4sO06rl02kuvvFuENEq9_-Q/s256-p/logo.png"
-                                   alt="Logo"
-                              />
-                          </Link>
-                      </div>
-                      <div className="MenuRight">
-                          <div className="Hover">
-                              <img className="LolImage"
-                                   src="https://lh3.googleusercontent.com/-_s9ls0NuuBs/Vull4W1SYrI/AAAAAAAAABA/6wERcNgCmZoQbRWEZ6OUSkipE970gMbaw/w126-h125-p/search.png"
-                                   alt="Searsh"/>
-                          </div>
-                          <div className="Hover">
-                              <div className="Sms"></div>
-                              <div className="MenuTextSms">
-                                  1
-                              </div>
-                          </div>
-                          <Login userData={{name: this.props.userData.name, username: this.props.userData.username}}
-                                 logInClick={()=>this.props.dispatch(loadPostData())}/>
-                      </div>
-                  </div>
-              </div>
-              {this.props.children}
-          </div>
+<div>
+<div className="PanelForMenu">
+  <div className="Menu">
+    <div>
+      <Link to="/">
+      <img className="Image ImgStyleM"
+      src="https://lh6.googleusercontent.com/-IzoUthdKiYA/Vull4PO5fXI/AAAAAAAAAA4/zDoB0OTDEg4sO06rl02kuvvFuENEq9_-Q/s256-p/logo.png"/>
+      </Link>
+    </div>
+    <div className="DFlex">
+      <i className="Icon IconStyleM">search</i>
+      <i className="Icon IconStyleM">mail</i>
+      <Login userData={{name: this.props.userData.name, username: this.props.userData.username}}
+           logInClick={()=>this.props.dispatch(loadPostData())}/>
+    </div>
+  </div>
+</div>
+  {this.props.children}
+</div>
         );
       }
 });
@@ -45,13 +34,25 @@ var Login = React.createClass({
     render: function() {
         var login;
         if(this.props.userData.username==null){
-
-            login=<div>
-                    <button onClick={this.onLogInClick} className="Whiteee MenuBtnMargin">Sign in</button>
-                    <Link to="/signin">
-                        <button className="Greennn MenuBtnMargin">Sign up</button>
-                    </Link>
-                </div>
+            login=<ul className="menu">
+              <li><button className="Button BtnStyleM menu">Sign</button>
+                <ul>
+                  <li><a className="RowBetween">
+                    <div className="TextStyleM">Username</div>
+                    <div><input tute="text" className="Label InputStyleM"/></div>
+                  </a></li>
+                  <li><a className="RowBetween">
+                    <div className="TextStyleM">Password</div>
+                    <div><input tute="text" className="Label InputStyleM"/></div>
+                  </a></li>
+                  <li><a className="ColumnArround">
+                    <button className="Button Sign GreenBtn">Sign in</button>
+                    <div className="TextStyleM">or</div>
+                    <button className="Button Sign WhiteBtn">Sign up</button>
+                  </a></li>
+                </ul>
+              </li>
+            </ul>
         }
         else {
             login=<Link to={"/"+this.props.userData.username}>
