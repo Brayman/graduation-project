@@ -3,6 +3,7 @@
  */
 const defaultState= {
     userData:{
+        id: null,
         username: null,
         name: null,
         type: null,
@@ -25,6 +26,17 @@ export default function (state={},action){
                 })
             }
          );
+        case 'SEND_SUCCESS':
+            return Object.assign({},state,{
+                    username: action.data.username,
+                    type: 'user',
+                    contact: Object.assign(state.contact, {
+                        mail: action.data.mail
+                    })
+                }
+            );
+
+
         case 'REGISTRATION':
             return Object.assign({},state,{
                 username: action.impotantData.username,
@@ -48,7 +60,8 @@ export default function (state={},action){
          );
         case 'LOG_IN':
             return Object.assign({},state,{
-                    username: "test-user",
+                    username: action.data[11].username,
+                    id: action.data[11]._id,
                     type: 'user',
                     description: 'Предпринимательство, предпринимательская деятельность — экономическая деятельность' +
                     ', направленная на систематическое получение прибыли от производства и продажи товаров, оказания ' +
@@ -56,7 +69,7 @@ export default function (state={},action){
                     ' предпринимателя, так и привлечённые со стороны. Нет гарантий, что затраченные средства окупятся,' +
                     ' что произведённое будет продано с прибылью. С этим связан риск потерь всего или части имущества.',
                     contact: Object.assign(state.contact, {
-                        mail: 'test@mail.ru'
+                        mail: action.data[11].mail
                     })
                 }
             );

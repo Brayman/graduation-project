@@ -1,4 +1,4 @@
-const  middleware = store => next => action =>{
+const  getPost = store => next => action =>{
     if (action.type !== 'LOAD_POSTS'){
         return next(action)
     }
@@ -15,7 +15,7 @@ const  middleware = store => next => action =>{
         error
     }))
 };
-export default middleware;
+export default getPost;
 
 /**
  * Created by Artsiom_Rakitski on 3/23/2016.

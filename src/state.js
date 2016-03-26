@@ -1,12 +1,12 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import * as reducers from '../src/reducers'
 import createLogger from 'redux-logger';
-import middleware from './middleware/getPostMiddleware';
-import registrat from './middleware/postRegistrDataMiddleware';
+import getPost from './middleware/getPost';
+import registrUser from './middleware/registrUser';
 
 const reducer = combineReducers(reducers);
 const logger = createLogger();
-const cswm=applyMiddleware(middleware,registrat ,logger)(createStore);
+const cswm=applyMiddleware(getPost,registrUser ,logger)(createStore);
 
 const store = cswm(reducer,{
     userData:{

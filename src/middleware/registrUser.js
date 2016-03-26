@@ -1,4 +1,4 @@
-const  registrat = store => next => action =>{
+const  registrUser = store => next => action =>{
     if (action.type !== 'REGISTRATION'){
         return next(action)
     }
@@ -7,10 +7,11 @@ const  registrat = store => next => action =>{
         type: startAction
     });
     store.dispatch({
-        type: successAction
+        type: successAction,
+        data: action.data
     })
 };
-export default registrat;
+export default registrUser;
 /**
  * Created by Artsiom_Rakitski on 3/25/2016.
  */

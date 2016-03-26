@@ -1,18 +1,37 @@
-export function newUser(impotantData){
+const url= 'https://peaceful-temple-19728.herokuapp.com';
+//const url= 'http://10.26.11.88/';
+//const url= ''
+
+//--middlewares
+export function loadPost(){
     return{
-        type: "REGISTRATION_NEW_USER",
-        impotantData
+        type: 'LOAD_POSTS',
+        actions: ['LOAD_POST','LOAD_POST_SUCCESS','LOAD_POST_FAILURE'],
+        promise: getPost()
     }
 }
-export function registr(impotantData){
+export function registration(impotantData){
     return{
         type: "REGISTRATION",
         actions: ['SEND','SEND_SUCCESS','SEND_FAILURE'],
-        promise: registrUser(impotantData)
+        promise: registrUser(impotantData),
+        data: impotantData
     }
 }
-export function registrUser(data){
-    fetch('http://10.26.11.88/users', {
+export function loadUserData(){
+    return{
+        type: 'LOAD_POSTS',
+        actions: ['LOAD_POST','LOG_IN','LOAD_POST_FAILURE'],
+        promise: logIn()
+    }
+}
+//--reqvests
+function getPost(){
+    return fetch(+'/posts')
+        .then(resp=> resp.json())
+}
+function registrUser(data){
+    fetch(url+'/users', {
         method: 'post',
         headers: {
             'Accept': 'application/json',
@@ -21,28 +40,28 @@ export function registrUser(data){
         body: JSON.stringify(data)
     })
 }
-export function logIn(){
-    return{
-        type: "LOG_IN"
-    }
+function getProfile(){
+    return fetch(url+'/users')
+        .then(resp=> resp.json());
+    //return{
+    //    type: "LOG_IN"
+    //}
 }
+//--other
 export function getUserData(username){
     console.log(username);
     return{
         type: "GET_PROFILE"
     }
 }
-export function loadPostData(){
+export function newUser(impotantData){
     return{
-        type: 'LOAD_POSTS',
-        actions: ['LOAD_POST','LOAD_POST_SUCCESS','LOAD_POST_FAILURE'],
-        promise: getData()
+        type: "REGISTRATION_NEW_USER",
+        impotantData
     }
 }
-function getData(){
-     return fetch('https://peaceful-temple-19728.herokuapp.com/posts')
-         .then(resp=> resp.json())
-}
+
+
 export function saveChanges(changes){
     return{
         type: 'NEW_PROFILE_DATA',
