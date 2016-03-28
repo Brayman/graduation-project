@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
-import {getUserData} from '../actions'
+import {getProfileData} from '../actions'
 
 var Profile = React.createClass({
     componentWillMount(){
         //this.props.dispatch(loadUserData())
-        this.props.dispatch(getUserData(this.props.params.user))
+        this.props.dispatch(getProfileData(this.props.params.user))
     },
     render: function() {
         var settings;

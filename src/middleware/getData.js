@@ -1,5 +1,5 @@
-const  getPost = store => next => action =>{
-    if (action.type !== 'LOAD_POSTS'){
+const  getData = store => next => action =>{
+    if (action.type !== 'LOAD'){
         return next(action)
     }
     const [startAction, successAction, failAction]= action.actions;
@@ -15,7 +15,7 @@ const  getPost = store => next => action =>{
         error
     }))
 };
-export default getPost;
+export default getData;
 
 /**
  * Created by Artsiom_Rakitski on 3/23/2016.

@@ -1,5 +1,5 @@
-const  registrUser = store => next => action =>{
-    if (action.type !== 'REGISTRATION'){
+const  sendData = store => next => action =>{
+    if (action.type !== 'SEND'){
         return next(action)
     }
     const [startAction, successAction, failAction]= action.actions;
@@ -11,7 +11,7 @@ const  registrUser = store => next => action =>{
         data: action.data
     })
 };
-export default registrUser;
+export default sendData;
 /**
  * Created by Artsiom_Rakitski on 3/25/2016.
  */

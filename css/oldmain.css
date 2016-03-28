@@ -109,6 +109,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .Post{
   margin:0px 10px;
+  flex-basis: 370px;
   flex-grow: 1;
 }
 .PostText{

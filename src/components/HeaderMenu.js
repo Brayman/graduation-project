@@ -1,9 +1,11 @@
 var React = require('react');
 import {connect} from 'react-redux'
-import {logIn, loadPostData} from '../actions'
+import {bindActionCreators} from 'redux'
+import * as Actions from '../actions'
 import {Link} from 'react-router'
 var HeaderMenu = React.createClass({
     render: function() {
+        let action=bindActionCreators(Actions, this.props.dispatch);
         return (
 <div>
 <div className="PanelForMenu">
@@ -18,7 +20,8 @@ var HeaderMenu = React.createClass({
       <i className="Icon IconStyleM">search</i>
       <i className="Icon IconStyleM">mail</i>
       <Login userData={{name: this.props.userData.name, username: this.props.userData.username}}
-           logInClick={()=>this.props.dispatch(loadPostData())}/>
+           //logInClick={data=>this.props.dispatch(login(data))}/>
+           logInClick={data=>action.login(data)}/>
     </div>
   </div>
 </div>
@@ -29,7 +32,11 @@ var HeaderMenu = React.createClass({
 });
 var Login = React.createClass({
     onLogInClick: function(){
-        this.props.logInClick();
+        var name = this.refs.username.value;
+        var password = this.refs.password.value;
+        this.refs.password.value='';
+        this.refs.username.value='';
+        this.props.logInClick({username: name, password: password});
     },
     render: function() {
         var login;
@@ -39,17 +46,21 @@ var Login = React.createClass({
                 <ul>
                   <li><a className="RowBetween">
                     <div className="TextStyleM">Username</div>
-                    <div><input tute="text" className="Label InputStyleM"/></div>
+                    <div><input tute="text" ref="username" className="Label InputStyleM"/></div>
                   </a></li>
                   <li><a className="RowBetween">
-                    <div className="TextStyleM">Password</div>
-                    <div><input tute="text" className="Label InputStyleM"/></div>
+                    <div className="TextStyleM" >Password</div>
+                    <div><input tute="text" ref="password" className="Label InputStyleM"/></div>
                   </a></li>
-                  <li><a className="ColumnArround">
-                    <button className="Button Sign GreenBtn">Sign in</button>
-                    <div className="TextStyleM">or</div>
-                    <button className="Button Sign WhiteBtn">Sign up</button>
-                  </a></li>
+                  <li>
+                    <button className="Button Sign WhiteBtn" onClick={this.onLogInClick}>Sign in</button>
+                    <div className="TextStyleM">
+                        or
+                    </div>
+                    <Link to="/signin">
+                          <button className="Button Sign GreenBtn">Sign up</button>
+                    </Link>
+                  </li>
                 </ul>
               </li>
             </ul>

@@ -1,11 +1,11 @@
 import React from 'react';
 import ListInfo from './ListInfo';
-import {loadPostData} from '../actions'
+import {getPost} from '../actions'
 import {connect} from 'react-redux'
 
 var HomePage = React.createClass({
     componentWillMount(){
-        //this.props.dispatch(loadPostData())
+        this.props.dispatch(getPost())
     },
   render: function () {
     return (

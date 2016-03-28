@@ -1,6 +1,6 @@
 var React = require('react');
 import {connect} from 'react-redux'
-import {newUser, registrUser, registr} from '../actions'
+import {registration} from '../actions'
 import {Link} from 'react-router'
 
 var Registration = React.createClass({
@@ -12,7 +12,7 @@ var Registration = React.createClass({
                     <div className="TextRegInfo">Frilans info service for employee </div>
                     <div className="TextRegInfo">and company.</div>
                 </div>
-                <Inputs  registrData={data => this.props.dispatch(registr(data))}/>
+                <Inputs  registrData={data => this.props.dispatch(registration(data))}/>
             </div>
         )
     }
