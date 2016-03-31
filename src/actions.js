@@ -1,4 +1,4 @@
-const url= 'https://peaceful-temple-19728.herokuapp.com';
+const url= 'https://peaceful-temple-19728.herokuapp.com/';
 //const url= 'http://10.26.11.88/';
 //const url= ''
 
@@ -15,7 +15,7 @@ export function registration(impotantData){
     return{
         type: "SEND",
         actions: ['SEND_DATA','SEND_DATA_SUCCESS','SEND_DATA_FAILURE'],
-        promise: registrUser(impotantData),
+        promise: registrUser(impotantData)
     }
 }
 export function login(data){
@@ -25,23 +25,39 @@ export function login(data){
         promise: sendLoginData(data)
     }
 }
-export function getProfileData(){
+export function getProfileData(user){
     return{
         type: 'LOAD',
         actions: ['LOAD_USER','LOAD_USER_SUCCESS','LOAD_USER_FAILURE'],
-        promise: loadProfile()
+        promise: loadProfile(user)
+    }
+}
+export function saveChanges(changes){
+    return{
+        type: 'NEW_PROFILE_DATA',
+        actions: ['LOAD_USER','LOAD_USER_SUCCESS','LOAD_USER_FAILURE'],
+        promise: newChanges(changes)
     }
 }
 //--requests
 
 function loadPost(){
-    return fetch(url+'/posts')
+    return fetch(url+'users')
         .then(resp=> resp.json())
 }
 function registrUser(data){
-    fetch(url+'/users', {
+    fetch(url+'users', {
         method: 'post',
-        mode: 'no-cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+}
+function newChanges(data){
+    fetch(url+'settings', {
+        method: 'post',
         headers: {
             'Accept': 'application/json',
             'Content-Type': "application/json"
@@ -50,7 +66,7 @@ function registrUser(data){
     })
 }
 function sendLoginData(data){
-    fetch(url, {
+    return fetch(url, {
         method: 'post',
         headers: {
             'Accept': 'application/json',
@@ -58,10 +74,18 @@ function sendLoginData(data){
         },
         body: JSON.stringify(data)
     })
+        .then(resp=> resp.json())
 }
-function loadProfile(){
-    return fetch(url+'/users')
-        .then(resp=> resp.json());
+function loadProfile(user){
+    return fetch(url+'profile', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify({username: user})
+    })
+        .then(resp=> resp.json())
 }
 
 //--other
@@ -80,12 +104,7 @@ export function newUser(impotantData){
 }
 
 
-export function saveChanges(changes){
-    return{
-        type: 'NEW_PROFILE_DATA',
-        data: changes
-    }
-}
+
 /**
  * Created by Artsiom_Rakitski on 3/10/2016.
  */

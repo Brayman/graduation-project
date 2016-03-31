@@ -20,8 +20,6 @@ const store = cswm(reducer,{
             phone: null
         }
     },
-    posts:[
-
-    ]
+    posts:[]
 });
 export default store;

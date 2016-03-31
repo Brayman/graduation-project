@@ -1,14 +1,29 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {saveChanges} from '../actions'
 
-var Test = React.createClass({
-    getInitialState: function(){
-        return {username:'', password:''}
-    },
+var Settings = React.createClass({
     usernameChange: function(event) {
         this.setState({username: event.target.value});
     },
     Click: function() {
-        this.setState({password: event.target.value});
+        var name = this.refs.name.value;
+        var mail = this.refs.mail.value;
+        var phone = this.refs.phone.value;
+        var description = this.refs.description.value;
+        var user=this.props.userData;
+        let data = {
+            _id: user.id,
+            username: user.username,
+            password: user.password,
+            name: name||user.name,
+            description: description||user.description,
+            contact:{
+                mail: mail||user.contact.mail,
+                phone: phone||user.contact.phone
+            }
+        };
+        this.props.dispatch(saveChanges(data))
     },
     render: function() {
             return (
@@ -17,18 +32,18 @@ var Test = React.createClass({
                         <h2 className="SettingName">Profile settings :</h2>
                         <div>
                             <h3 className="SettingText">Change name:</h3>
-                            <i className="material-icons">assignment_ind</i>
-                            <input className="SettingInput" type="text" placeholder="Name..."/>
+                            <i className="Icon small">assignment_ind</i>
+                            <input className="SettingInput" ref="name" type="text" placeholder="Name..."/>
                         </div>
                         <div>
                             <h3 className="SettingText">Change mail:</h3>
-                            <i className="material-icons">mail</i>
-                            <input className="SettingInput" type="text" placeholder="Mail..."/>
+                            <i className="Icon small">mail</i>
+                            <input className="SettingInput" type="text" ref="mail" placeholder="Mail..."/>
                         </div>
                         <div>
                             <h3 className="SettingText">Change phone:</h3>
-                            <i className="material-icons">call</i>
-                            <input className="SettingInput" type="text" placeholder="Number phone..."/>
+                            <i className="Icon small">call</i>
+                            <input className="SettingInput" type="text" ref="phone" placeholder="Number phone..."/>
                         </div>
                         <div>
                             <h3 className="SettingText">Change photo:</h3>
@@ -42,11 +57,17 @@ var Test = React.createClass({
                         </div>
                         <div>
                             <h3 className="SettingText">Change info:</h3>
-                            <i className="material-icons">info_outline</i>
-                            <textarea className="SettingTextarea" type="text" placeholder="Information about your company or yourself..."/>
+                            <i className="Icon small">info_outline</i>
+                            <textarea className="SettingTextarea"
+                                      type="text"
+                                      placeholder="Information about your company or yourself..."
+                                      ref="description"
+                            />
                         </div>
-                        <button className="SettingBtn">
-                            <i className="material-icons" title="Save">
+                        <button className="SettingBtn"
+                                onClick={this.Click}
+                        >
+                            <i className="Icon small" title="Save">
                                 save
                             </i>
                             save
@@ -56,4 +77,7 @@ var Test = React.createClass({
             )
         }
     });
-export default Test;
+export default connect(
+    (state)=> {return{
+        userData: state.userData
+    }})(Settings)

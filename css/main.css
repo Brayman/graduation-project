@@ -37,6 +37,9 @@
    -moz-osx-font-smoothing: grayscale;
    font-feature-settings: 'liga';
 }
+.Icon.small{
+    font-size: 26px;
+}
 body{
   margin: 0em;
   padding: 0em;

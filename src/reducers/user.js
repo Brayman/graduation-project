@@ -26,8 +26,9 @@ export default function (state={},action){
                 })
             }
          );
-        case 'SEND_SUCCESS':
+        case 'SEND_LOGIN_DATA_SUCCESS':
             return Object.assign({},state,{
+                    id: action.data._id,
                     username: action.data.username,
                     type: 'user',
                     contact: Object.assign(state.contact, {

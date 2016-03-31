@@ -35,7 +35,7 @@ var NewsColumn = React.createClass({
        <div>
          {post.map(function(post){
           return (
-              <ListInfo key={post.id} data={post}/>
+              <ListInfo key={post._id} data={post}/>
           )
         })}
       </div>

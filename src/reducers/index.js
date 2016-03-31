@@ -25,17 +25,13 @@ export function posts(state=[],action){
 export function Profile (state=defaultState,action){
     switch (action.type){
         case 'LOAD_USER_SUCCESS':
+            console.log(action);
             return Object.assign({},state,{
-                    username: action.data[11].username,
-                    id: action.data[11]._id,
+                    username: action.data.username,
                     type: 'user',
-                    description: 'Предпринимательство, предпринимательская деятельность — экономическая деятельность' +
-                    ', направленная на систематическое получение прибыли от производства и продажи товаров, оказания ' +
-                    'услуг. Для этой цели используется имущество, нематериальные активы, труд как самого' +
-                    ' предпринимателя, так и привлечённые со стороны. Нет гарантий, что затраченные средства окупятся,' +
-                    ' что произведённое будет продано с прибылью. С этим связан риск потерь всего или части имущества.',
+                    description: action.data.description||'Тут пока что пусто',
                     contact: Object.assign(state.contact, {
-                        mail: action.data[11].mail
+                        mail: action.data.mail
                     })
                 }
             );
