@@ -25,13 +25,13 @@ export function posts(state=[],action){
 export function Profile (state=defaultState,action){
     switch (action.type){
         case 'LOAD_USER_SUCCESS':
-            console.log(action);
             return Object.assign({},state,{
                     username: action.data.username,
+                    name: action.data.name,
                     type: 'user',
                     description: action.data.description||'Тут пока что пусто',
                     contact: Object.assign(state.contact, {
-                        mail: action.data.mail
+                        mail: action.data.contact.mail
                     })
                 }
             );

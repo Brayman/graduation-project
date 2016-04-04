@@ -32,8 +32,8 @@ export default function (state={},action){
                     username: action.data.username,
                     type: 'user',
                     contact: Object.assign(state.contact, {
-                        mail: action.data.mail
-                    })
+                        mail: action.data.contact.mail
+                    }),
                 }
             );
 
@@ -44,18 +44,6 @@ export default function (state={},action){
                 type: 'user',
                 contact: Object.assign(state.contact, {
                     mail: action.impotantData.mail
-                })
-            }
-         );
-        case 'NEW_PROFILE_DATA':
-            return Object.assign({},state,{
-                name: action.data.name||state.name,
-                type: null,
-                description: action.data.description||state.description,
-                contact: Object.assign(state.contact, {
-                    twitter: action.data.contact.twitter||state.contact.twitter,
-                    mail: action.data.contact.mail||state.contact.mail,
-                    phone: action.data.contact.phone||state.contact.phone
                 })
             }
          );
