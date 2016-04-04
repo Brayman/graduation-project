@@ -1,41 +1,41 @@
 const url= 'https://peaceful-temple-19728.herokuapp.com/';
 //const url= 'http://10.26.11.88/';
 //const url= ''
-
+import fetch from 'isomorphic-fetch'
 //--middleware
 
 export function getPost(){
     return{
-        type: 'LOAD',
+        type: 'REQUEST',
         actions: ['LOAD_POST','LOAD_POST_SUCCESS','LOAD_POST_FAILURE'],
         promise: loadPost()
     }
 }
 export function registration(impotantData){
     return{
-        type: "SEND",
+        type: "REQUEST",
         actions: ['SEND_DATA','SEND_DATA_SUCCESS','SEND_DATA_FAILURE'],
         promise: registrUser(impotantData)
     }
 }
 export function login(data){
     return{
-        type: 'SEND',
+        type: 'REQUEST',
         actions: ['SEND_LOGIN_DATA','SEND_LOGIN_DATA_SUCCESS','SEND_LOGIN_DATA_FAILURE'],
         promise: sendLoginData(data)
     }
 }
 export function getProfileData(user){
     return{
-        type: 'LOAD',
+        type: 'REQUEST',
         actions: ['LOAD_USER','LOAD_USER_SUCCESS','LOAD_USER_FAILURE'],
         promise: loadProfile(user)
     }
 }
 export function saveChanges(changes){
     return{
-        type: 'NEW_PROFILE_DATA',
-        actions: ['LOAD_USER','LOAD_USER_SUCCESS','LOAD_USER_FAILURE'],
+        type: 'REQUEST',
+        actions: ['SAVE_USER','SAVE_USER_SUCCESS','SAVE_USER_FAILURE'],
         promise: newChanges(changes)
     }
 }
@@ -64,6 +64,7 @@ function newChanges(data){
         },
         body: JSON.stringify(data)
     })
+        .then()
 }
 function sendLoginData(data){
     return fetch(url, {
