@@ -89,6 +89,7 @@ a{
   text-decoration: inherit;
 }
 body{
+  min-width: 500px;
   margin: 0em;
   padding: 0em;
   font-family: Ubuntu;
@@ -112,7 +113,7 @@ body{
   display: flex;
 }
 .MenuLeftBtn{
-  margin: 15px 0px 0px 0px;
+  margin: 15px 0px 0px 20px;
   font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
@@ -166,7 +167,7 @@ body{
 }
 .SignInTextCompany{
   text-align: center;
-  font-size: 67px;
+  font-size: 63px;
   margin: 100px 0px 50px 0px;
   -moz-user-select: -moz-none;
   -o-user-select: none;
@@ -185,7 +186,7 @@ body{
   border: solid 2px;
 }
 .SignInput{
-  width: 320px;
+  width: 290px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 20px;
