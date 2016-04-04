@@ -3,79 +3,157 @@ import {connect} from 'react-redux'
 import {saveChanges} from '../actions'
 
 var Settings = React.createClass({
-    usernameChange: function(event) {
-        this.setState({username: event.target.value});
+    getInitialState: function(){
+        return{settings:{}, panel: 'profile'}
+    },
+    componentDidMount(){
+        this.setState({settings: this.props.userData});
+    },
+    NewValue: function(event) {
+        switch(event.target.name){
+            case 'name':
+                this.setState({settings:Object.assign({},this.state.settings,{name: event.target.value})});
+                break;
+            case 'mail':
+                this.setState({
+                    settings: Object.assign({},this.state.settings,
+                        {
+                            contact: Object.assign(this.state.settings.contact, {
+                                mail: event.target.value
+                            }),
+                        })
+                });
+                break;
+            case 'phone':
+                this.setState({
+                    settings: Object.assign({},this.state.settings,
+                        {
+                            contact: Object.assign(this.state.settings.contact, {
+                                phone: event.target.value
+                            })
+                        })
+                });
+                break;
+            case 'description':
+                this.setState({
+                    settings: Object.assign({},this.state.settings,{description: event.target.value})});
+                break;
+        }
+    },
+    Vibor: function(e) {
+        this.setState({panel: e.target.id});
     },
     Click: function() {
-        var name = this.refs.name.value;
-        var mail = this.refs.mail.value;
-        var phone = this.refs.phone.value;
-        var description = this.refs.description.value;
-        var user=this.props.userData;
-        let data = {
-            _id: user.id,
-            username: user.username,
-            password: user.password,
-            name: name||user.name,
-            description: description||user.description,
-            contact:{
-                mail: mail||user.contact.mail,
-                phone: phone||user.contact.phone
-            }
-        };
-        this.props.dispatch(saveChanges(data))
+            console.log(this.state.settings);
+            this.props.dispatch(saveChanges(this.state.settings))
     },
-    render: function() {
-            return (
-                <div className="SettingContent">
-                    <div className="SettingCard SettingColor">
-                        <h2 className="SettingName">Profile settings :</h2>
+    render: function(){
+        let panel=function(a, e, e2){
+            switch (a) {
+                case 'profile':
+                    return (
                         <div>
-                            <h3 className="SettingText">Change name:</h3>
-                            <i className="Icon small">assignment_ind</i>
-                            <input className="SettingInput" ref="name" type="text" placeholder="Name..."/>
+                            <div className="SettingTextInput">Profile pictures</div>
+                            <div>
+                                <input className="SettingsInput"
+                                       type="text"
+                                       placeholder="write URL on image..."
+                                /></div>
+                            <div className="SettingTextInput">Name</div>
+                            <div>
+                                <input className="SettingsInput"
+                                       name="name"
+                                       type="text"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div className="SettingTextInput">about</div>
+                            <div>
+                                <textarea className="SettingsInput"
+                                       type="text"
+                                       name="description"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div className="SettingTextInput">Company</div>
+                            <div><input className="SettingsInput"
+                                        type="text" placeholder="Write..."
+                                        onBlur={e}
+                            /></div>
+                            <div className="SettingTextInput">Location</div>
+                            <div><input className="SettingsInput"
+                                        type="text" placeholder="Write..."
+                                        onBlur={e}
+                            /></div>
+                            <div>
+                                <button className="SettingUpdate"
+                                         onClick={e2}
+                                >
+                                    Update profile
+                                </button>
+                            </div>
                         </div>
+                    );
+                case 'account':
+                    return (
                         <div>
-                            <h3 className="SettingText">Change mail:</h3>
-                            <i className="Icon small">mail</i>
-                            <input className="SettingInput" type="text" ref="mail" placeholder="Mail..."/>
+                            <div className="SettingTextInput">Old password</div>
+                            <div><input className="SettingsInput"
+                                        type="password" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">New password</div>
+                            <div><input className="SettingsInput"
+                                        type="password" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">Confirm new password</div>
+                            <div><input className="SettingsInput"
+                                        type="password" placeholder="Write..."/></div>
+                            <div>
+                                <button className="SettingUpdate">Update password</button>
+                                <button className="SettingDontKnow">I forgot my password</button>
+                            </div>
                         </div>
+                    );
+                case 'mail':
+                    return (
                         <div>
-                            <h3 className="SettingText">Change phone:</h3>
-                            <i className="Icon small">call</i>
-                            <input className="SettingInput" type="text" ref="phone" placeholder="Number phone..."/>
+                            <div className="SettingTextInput">Show email adress?</div>
+                            <div>
+                                <input type="checkbox" name="EmailShow" value="Yes">Yes</input>
+                                <input type="checkbox" name="EmailShow" value="No">No</input>
+                            </div>
+                            <div className="SettingTextInput">Add email adress</div>
+                            <div><input className="SettingsInput"
+                                        type="mail"
+                                        placeholder="Write..."
+                                        name="mail"
+                            /></div>
+                            <div><button className="SettingUpdate" onClick={e2}>Update email</button></div>
                         </div>
-                        <div>
-                            <h3 className="SettingText">Change photo:</h3>
-                            <img className="SettingImg" src="" alt="New photo"/>
-                                <div className="SettingImgBtn">
-                                    <label>
-                                        <input type="file" name="file" multiple="" accept="image/*,image/jpeg"/>
-                                            <span>Add photo</span>
-                                    </label>
-                                </div>
-                        </div>
-                        <div>
-                            <h3 className="SettingText">Change info:</h3>
-                            <i className="Icon small">info_outline</i>
-                            <textarea className="SettingTextarea"
-                                      type="text"
-                                      placeholder="Information about your company or yourself..."
-                                      ref="description"
-                            />
-                        </div>
-                        <button className="SettingBtn"
-                                onClick={this.Click}
-                        >
-                            <i className="Icon small" title="Save">
-                                save
-                            </i>
-                            save
-                        </button>
-                    </div>
-                </div>
-            )
+                    );
+                default:
+                    return(
+                        <div> meeh</div>
+                    )
+                }
+
         }
+        console.log(this.state.panel);
+        return (
+            <div className="RowFlexBetween  ">
+                <div className="LeftPanelSetting item1s">
+                    <div className="SettingsInfoText">Personal Settings</div>
+                    <div className="SettingsExpander" id="profile" onClick={this.Vibor}>profile</div>
+                    <div className="SettingsExpander" id="account" onClick={this.Vibor}>account</div>
+                    <div className="SettingsExpander" id="mail" onClick={this.Vibor}>mail</div>
+                </div>
+                <div className="RightPanelSetting item2s">
+                    <div className="SettingsInfoText">Setting</div>
+                    {panel(this.state.panel, this.NewValue, this.Click)}
+                </div>
+            </div>
+        )
+    }
     });
 export default connect(
     (state)=> {return{
