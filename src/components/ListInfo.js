@@ -13,7 +13,7 @@ var ListInfo = React.createClass({
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
-                    {this.props.data.username}
+                    {this.props.data.name||this.props.data.username}
                 </h4>
               </div>
               <div>
