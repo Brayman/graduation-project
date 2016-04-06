@@ -10,6 +10,7 @@ body{
     width: auto;
 }
 .item2s{
+    flex-grow: 2;
     order: 1;
     height: auto;
     margin: 0px;
@@ -20,6 +21,7 @@ body{
     margin: 20px 7px 0px 8px;
 }
 .item1s {
+    flex-grow: 1;
     order: 0;
     height: auto;
     margin: 0px;

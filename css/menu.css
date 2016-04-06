@@ -137,10 +137,11 @@ body{
   background: #5c6bc0;
 }
 .RowFlex{
+  min-width: 396px;
   width: 100%;
   flex-direction:row;
   justify-content:space-around;
-  flex-wrap:wrap;
+  flex-wrap: nowrap;
   display: flex;
 }
 .SignInTextRight{
@@ -197,7 +198,14 @@ body{
 .SignInput:focus{
   border:solid 3px #4CAF50;
 }
+.SignIn{
+  order: 1;
+}
+.SignUp{
+  order: 2;
+}
 .SignColore{
+  flex-wrap: wrap;
   padding: 70px 0px;
   background: #5c6bc0;
 }

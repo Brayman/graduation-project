@@ -92,6 +92,12 @@ body{
   color: #ffffff;
   border:solid 2px #FD7C16;
 }
+.Button.Settings{
+    height: 45px;
+    width: 300px;
+    margin: 0px 0px 10px 10px;
+    font-size: 26px;
+}
 .Button:active{
   opacity: 0.6;
 }
