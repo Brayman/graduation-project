@@ -1,16 +1,16 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router'
-import {getProfileData} from '../actions'
+import React from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router';
+import {getProfileData} from '../actions';
 
 var Profile = React.createClass({
-    componentWillMount(){
+    componentWillMount() {
         //this.props.dispatch(loadUserData())
         this.props.dispatch(getProfileData(this.props.params.user));
     },
     render: function () {
         var settings;
-        if(this.props.userData.username === this.props.Profile.username) {
+        if (this.props.userData.username === this.props.Profile.username) {
             settings = <Settings/>;
         }
         return (
@@ -58,7 +58,7 @@ var Profile = React.createClass({
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 });
 var Settings = React.createClass({

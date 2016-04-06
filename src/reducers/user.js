@@ -30,6 +30,7 @@ export default function (state={},action){
             return Object.assign({},state,{
                     _id: action.data._id,
                     username: action.data.username,
+                    name: action.data.name,
                     type: 'user',
                     contact: Object.assign(state.contact, {
                         mail: action.data.contact.mail

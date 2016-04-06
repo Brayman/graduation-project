@@ -119,8 +119,8 @@ var Settings = React.createClass({
                         <div>
                             <div className="SettingTextInput">Show email adress?</div>
                             <div>
-                                <input type="checkbox" name="EmailShow" value="Yes">Yes</input>
-                                <input type="checkbox" name="EmailShow" value="No">No</input>
+                                <input type="checkbox" name="EmailShow" value="Yes"/>
+                                <input type="checkbox" name="EmailShow" value="No"/>
                             </div>
                             <div className="SettingTextInput">Add email adress</div>
                             <div><input className="SettingsInput"
