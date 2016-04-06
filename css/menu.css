@@ -36,9 +36,12 @@ body{
   -webkit-user-select: none;
   user-select: none;
 }
+.MenuLeftBtn:hover{
+  color:#A0ADF6;
+}
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;
-  padding: 15px 10px;
+  padding: 14px 10px;
   font-size: 15px;
   cursor: pointer;
   -moz-user-select: -moz-none;
@@ -101,7 +104,7 @@ body{
   border: solid 2px;
 }
 .SignInput{
-  width: 290px;
+  width: 310px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -120,7 +123,7 @@ body{
 }
 .SignColore{
   flex-wrap: wrap;
-  padding: 70px 0px;
+  padding: 100px 0px;
   background: #5c6bc0;
 }
 .SignInButton{
@@ -169,5 +172,14 @@ body{
   color:#478189;
 }
 .PaddingSignIn{
-  padding: 100px 0px;
+  padding: 70px 0px;
+}
+.InputCheckBox{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 120px;
+}
+.InputCheckBoxText{
+  color:#ffffff;
 }
