@@ -4,11 +4,11 @@
 //import posts from './posts'
 import userData from './user';
 const defaultState= {
-        username: null,
+        login: null,
         name: null,
         description: null,
         rating: null,
-        contact: {
+        contacts: {
             twitter: null,
             mail: null,
             phone: null
@@ -26,12 +26,12 @@ export function Profile (state=defaultState,action){
     switch (action.type){
         case 'LOAD_USER_SUCCESS':
             return Object.assign({},state,{
-                    username: action.data.username,
-                    name: action.data.name,
+                login: action.data.login,
+                name: action.data.name,
                     type: 'user',
-                    description: action.data.description||'Тут пока что пусто',
-                    contact: Object.assign(state.contact, {
-                        mail: action.data.contact.mail
+                    description: action.data.description || 'Тут пока что пусто',
+                    contacts: Object.assign(state.contacts, {
+                        mail: action.data.contacts.mail
                     })
                 }
             );
