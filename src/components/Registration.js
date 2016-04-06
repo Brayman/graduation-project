@@ -1,7 +1,7 @@
 var React = require('react');
-import {connect} from 'react-redux'
-import {registration} from '../actions'
-import {Link} from 'react-router'
+import {connect} from 'react-redux';
+import {registration} from '../actions';
+import {Link} from 'react-router';
 
 var Registration = React.createClass({
     render: function() {
@@ -26,14 +26,14 @@ var Inputs = React.createClass({
         var mail = this.refs.email.value;
         if(this.refs.password.value==this.refs.password2.value){
             var password = this.refs.password.value;
-            this.props.registrData({username: name,contact:{mail: mail}, password: password});
+            this.props.registrData({username: name, contact:{mail: mail}, password: password});
         }else {
             this.setState({err:'пароли не совпадают'})
         }
 
-        this.refs.password.value='';
-        this.refs.email.value='';
-        this.refs.username.value=''
+        this.refs.password.value = '';
+        this.refs.email.value = '';
+        this.refs.username.value = '';
     },
     render: function() {
         return (

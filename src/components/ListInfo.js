@@ -1,11 +1,17 @@
 var React = require('react');
-import {Link} from 'react-router'
+import { Link} from 'react-router';
 var ListInfo = React.createClass({
 
-    render: function() {
+    render: function () {
+        /*var description;
+        if(this.props.data.profile.description.length>100){
+            description = this.props.data.profile.description.substring(1,100)
+        } else {
+            description = this.props.data.profile.description
+        }*/
         return (
           <div className="Block">
-            <Link to={"/"+this.props.data.username}>
+            <Link to={'/'+this.props.data.username}>
                 <img className="MediumImage Right Hover"
                      src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
                      alt=""/>
@@ -13,7 +19,7 @@ var ListInfo = React.createClass({
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
-                    {this.props.data.username}
+                    {this.props.data.name||this.props.data.username}
                 </h4>
               </div>
               <div>

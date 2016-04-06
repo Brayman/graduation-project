@@ -3,7 +3,7 @@
  */
 const defaultState= {
     userData:{
-        id: null,
+        _id: null,
         username: null,
         name: null,
         type: null,
@@ -28,16 +28,16 @@ export default function (state={},action){
          );
         case 'SEND_LOGIN_DATA_SUCCESS':
             return Object.assign({},state,{
-                    id: action.data._id,
+                    _id: action.data._id,
                     username: action.data.username,
                     type: 'user',
                     contact: Object.assign(state.contact, {
                         mail: action.data.contact.mail
-                    }),
+                    })
                 }
             );
-
-
+        case 'SIGNOUT':
+            return defaultState.userData;
         case 'REGISTRATION':
             return Object.assign({},state,{
                 username: action.impotantData.username,

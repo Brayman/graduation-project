@@ -1,13 +1,12 @@
 const  getData = store => next => action =>{
-    if (action.type !== 'LOAD'){
+    if (action.type !== 'REQUESTWR'){
         return next(action)
     }
     const [startAction, successAction, failAction]= action.actions;
     store.dispatch({
         type: startAction
     });
-    console.log(action.promise);
-    action.promise.then((data)=>store.dispatch({
+    action.promise.then(()=>store.dispatch({
         type: successAction,
         data
     }),(error)=> store.dispatch({

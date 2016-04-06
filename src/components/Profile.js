@@ -6,12 +6,12 @@ import {getProfileData} from '../actions'
 var Profile = React.createClass({
     componentWillMount(){
         //this.props.dispatch(loadUserData())
-        this.props.dispatch(getProfileData(this.props.params.user))
+        this.props.dispatch(getProfileData(this.props.params.user));
     },
-    render: function() {
+    render: function () {
         var settings;
-        if(this.props.userData.username===this.props.Profile.username){
-            settings=<Settings/>
+        if(this.props.userData.username === this.props.Profile.username) {
+            settings = <Settings/>;
         }
         return (
             <div>
@@ -27,15 +27,11 @@ var Profile = React.createClass({
                                 Contact:
                             </h3>
                             <div>
-                                <img className="ImgProfilInfo"
-                                     src="svg/phone.svg"
-                                />
+                                <i className="Icon">phone</i>
                                 {this.props.Profile.contact.phone}
                             </div>
                             <div>
-                                <img className="ImgProfilInfo"
-                                     src="svg/mail-ru.svg"
-                                />
+                                <i className="Icon">mail</i>
                                 {this.props.Profile.contact.mail}
                             </div>
                         </div>
@@ -66,26 +62,27 @@ var Profile = React.createClass({
     }
 });
 var Settings = React.createClass({
-    render: function() {
-        return(
+    render: function () {
+        return (
             <Link to="/settings">
-                <button className="BtnSettings">
-                    <img className="ImgBtn"
-                         src="svg/settings.svg"
-                    />
-                    <h3 className="BtnText">
-                        Settings
-                    </h3>
+                <button className="Button Settings">
+                    <i className="Icon">
+                        settings
+                    </i>
+                    settings
                 </button>
             </Link>
-        )
+        );
     }
 });
 export default connect(
-    (state)=> {return{
-        userData: state.userData,
-        Profile: state.Profile
-    }})(Profile)
+    (state)=> {
+        return {
+            userData: state.userData,
+            Profile: state.Profile
+        };
+    }
+)(Profile);
 /**
  * Created by Artsiom_Rakitski on 3/18/2016.
  */
