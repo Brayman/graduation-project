@@ -10,7 +10,7 @@ var Profile = React.createClass({
     },
     render: function () {
         var settings;
-        if (this.props.userData.username === this.props.Profile.username) {
+        if (this.props.userData.login === this.props.Profile.login) {
             settings = <Settings/>;
         }
         return (
@@ -19,20 +19,17 @@ var Profile = React.createClass({
                     <div className="Column item2 white">
                         <div>
                             <h2 className="PadingText">
-                                {this.props.Profile.name || this.props.Profile.username}
+                                {this.props.Profile.name || this.props.Profile.login}
                             </h2>
                         </div>
                         <div className="ProfilInfo">
                             <h3 className="NameFont">
                                 Contact:
                             </h3>
-                            <div>
-                                <i className="Icon">phone</i>
-                                {this.props.Profile.contact.phone}
-                            </div>
+
                             <div>
                                 <i className="Icon">mail</i>
-                                {this.props.Profile.contact.mail}
+                                {this.props.Profile.contacts.mail}
                             </div>
                         </div>
                         <div className="ProfilInfo">

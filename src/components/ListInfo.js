@@ -11,7 +11,7 @@ var ListInfo = React.createClass({
         }*/
         return (
           <div className="Block">
-            <Link to={'/'+this.props.data.username}>
+            <Link to={'/' + this.props.data._id}>
                 <img className="MediumImage Right Hover"
                      src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
                      alt=""/>
@@ -19,7 +19,7 @@ var ListInfo = React.createClass({
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
-                    {this.props.data.name||this.props.data.username}
+                    {this.props.data.name || this.props.data.login}
                 </h4>
               </div>
               <div>

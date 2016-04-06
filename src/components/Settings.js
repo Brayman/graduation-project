@@ -12,7 +12,7 @@ var Settings = React.createClass({
     NewValue: function(event) {
         switch(event.target.name){
             case 'name':
-                this.setState({settings:Object.assign({},this.state.settings,{name: event.target.value})});
+                this.setState({settings: Object.assign({},this.state.settings, {name: event.target.value})});
                 break;
             case 'mail':
                 this.setState({
@@ -36,7 +36,7 @@ var Settings = React.createClass({
                 break;
             case 'description':
                 this.setState({
-                    settings: Object.assign({},this.state.settings,{description: event.target.value})});
+                    settings: Object.assign({},this.state.settings, {description: event.target.value})});
                 break;
         }
     },
@@ -156,6 +156,7 @@ var Settings = React.createClass({
     }
     });
 export default connect(
-    (state)=> {return{
+    (state)=> {
+        return{
         userData: state.userData
     }})(Settings)

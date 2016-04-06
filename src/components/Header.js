@@ -16,7 +16,7 @@ var Header = React.createClass({
     render: function () {
         var action = bindActionCreators(Actions, this.props.dispatch);
         let panel = function (Click, userData) {
-            if (userData.username == null) {
+            if (userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
                         <div className="MenuRightBtn">Search</div>
@@ -25,11 +25,6 @@ var Header = React.createClass({
                         </Link>
                         <Link to="signin">
                             <div className="MenuRightBtn">signin</div>
-                        </Link>
-                        <Link to={'/' + userData.username}>
-                            <div className="MenuRightBtn">
-                                {userData.username}
-                            </div>
                         </Link>
                     </div>
                 );
@@ -46,9 +41,9 @@ var Header = React.createClass({
                         >
                             signout
                         </div>
-                        <Link to={'/' + userData.username}>
+                        <Link to={'/' + userData._id}>
                             <div className="MenuRightBtn">
-                                {userData.username}
+                                {userData.login}
                             </div>
                         </Link>
                     </div>

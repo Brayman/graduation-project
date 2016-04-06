@@ -34,7 +34,7 @@ var SignIn = React.createClass({
                                 <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
                             </div>
                             <div className="InputCheckBoxText">
-                                <input className="InputCheckBox" type="checkbox">company</input>
+                                <input className="InputCheckBox" type="checkbox"/>company
                             </div>
                             <button className="SignBtton SignInButton"
                                     onClick={this.onLogInClick}
