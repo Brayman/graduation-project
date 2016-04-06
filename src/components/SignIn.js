@@ -9,7 +9,7 @@ var SignIn = React.createClass({
         var name = this.refs.username.value;
         var password = this.refs.password.value;
         if (name && password !== '') {
-            this.props.dispatch(login({username: name, password: password}));
+            this.props.dispatch(login({login: name, password: password}));
         }
         this.refs.password.value = '';
         this.refs.username.value = '';
