@@ -28,7 +28,7 @@ var Profile = React.createClass({
                             </h3>
 
                             <div>
-                                <i className="Icon">mail</i>
+                                <i className="mail icon"/>
                                 {this.props.Profile.contacts.mail}
                             </div>
                         </div>
@@ -63,9 +63,7 @@ var Settings = React.createClass({
         return (
             <Link to="/settings">
                 <button className="Button Settings">
-                    <i className="Icon">
-                        settings
-                    </i>
+                    <i className="setting icon"/>
                     settings
                 </button>
             </Link>

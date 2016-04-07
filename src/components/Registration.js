@@ -23,11 +23,13 @@ var Inputs = React.createClass({
     GetValues: function () {
         var name = this.refs.username.value;
         var mail = this.refs.email.value;
-        if (this.refs.password.value === this.refs.password2.value) {
-            var password = this.refs.password.value;
-            this.props.registrData({login: name, contacts: {mail: mail}, password: password});
-        } else {
-            this.setState({err: 'пароли не совпадают'});
+        if (name && mail !== null) {
+            if (this.refs.password.value === this.refs.password2.value) {
+                var password = this.refs.password.value;
+                this.props.registrData({login: name, contacts: {mail: mail}, password: password});
+            } else {
+                this.setState({err: 'пароли не совпадают'});
+            }
         }
 
         this.refs.password.value = '';
@@ -42,7 +44,7 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="text" ref="username" placeholder="Pick a username"/>
                 </div>
                 <div>
-                    <input className="InputReg" type="text" ref="email" placeholder="Your email address"/>
+                    <input className="InputReg" type="email" ref="email" placeholder="Your email address" onBlur={e=>{console.log(e.target)}}/>
                 </div>
                 <div style={{backgroundColor: 'red'}}
                      onClick={()=>{

@@ -9,16 +9,16 @@ var Settings = React.createClass({
     componentDidMount(){
         this.setState({settings: this.props.userData});
     },
-    NewValue: function(event) {
-        switch(event.target.name){
+    NewValue: function (event) {
+        switch(event.target.name) {
             case 'name':
                 this.setState({settings: Object.assign({},this.state.settings, {name: event.target.value})});
                 break;
             case 'mail':
                 this.setState({
-                    settings: Object.assign({},this.state.settings,
+                    settings: Object.assign({}, this.state.settings,
                         {
-                            contact: Object.assign(this.state.settings.contact, {
+                            contacts: Object.assign(this.state.settings.contacts, {
                                 mail: event.target.value
                             }),
                         })
@@ -26,9 +26,9 @@ var Settings = React.createClass({
                 break;
             case 'phone':
                 this.setState({
-                    settings: Object.assign({},this.state.settings,
+                    settings: Object.assign({}, this.state.settings,
                         {
-                            contact: Object.assign(this.state.settings.contact, {
+                            contacts: Object.assign(this.state.settings.contacts, {
                                 phone: event.target.value
                             })
                         })
@@ -36,19 +36,19 @@ var Settings = React.createClass({
                 break;
             case 'description':
                 this.setState({
-                    settings: Object.assign({},this.state.settings, {description: event.target.value})});
+                    settings: Object.assign({}, this.state.settings, {description: event.target.value})});
                 break;
         }
     },
-    Vibor: function(e) {
+    Vibor: function (e) {
         this.setState({panel: e.target.id});
     },
-    Click: function() {
-            console.log(this.state.settings);
-            this.props.dispatch(saveChanges(this.state.settings))
+    Click: function () {
+        console.log(this.state.settings);
+        this.props.dispatch(saveChanges(this.state.settings));
     },
-    render: function(){
-        let panel=function(a, e, e2){
+    render: function () {
+        let panel = function (a, e, e2) {
             switch (a) {
                 case 'profile':
                     return (
@@ -127,6 +127,7 @@ var Settings = React.createClass({
                                         type="mail"
                                         placeholder="Write..."
                                         name="mail"
+                                        onBlur={e}
                             /></div>
                             <div><button className="SettingUpdate" onClick={e2}>Update email</button></div>
                         </div>

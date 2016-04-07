@@ -1,5 +1,5 @@
-//const url= 'https://peaceful-temple-19728.herokuapp.com/';
-const url= 'http://10.26.11.88/';
+//const url = 'https://gentle-meadow-48046.herokuapp.com/';
+const url = 'http://10.26.11.88/';
 //const url= ''
 import fetch from 'isomorphic-fetch';
 //--middleware
@@ -11,22 +11,22 @@ export function getPost() {
         promise: loadPost()
     }
 }
-export function registration(impotantData){
-    return{
+export function registration(impotantData) {
+    return {
         type: 'REQUEST',
-        actions: ['SEND_DATA','SEND_DATA_SUCCESS', 'SEND_DATA_FAILURE'],
-        promise: registrUser(impotantData),
+        actions: ['SEND_DATA', 'SEND_DATA_SUCCESS', 'SEND_DATA_FAILURE'],
+        promise: registrUser(impotantData)
     }
 }
 export function login(data){
-    return{
+    return {
         type: 'REQUEST',
         actions: ['SEND_LOGIN_DATA', 'SEND_LOGIN_DATA_SUCCESS', 'SEND_LOGIN_DATA_FAILURE'],
         promise: sendLoginData(data)
     };
 }
 export function getProfileData(user){
-    return{
+    return {
         type: 'REQUEST',
         actions: ['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'],
         promise: loadProfile(user),
@@ -35,7 +35,7 @@ export function getProfileData(user){
 export function saveChanges(changes){
     return{
         type: 'REQUEST',
-        actions: ['SAVE_USER','SAVE_USER_SUCCESS','SAVE_USER_FAILURE'],
+        actions: ['SAVE_USER', 'SAVE_USER_SUCCESS', 'SAVE_USER_FAILURE'],
         promise: newChanges(changes)
     }
 }
@@ -45,7 +45,7 @@ function loadPost() {
     return fetch(url + 'users')
         .then(
             function (resp) {
-                if (resp.status == 200) {
+                if (resp.status === 200) {
                     console.log(resp.statusText);
                     return resp.json();
                 } else {
@@ -73,10 +73,14 @@ function newChanges(data) {
         },
         body: JSON.stringify(data)
     })
-        .then();
+        .then(
+            resp => {
+                resp.statusText;
+            }
+        );
 }
-function sendLoginData(data){
-    return fetch(url, {
+function sendLoginData(data) {
+    return fetch(url + 'login', {
         method: 'post',
         headers: {
             Accept: 'application/json',
