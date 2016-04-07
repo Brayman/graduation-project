@@ -10,7 +10,7 @@ var SignIn = React.createClass({
         var name = this.refs.username.value;
         var password = this.refs.password.value;
         if (name && password !== '') {
-            this.props.dispatch(login({username: name, password: password}));
+            this.props.dispatch(login({login: name, password: password}));
         }
         this.refs.password.value = '';
         this.refs.username.value = '';
@@ -37,7 +37,7 @@ var SignIn = React.createClass({
                                 <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
                             </div>
                             <div className="InputCheckBoxText">
-                                <input className="InputCheckBox" type="checkbox">company</input>
+                                <input className="InputCheckBox" type="checkbox"/>company
                                 <button className="SettingDontKnow">I forgot my password </button>
                             </div>
                             <button className="SignBtton SignInButton"

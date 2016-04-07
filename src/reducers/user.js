@@ -1,49 +1,47 @@
 /**
  * Created by Artsiom_Rakitski on 3/1/2016.
  */
-const defaultState= {
-    userData:{
+const defaultState = {
+    userData: {
         _id: null,
-        username: null,
+        login: null,
         name: null,
         type: null,
         description: null,
-        contact: {
+        contacts: {
             twitter: null,
             mail: null,
             phone: null
         }
     }
 };
-export default function (state={},action){
-    switch (action.type){
+export default function (state = {}, action) {
+    switch (action.type) {
         case 'REGISTRATION_NEW_USER':
-            return Object.assign({},state,{
-                username: action.impotantData.username,
+            return Object.assign({}, state, {
+                login: action.impotantData.login,
                 type: 'user',
-                contact: Object.assign(state.contact, {
+                contacts: Object.assign(state.contacts, {
                     mail: action.impotantData.mail
                 })
             }
          );
         case 'SEND_LOGIN_DATA_SUCCESS':
-            return Object.assign({},state,{
-                    _id: action.data._id,
-                    username: action.data.username,
-                    name: action.data.name,
-                    type: 'user',
-                    contact: Object.assign(state.contact, {
-                        mail: action.data.contact.mail
-                    })
-                }
-            );
+            return Object.assign({}, state, {
+                _id: action.data._id,
+                login: action.data.login,
+                name: action.data.name,
+                contacts: Object.assign({}, state, {
+                    mail: action.data.contacts.mail
+                })
+            });
         case 'SIGNOUT':
             return defaultState.userData;
         case 'REGISTRATION':
-            return Object.assign({},state,{
-                username: action.impotantData.username,
+            return Object.assign({}, state, {
+                login: action.impotantData.login,
                 type: 'user',
-                contact: Object.assign(state.contact, {
+                contacts: Object.assign(state.contacts, {
                     mail: action.impotantData.mail
                 })
             }
