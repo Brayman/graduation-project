@@ -4,6 +4,7 @@
 import React from 'react';
 import {login} from '../actions';
 import {connect} from 'react-redux'
+import {Link} from 'react-router';
 var SignIn = React.createClass({
     onLogInClick: function () {
         var name = this.refs.username.value;
@@ -21,7 +22,9 @@ var SignIn = React.createClass({
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
                      <div className="SignInTextDisription">frilans service</div>
+                     <Link to="/signup">
                      <button className="SignBtton SignUpButton">Sign up</button>
+                     </Link>
                      </div>
                      <div className="SignIn">
                         <div className="PaddingSignIn">
@@ -35,13 +38,13 @@ var SignIn = React.createClass({
                             </div>
                             <div className="InputCheckBoxText">
                                 <input className="InputCheckBox" type="checkbox">company</input>
+                                <button className="SettingDontKnow">I forgot my password </button>
                             </div>
                             <button className="SignBtton SignInButton"
                                     onClick={this.onLogInClick}
                             >
                                 Sign in
                             </button>
-
                         </div>
                     </div>
                 </div>

@@ -178,8 +178,9 @@ body{
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  margin-left: 120px;
+  margin-left: 60px;
 }
 .InputCheckBoxText{
   color:#ffffff;
+  font-size: 20px;
 }
