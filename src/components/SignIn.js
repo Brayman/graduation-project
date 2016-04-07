@@ -40,11 +40,13 @@ var SignIn = React.createClass({
                                 <input className="InputCheckBox" type="checkbox"/>company
                                 <button className="SettingDontKnow">I forgot my password </button>
                             </div>
+                              <Link to='/'>
                             <button className="SignBtton SignInButton"
                                     onClick={this.onLogInClick}
                             >
                                 Sign in
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

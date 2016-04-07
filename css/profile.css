@@ -1,0 +1,76 @@
+.ImageProfile{
+    width: 300px;
+    height: 300px;
+    margin: 5px 0px 0px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.MarkerProfile {
+    color: white;
+    font-weight: 600;
+    background-color: #1ABC9C;
+    margin:5px 0px 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 5px 10px;
+    width: 280px;
+    text-align: center;
+}
+.ProfileNameText{
+    font-size: 40px;
+    text-transform : uppercase;
+    font-weight: 600;
+    margin:10px;
+    text-align: center;
+}
+.ProfileDescriptionText{
+    font-size: 30px;
+    margin:20px;
+    text-align: center;
+}
+.ProfileTextMyselfMargin{
+    margin-top: 75px;
+}
+.ProfileTextMyself{
+    text-indent: 20px;
+    margin: 5px 10px;
+}
+.ProfileContactIco{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin:5px 20px;
+    vertical-align: middle;
+}
+.FlexEnd{
+    flex-direction: row-reverse;
+}
+.item3p{
+    order: 0;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 250px;
+    height: auto;
+    margin: 10px;
+}
+.item2p{
+    order: 2;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 690px;
+    height: auto;
+    margin: 10px;
+}
+.item1p{
+    order: 1;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 300px;
+    margin: 10px;
+}
+.SettingProfileButton{
+  margin: 0px;
+}

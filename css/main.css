@@ -1,3 +1,10 @@
+body{
+  margin: 0em;
+  padding: 0em;
+  background-color: #E9E9E9;
+  font-family: Ubuntu;
+  min-width: 450px;
+}
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
@@ -40,12 +47,6 @@
 .Icon.small{
     font-size: 26px;
 }
-body{
-  margin: 0em;
-  padding: 0em;
-  background-color: #E9E9E9;
-  font-family: Ubuntu;
-}
 .PanelForMenu{
   height: 3.5em;
   margin: 0em;
@@ -64,7 +65,6 @@ body{
   display: flex;
   flex-direction:row;
   justify-content:space-between;
-  flex-wrap:wrap;
 }
 .Label{
   background-color: #ffffff;
@@ -95,7 +95,7 @@ body{
 .Button.Settings{
     height: 45px;
     width: 300px;
-    margin: 0px 0px 10px 10px;
+    margin: 0px;
     font-size: 26px;
 }
 .Button:active{
@@ -153,4 +153,7 @@ body{
   background-color: #ffffff;
   color: #000000;
   border: solid 2px #ffffff;
+}
+.DisplayBlock{
+  display: block;
 }

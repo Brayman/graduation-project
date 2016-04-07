@@ -2,13 +2,6 @@ a{
   color: inherit;
   text-decoration: inherit;
 }
-body{
-  min-width: 396px;
-  margin: 0em;
-  padding: 0em;
-  font-family: Ubuntu;
-  background-color: #F0F0F0;
-}
 .Nav{
   height: 65px;
   margin: 0em;
@@ -27,7 +20,7 @@ body{
   display: flex;
 }
 .MenuLeftBtn{
-  margin: 15px 0px 0px 20px;
+  margin: 15px 0px 0px 10px;
   font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
