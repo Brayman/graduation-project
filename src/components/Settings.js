@@ -68,6 +68,12 @@ var Settings = React.createClass({
                                        onBlur={e}
                                 />
                             </div>
+                            <div className="SettingTextInput">Sex</div>
+                            <div><input type="radio" id='female' name="sex"/>
+                            <label htmlFor="female"><span></span>female</label>
+                            <input type="radio" id="male" name="sex"/>
+                            <label htmlFor="male"><span></span>male</label>
+                            <label htmlFor="radio1" className="css-label radGroup1"></label></div>
                             <div className="SettingTextInput">about</div>
                             <div>
                                 <textarea className="SettingsInput"
@@ -96,6 +102,27 @@ var Settings = React.createClass({
                             </div>
                         </div>
                     );
+                    case 'contacts':
+                        return (
+                          <div>
+                            <div className="SettingTextInput">Mail</div>
+                            <div><input className="SettingsInput"
+                            type="mail" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">Phone</div>
+                            <div><input className="SettingsInput"
+                            type="mail" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">Twiter</div>
+                            <div><input className="SettingsInput"
+                            type="mail" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">VK</div>
+                            <div><input className="SettingsInput"
+                            type="mail" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">Facebook</div>
+                            <div><input className="SettingsInput"
+                            type="mail" placeholder="Write..."/></div>
+                            <div><button className="SettingUpdate">Update contacts</button></div>
+                          </div>
+                        );
                 case 'account':
                     return (
                         <div>

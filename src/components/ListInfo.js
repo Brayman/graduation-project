@@ -11,11 +11,14 @@ var ListInfo = React.createClass({
         }*/
         return (
           <div className="Block">
-            <Link to={'/' + this.props.data._id}>
-                <img className="MediumImage Right Hover"
-                     src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
-                     alt=""/>
+            <div className="DisplayBlock Right">
+            <img className="MediumImage Hover "
+              src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
+            alt=""/>
+            <Link to={"/"+this.props.data._id}>
+              <button className="ButtonViewProfil">view profile</button>
             </Link>
+            </div>
             <div className="RowAll">
               <div>
                 <h4 className="PostText">

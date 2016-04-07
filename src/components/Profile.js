@@ -15,6 +15,7 @@ var Profile = React.createClass({
         }
         return (
             <div>
+<<<<<<< HEAD
                 <div className="ProfilContent">
                     <div className="Column item2 white">
                         <div>
@@ -53,7 +54,54 @@ var Profile = React.createClass({
                         </h2>
                         {settings}
                     </div>
+=======
+              <div className="RowFlexBetween FlexEnd">
+                <div className="item3p">
+                  <img src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg"
+                  className="ImageProfile" alt=""/>
+                  <div className="MarkerProfile">
+                    Rating {this.props.Profile.rating}
+                  </div>
+                    {settings}
                 </div>
+                <div className="item2p">
+                  <div className="ProfileDescriptionText ProfileTextMyselfMargin">About myself</div>
+                  <div className="ProfileTextMyself">{this.props.Profile.description || 'Здесь пока пусто.'}</div>
+                </div>
+                <div className="item1p">
+                  <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
+                  <div className="ProfileDescriptionText">Information</div>
+                  <div>
+                    <img className="ProfileContactIco"
+                    src="http://i.yapx.ru/BAJB.png" alt=""/>
+                    facebook.com
+                  </div>
+                  <div>
+                    <i className='Icon ProfileContactIco'>email</i>
+                    {this.props.Profile.contacts.mail}
+                  </div>
+                  <div>
+                    <i className='Icon ProfileContactIco'>phone</i>
+                    {this.props.Profile.contacts.phone}
+                  </div>
+                  <div>
+                    <img className="ProfileContactIco"
+                    src="https://i.yapx.ru/BAJE.png" alt=""/>
+                    twiter.com
+                  </div>
+                  <div>
+                    <img className="ProfileContactIco"
+                    src="https://i.yapx.ru/BAJF.png" alt=""/>
+                    vk.com
+                  </div>
+                  <div>
+                    <img className="ProfileContactIco"
+                    src="https://i.yapx.ru/BAJn.png" alt=""/>
+                    Brest
+                  </div>
+>>>>>>> be8b557834fa1e9bbd8d7dce54aa987e2e75961f
+                </div>
+              </div>
             </div>
         );
     }
