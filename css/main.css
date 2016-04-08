@@ -9,7 +9,7 @@ body{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
    }
-  @font-face {
+  /*@font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
@@ -43,7 +43,7 @@ body{
    text-rendering: optimizeLegibility;
    -moz-osx-font-smoothing: grayscale;
    font-feature-settings: 'liga';
-}
+}*/
 .Icon.small{
     font-size: 26px;
 }

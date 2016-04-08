@@ -15,6 +15,46 @@ var Profile = React.createClass({
         }
         return (
             <div>
+<<<<<<< HEAD
+                <div className="ProfilContent">
+                    <div className="Column item2 white">
+                        <div>
+                            <h2 className="PadingText">
+                                {this.props.Profile.name || this.props.Profile.login}
+                            </h2>
+                        </div>
+                        <div className="ProfilInfo">
+                            <h3 className="NameFont">
+                                Contact:
+                            </h3>
+
+                            <div>
+                                <i className="mail icon"/>
+                                {this.props.Profile.contacts.mail}
+                            </div>
+                        </div>
+                        <div className="ProfilInfo">
+                            <h3 className="PadingText">
+                                Work:
+                            </h3>
+                            <div className="Text">
+                                {this.props.Profile.description || 'Здесь пока пусто.'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item1 white">
+
+                        <div>
+                            <img className="ProfilImage"
+                                 src="http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg"
+                            />
+                        </div>
+                        <h2 className="MarkerProfil">
+                            Rating {this.props.Profile.rating}
+                        </h2>
+                        {settings}
+                    </div>
+=======
               <div className="RowFlexBetween FlexEnd">
                 <div className="item3p">
                   <img src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg"
@@ -59,6 +99,7 @@ var Profile = React.createClass({
                     src="https://i.yapx.ru/BAJn.png" alt=""/>
                     Brest
                   </div>
+>>>>>>> be8b557834fa1e9bbd8d7dce54aa987e2e75961f
                 </div>
               </div>
             </div>
@@ -70,9 +111,7 @@ var Settings = React.createClass({
         return (
             <Link to="/settings">
                 <button className="Button Settings">
-                    <i className="Icon">
-                        settings
-                    </i>
+                    <i className="setting icon"/>
                     settings
                 </button>
             </Link>
