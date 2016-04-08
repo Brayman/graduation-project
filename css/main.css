@@ -9,7 +9,7 @@ body{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
    }
-  /*@font-face {
+  @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
@@ -43,7 +43,7 @@ body{
    text-rendering: optimizeLegibility;
    -moz-osx-font-smoothing: grayscale;
    font-feature-settings: 'liga';
-}*/
+}
 .Icon.small{
     font-size: 26px;
 }
@@ -97,6 +97,9 @@ body{
     width: 300px;
     margin: 0px;
     font-size: 26px;
+    background-color: #37474f;
+    color: #ffffff;
+    border:solid 2px #37474f;
 }
 .Button:active{
   opacity: 0.6;
@@ -156,4 +159,26 @@ body{
 }
 .DisplayBlock{
   display: block;
+}
+.RadioButton{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 5px 2px 0px 30px;
+}
+.ButtonClose{
+    cursor: pointer;
+}
+.FeedBack{
+    font-size: 30px;
+    text-align: center;
+}
+.FeedBackText{
+    padding: 30px 200px;
+}
+.Error{
+    background-color: #F44336;
+}
+.Success{
+    background-color: #F44336;
 }
