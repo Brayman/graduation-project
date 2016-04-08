@@ -69,19 +69,11 @@ var Settings = React.createClass({
                                 />
                             </div>
                             <div className="SettingTextInput">Sex</div>
-                            <div><input type="radio" id='female' name="sex"/>
-                            <label htmlFor="female"><span></span>female</label>
-                            <input type="radio" id="male" name="sex"/>
-                            <label htmlFor="male"><span></span>male</label>
-                            <label htmlFor="radio1" className="css-label radGroup1"></label></div>
-                            <div className="SettingTextInput">about</div>
                             <div>
-                                <textarea className="SettingsInput"
-                                       type="text"
-                                       name="description"
-                                       placeholder="Write..."
-                                       onBlur={e}
-                                />
+                              <input className="RadioButton" type="radio" id="female" name="sex"/>
+                              female
+                              <input className="RadioButton" type="radio" id="male" name="sex"/>
+                              male
                             </div>
                             <div className="SettingTextInput">Company</div>
                             <div><input className="SettingsInput"
@@ -93,6 +85,18 @@ var Settings = React.createClass({
                                         type="text" placeholder="Write..."
                                         onBlur={e}
                             /></div>
+                            <div className="SettingTextInput">Birthdate</div>
+                            <div><input className="SettingsInput"
+                            type="date" placeholder="Write..."/></div>
+                            <div className="SettingTextInput">about</div>
+                            <div>
+                                <textarea className="SettingsInput"
+                                       type="text"
+                                       name="description"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
                             <div>
                                 <button className="SettingUpdate"
                                          onClick={e2}
@@ -146,8 +150,10 @@ var Settings = React.createClass({
                         <div>
                             <div className="SettingTextInput">Show email adress?</div>
                             <div>
-                                <input type="checkbox" name="EmailShow" value="Yes"/>
-                                <input type="checkbox" name="EmailShow" value="No"/>
+                              <input className="RadioButton" type="radio" id="Yes" name="EmailShow"/>
+                              Yes
+                              <input className="RadioButton" type="radio" id="No" name="EmailShow"/>
+                              No
                             </div>
                             <div className="SettingTextInput">Add email adress</div>
                             <div><input className="SettingsInput"
@@ -162,8 +168,7 @@ var Settings = React.createClass({
                     return(
                         <div> meeh</div>
                     )
-                }
-
+              }
         }
         console.log(this.state.panel);
         return (
@@ -171,6 +176,7 @@ var Settings = React.createClass({
                 <div className="LeftPanelSetting item1s">
                     <div className="SettingsInfoText">Personal Settings</div>
                     <div className="SettingsExpander" id="profile" onClick={this.Vibor}>profile</div>
+                    <div className="SettingsExpander" id="contacts" onClick={this.Vibor}>contacts</div>
                     <div className="SettingsExpander" id="account" onClick={this.Vibor}>account</div>
                     <div className="SettingsExpander" id="mail" onClick={this.Vibor}>mail</div>
                 </div>
