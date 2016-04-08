@@ -9,6 +9,7 @@ const logger = createLogger();
 const cswm=applyMiddleware(getData,sendData,logger)(createStore);
 
 const store = cswm(reducer,{
+    status: null,
     userData: {},
     posts: []
 });
