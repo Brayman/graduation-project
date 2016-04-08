@@ -89,7 +89,7 @@ a{
 }
 .SignBtton{
   padding: 15px 20px;
-  margin: 20px 0px 100px 120px;
+  margin: 20px 0px 100px 0px;
   cursor: pointer;
   outline: none;
   font-size: 17px;

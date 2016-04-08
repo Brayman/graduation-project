@@ -6,6 +6,9 @@ import {login} from '../actions';
 import {connect} from 'react-redux'
 import {Link} from 'react-router';
 var SignIn = React.createClass({
+  getInitialState: function () {
+      return {color: 'Error'};
+  },
     onLogInClick: function () {
         var name = this.refs.username.value;
         var password = this.refs.password.value;
@@ -17,7 +20,13 @@ var SignIn = React.createClass({
 
     },
     render: function () {
+      var text='FeedBack '+ this.state.color;
         return (
+            <div className={text}>
+              <div className="Icon small Right ButtonClose">close</div>
+              <div className="FeedBackText">
+                Text feetback.
+              </div>
                 <div className="RowFlex SignColore">
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
@@ -50,6 +59,7 @@ var SignIn = React.createClass({
                         </div>
                     </div>
                 </div>
+              </div>
         );
     }
 });
