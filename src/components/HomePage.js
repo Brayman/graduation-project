@@ -10,7 +10,7 @@ var HomePage = React.createClass({
     render: function () {
         return (
           <div>
-              <div>{this.props.status}</div>
+              <Message status={this.props.status}/>
             <div className="NewsColumn">
               <div className="Post">
                 <h2 className="TextHome">Project</h2>
@@ -41,6 +41,32 @@ var NewsColumn = React.createClass({
                 })}
             </div>
         );
+    }
+});
+var Message = React.createClass({
+    componentWillMount() {
+        this.setState({status: this.props.status});
+    },
+    close: function () {
+        this.setState({status: null});
+    },
+    render: function () {
+        if (this.state.status === null) {
+            return null;
+        } else {
+            return (
+                <div className="FeedBack NavFeedBack">
+                    <i className="Icon small Right ButtonClose"
+                       onClick={this.close}
+                    >
+                        close
+                    </i>
+                    <div className='green' >
+                        {this.state.status}
+                    </div>
+                </div>
+            );
+        }
     }
 });
 export default connect(
