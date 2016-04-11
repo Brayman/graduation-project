@@ -171,14 +171,32 @@ body{
 }
 .FeedBack{
     font-size: 30px;
-    text-align: center;
+    animation-name: openSignUp;
+    animation-duration: 1.5s;
+    position:absolute;
+    width: 100%;
+    min-width:450px;
 }
 .FeedBackText{
-    padding: 30px 200px;
+    padding: 30px 10px;
+    text-align: center;
 }
 .Error{
     background-color: #F44336;
 }
 .Success{
-    background-color: #F44336;
+    background-color: #8BC34A;
+}
+@keyframes openSignUp{
+  from{
+    transform: translateY(-105px);
+  }
+  to{
+    transform: translateY(0px);
+}
+.NavFeedBack{
+  height: 95px;
+  margin: 0em;
+  padding: 0em;
+  width: 100%;
 }

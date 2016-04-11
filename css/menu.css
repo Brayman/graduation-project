@@ -15,6 +15,7 @@ a{
   height: 65px;
   background-color: #37474f;
   color: #ffffff;
+  z-index: 1;
 }
 .LeftBtnPanel{
   display: flex;
@@ -89,7 +90,7 @@ a{
 }
 .SignBtton{
   padding: 15px 20px;
-  margin: 20px 0px 100px 0px;
+  margin: 20px 0px 100px 120px;
   cursor: pointer;
   outline: none;
   font-size: 17px;

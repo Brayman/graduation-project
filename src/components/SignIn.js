@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router';
 var SignIn = React.createClass({
   getInitialState: function () {
-      return {color: 'Error'};
+      return {color: 'Success'};
   },
     onLogInClick: function () {
         var name = this.refs.username.value;
@@ -20,20 +20,20 @@ var SignIn = React.createClass({
 
     },
     render: function () {
-      var text='FeedBack '+ this.state.color;
+      var text='FeedBackText '+ this.state.color;
         return (
-            <div className={text}>
-              <div className="Icon small Right ButtonClose">close</div>
-              <div className="FeedBackText">
-                Text feetback.
+          <div>
+            <div className="FeedBack NavFeedBack">
+              <i className="Icon small Right ButtonClose">close</i>
+              <div className={text} >
+                  Text feetback.
               </div>
+            </div>
                 <div className="RowFlex SignColore">
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
                      <div className="SignInTextDisription">frilans service</div>
-                     <Link to="/signup">
                      <button className="SignBtton SignUpButton">Sign up</button>
-                     </Link>
                      </div>
                      <div className="SignIn">
                         <div className="PaddingSignIn">
