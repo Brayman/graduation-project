@@ -15,7 +15,6 @@ var Profile = React.createClass({
         }
         return (
             <div>
-
               <div className="RowFlexBetween FlexEnd">
                 <div className="item3p">
                   <img src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg"
@@ -33,31 +32,27 @@ var Profile = React.createClass({
                   <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
                   <div className="ProfileDescriptionText">Information</div>
                   <div>
-                    <img className="ProfileContactIco"
-                    src="http://i.yapx.ru/BAJB.png" alt=""/>
+                    <i className="facebook icon"/>
                     facebook.com
                   </div>
                   <div>
-                    <i className='Icon ProfileContactIco'>email</i>
+                      <i className="mail icon"/>
                     {this.props.Profile.contacts.mail}
                   </div>
                   <div>
-                    <i className='Icon ProfileContactIco'>phone</i>
+                      <i className="phone icon"/>
                     {this.props.Profile.contacts.phone}
                   </div>
                   <div>
-                    <img className="ProfileContactIco"
-                    src="https://i.yapx.ru/BAJE.png" alt=""/>
-                    twiter.com
+                      <i className="twitter icon"/>
+                    twitter.com
                   </div>
                   <div>
-                    <img className="ProfileContactIco"
-                    src="https://i.yapx.ru/BAJF.png" alt=""/>
+                      <i className="vk icon"/>
                     vk.com
                   </div>
                   <div>
-                    <img className="ProfileContactIco"
-                    src="https://i.yapx.ru/BAJn.png" alt=""/>
+                      <i className="marker icon"/>
                     Brest
                   </div>
                 </div>

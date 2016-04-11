@@ -14,27 +14,35 @@ const defaultState= {
             phone: null
         }
 };
-export function posts(state=[],action){
-    switch (action.type){
+export function posts(state = [], action) {
+    switch (action.type) {
         case 'LOAD_POST_SUCCESS':
             return action.data;
         default:
             return state;
     }
 }
-export function Profile (state=defaultState,action){
-    switch (action.type){
+export function status(state = '', action) {
+    switch (action.type) {
+        case 'LOAD_POST_SUCCESS':
+            return 'всё хорошо';
+        case 'LOAD_POST_FAILURE':
+            return action.error.message;
+        default:
+            return state;
+    }
+}
+export function Profile(state = defaultState, action) {
+    switch (action.type) {
         case 'LOAD_USER_SUCCESS':
-            return Object.assign({},state,{
+            return Object.assign({}, state, {
                 login: action.data.login,
                 name: action.data.name,
-                    type: 'user',
-                    description: action.data.description || 'Тут пока что пусто',
-                    contacts: Object.assign(state.contacts, {
-                        mail: action.data.contacts.mail
-                    })
-                }
-            );
+                description: action.data.description || 'Тут пока что пусто',
+                contacts: Object.assign(state.contacts, {
+                    mail: action.data.contacts.mail
+                })
+            });
         default:
             return state;
     }

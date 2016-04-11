@@ -1,12 +1,12 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {saveChanges} from '../actions'
+import React from 'react';
+import {connect} from 'react-redux';
+import {saveChanges} from '../actions';
 
 var Settings = React.createClass({
-    getInitialState: function(){
-        return{settings:{}, panel: 'profile'}
+    getInitialState: function() {
+        return {settings: {}, panel: 'profile'};
     },
-    componentDidMount(){
+    componentDidMount() {
         this.setState({settings: this.props.userData});
     },
     NewValue: function (event) {
