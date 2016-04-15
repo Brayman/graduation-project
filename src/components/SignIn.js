@@ -33,7 +33,9 @@ var SignIn = React.createClass({
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
                      <div className="SignInTextDisription">frilans service</div>
-                     <button className="SignBtton SignUpButton">Sign up</button>
+                     <Link to='/signup'>
+                       <button className="SignBtton SignUpButton">Sign up</button>
+                     </Link>
                      </div>
                      <div className="SignIn">
                         <div className="PaddingSignIn">
@@ -46,7 +48,6 @@ var SignIn = React.createClass({
                                 <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
                             </div>
                             <div className="InputCheckBoxText">
-                                <input className="InputCheckBox" type="checkbox"/>company
                                 <button className="SettingDontKnow">I forgot my password </button>
                             </div>
                               <Link to='/'>

@@ -13,15 +13,7 @@ var HomePage = React.createClass({
               <Message status={this.props.status}/>
             <div className="NewsColumn">
               <div className="Post">
-                <h2 className="TextHome">Project</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
-              <div className="Post">
-                <h2 className="TextHome">Company</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
-              <div className="Post">
-                <h2 className="TextHome">Employee</h2>
+                <h2 className="TextHome">News</h2>
                 <NewsColumn posts={this.props.posts}/>
               </div>
             </div>
@@ -50,6 +42,7 @@ var Message = React.createClass({
     close: function () {
         this.setState({status: null});
     },
+
     render: function () {
         if (this.state.status === null) {
             return null;
@@ -61,7 +54,7 @@ var Message = React.createClass({
                     >
                         close
                     </i>
-                    <div className='green' >
+                    <div className="FeedBackText Error">
                         {this.state.status}
                     </div>
                 </div>
@@ -73,7 +66,8 @@ export default connect(
     (state)=> {
         return {
             status: state.status,
-            posts: state.posts
+            posts: state.posts,
+            color: state.color
         };
     }
 )(HomePage);

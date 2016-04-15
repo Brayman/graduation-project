@@ -79,6 +79,7 @@
     font-size: 14px;
     background: none;
     outline: none;
+    margin-left:100px;
 }
 .SettingDontKnow:hover{
     color:#FF5722;
