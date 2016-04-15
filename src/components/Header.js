@@ -61,9 +61,10 @@ var Header = React.createClass({
                         {panel(this.Click, this.props.userData)}
                     </div>
                 </div>
+                <div className="demo">
                 {this.props.children}
-                <div className="Van">
-                  <div className="Footer">
+                </div>
+                  <div className="footer">
                     <div className="DFlex FooterButtonPosition">
                       <div className="FooterButton">
                         Aboute
@@ -76,7 +77,6 @@ var Header = React.createClass({
                       </div>
                     </div>
                     <div>&copy; JobBox</div>
-                  </div>
                 </div>
             </div>
         );

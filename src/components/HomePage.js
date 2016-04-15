@@ -10,7 +10,7 @@ var HomePage = React.createClass({
     render: function () {
         return (
           <div>
-              <Message status={this.props.status}/>
+          {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
               <div className="Post">
                 <h2 className="TextHome">News</h2>

@@ -14,7 +14,7 @@
     flex-grow: 2;
     background: #D7D7D7;
     height: auto;
-    margin: 20px 7px 0px 8px;
+    margin: 20px 7px 10px 8px;
 }
 .item1s {
     flex-grow: 1;
@@ -24,7 +24,7 @@
     padding: 0px;
     flex-basis: 400px;
     flex-grow: 1;
-    margin: 20px 8px 0px 7px;
+    margin: 20px 8px 10px 7px;
 }
 .SettingsInfoText{
     text-align: center;
@@ -75,11 +75,10 @@
     border: none;
     cursor: pointer;
     padding: 0px;
-    margin-left: 10px;
     font-size: 14px;
     background: none;
     outline: none;
-    margin-left:100px;
+    margin-left: 80px;
 }
 .SettingDontKnow:hover{
     color:#FF5722;

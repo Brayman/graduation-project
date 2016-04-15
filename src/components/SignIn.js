@@ -23,12 +23,12 @@ var SignIn = React.createClass({
       var text='FeedBackText '+ this.state.color;
         return (
           <div>
-            <div className="FeedBack NavFeedBack">
+            {/*<div className="FeedBack NavFeedBack">
               <i className="Icon small Right ButtonClose">close</i>
               <div className={text} >
                   Text feetback.
               </div>
-            </div>
+            </div>*/}
                 <div className="RowFlex SignColore">
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
