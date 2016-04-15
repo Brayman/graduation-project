@@ -29,6 +29,7 @@ export default function (state = {}, action) {
         case 'SEND_LOGIN_DATA_SUCCESS':
             return Object.assign({}, state, {
                 _id: action.data._id,
+                picture: action.data.picture,
                 login: action.data.login,
                 name: action.data.name,
                 contacts: Object.assign({}, state, {

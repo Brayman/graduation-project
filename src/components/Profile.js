@@ -17,7 +17,7 @@ var Profile = React.createClass({
             <div>
               <div className="RowFlexBetween FlexEnd">
                 <div className="item3p">
-                  <img src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg"
+                  <img src={this.props.Profile.picture}
                   className="ImageProfile" alt=""/>
                   <div className="MarkerProfile">
                     Rating {this.props.Profile.rating}
@@ -31,30 +31,30 @@ var Profile = React.createClass({
                 <div className="item1p">
                   <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
                   <div className="ProfileDescriptionText">Information</div>
-                  <div>
-                    <i className="facebook icon"/>
-                    facebook.com
-                  </div>
-                  <div>
-                      <i className="mail icon"/>
-                    {this.props.Profile.contacts.mail}
-                  </div>
-                  <div>
-                      <i className="phone icon"/>
-                    {this.props.Profile.contacts.phone}
-                  </div>
-                  <div>
-                      <i className="twitter icon"/>
-                    twitter.com
-                  </div>
-                  <div>
-                      <i className="vk icon"/>
-                    vk.com
-                  </div>
-                  <div>
-                      <i className="marker icon"/>
-                    Brest
-                  </div>
+                    {this.props.Profile.contacts.facebook ? (<div>
+                        <i className="facebook icon"/>
+                            {this.props.Profile.contacts.facebook}
+                    </div>) : null}
+                    {this.props.Profile.contacts.mail ? (<div>
+                        <i className="mail icon"/>
+                        {this.props.Profile.contacts.mail}
+                    </div>) : null}
+                    {this.props.Profile.contacts.phone ? (<div>
+                        <i className="phone icon"/>
+                        {this.props.Profile.contacts.phone}
+                    </div>) : null}
+                    {this.props.Profile.contacts.vk ? (<div>
+                        <i className="vk icon"/>
+                        {this.props.Profile.contacts.vk}
+                    </div>) : null}
+                    {this.props.Profile.contacts.twitter ? (<div>
+                        <i className="twitter icon"/>
+                        {this.props.Profile.contacts.twitter}
+                    </div>) : null}
+                    {this.props.Profile.contacts.location ? (<div>
+                        <i className="marker icon"/>
+                        {this.props.Profile.contacts.location}
+                    </div>) : null}
                 </div>
               </div>
             </div>
@@ -81,6 +81,7 @@ export default connect(
         };
     }
 )(Profile);
+
 /**
  * Created by Artsiom_Rakitski on 3/18/2016.
  */

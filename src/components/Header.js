@@ -19,6 +19,7 @@ var Header = React.createClass({
             if (userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
+
                         <div className="MenuRightBtn">Search</div>
                         <Link to="signup">
                             <div className="MenuRightBtn">signup</div>

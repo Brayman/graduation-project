@@ -3,24 +3,31 @@ import {connect} from 'react-redux';
 import {saveChanges} from '../actions';
 
 var Settings = React.createClass({
-    getInitialState: function() {
+    getInitialState: function () {
         return {settings: {}, panel: 'profile'};
     },
     componentDidMount() {
         this.setState({settings: this.props.userData});
     },
     NewValue: function (event) {
-        switch(event.target.name) {
+        switch (event.target.name) {
             case 'name':
-                this.setState({settings: Object.assign({},this.state.settings, {name: event.target.value})});
+                this.setState({settings: Object.assign({}, this.state.settings, {name: event.target.value})});
                 break;
+            case 'picture':
+                this.setState({settings: Object.assign({}, this.state.settings, {picture: event.target.value})});
+                break;
+            case 'location':
+                this.setState({settings: Object.assign({}, this.state.settings, {location: event.target.value})});
+                break;
+
             case 'mail':
                 this.setState({
                     settings: Object.assign({}, this.state.settings,
                         {
                             contacts: Object.assign(this.state.settings.contacts, {
                                 mail: event.target.value
-                            }),
+                            })
                         })
                 });
                 break;
@@ -34,6 +41,17 @@ var Settings = React.createClass({
                         })
                 });
                 break;
+            case 'phone':
+                this.setState({
+                    settings: Object.assign({}, this.state.settings,
+                        {
+                            contacts: Object.assign(this.state.settings.contacts, {
+                                phone: event.target.value
+                            })
+                        })
+                });
+                break;
+
             case 'description':
                 this.setState({
                     settings: Object.assign({}, this.state.settings, {description: event.target.value})});
@@ -44,7 +62,6 @@ var Settings = React.createClass({
         this.setState({panel: e.target.id});
     },
     Click: function () {
-        console.log(this.state.settings);
         this.props.dispatch(saveChanges(this.state.settings));
     },
     render: function () {
@@ -56,8 +73,10 @@ var Settings = React.createClass({
                             <div className="SettingTextInput">Profile pictures</div>
                             <div>
                                 <input className="SettingsInput"
+                                       name="picture"
                                        type="text"
                                        placeholder="write URL on image..."
+                                       onBlur={e}
                                 /></div>
                             <div className="SettingTextInput">Name</div>
                             <div>
@@ -77,12 +96,15 @@ var Settings = React.createClass({
                             </div>
                             <div className="SettingTextInput">Company</div>
                             <div><input className="SettingsInput"
-                                        type="text" placeholder="Write..."
+                                        type="text"
+                                        placeholder="Write..."
                                         onBlur={e}
                             /></div>
                             <div className="SettingTextInput">Location</div>
                             <div><input className="SettingsInput"
-                                        type="text" placeholder="Write..."
+                                        name="location"
+                                        type="text"
+                                        placeholder="City"
                                         onBlur={e}
                             /></div>
                             <div className="SettingTextInput">Birthdate</div>
@@ -106,15 +128,19 @@ var Settings = React.createClass({
                             </div>
                         </div>
                     );
-                    case 'contacts':
-                        return (
+                case 'contacts':
+                    return (
                           <div>
                             <div className="SettingTextInput">Mail</div>
                             <div><input className="SettingsInput"
                             type="mail" placeholder="Write..."/></div>
                             <div className="SettingTextInput">Phone</div>
                             <div><input className="SettingsInput"
-                            type="mail" placeholder="Write..."/></div>
+                                        name="phone"
+                                        type="number"
+                                        placeholder="Write..."
+                                        onBlur={e}
+                            /></div>
                             <div className="SettingTextInput">Twiter</div>
                             <div><input className="SettingsInput"
                             type="mail" placeholder="Write..."/></div>
@@ -124,9 +150,9 @@ var Settings = React.createClass({
                             <div className="SettingTextInput">Facebook</div>
                             <div><input className="SettingsInput"
                             type="mail" placeholder="Write..."/></div>
-                            <div><button className="SettingUpdate">Update contacts</button></div>
+                            <div><button className="SettingUpdate" onClick={e2}>Update contacts</button></div>
                           </div>
-                        );
+                    );
                 case 'account':
                     return (
                         <div>
@@ -166,11 +192,9 @@ var Settings = React.createClass({
                         </div>
                     );
                 default:
-                    return(
-                        <div> meeh</div>
-                    )
-              }
-        }
+                    return null;
+            }
+        };
         console.log(this.state.panel);
         return (
             <div className="RowFlexBetween  ">
@@ -186,11 +210,13 @@ var Settings = React.createClass({
                     {panel(this.state.panel, this.NewValue, this.Click)}
                 </div>
             </div>
-        )
+        );
     }
-    });
+});
 export default connect(
     (state)=> {
-        return{
-        userData: state.userData
-    }})(Settings)
+        return {
+            userData: state.userData
+        };
+    }
+)(Settings);

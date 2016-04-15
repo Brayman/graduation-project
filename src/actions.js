@@ -1,7 +1,6 @@
-const url = 'https://gentle-meadow-48046.herokuapp.com/';
-//const url = 'http://10.26.11.88/';
-
-import fetch from 'isomorphic-fetch';
+//const url = 'https://gentle-meadow-48046.herokuapp.com/';
+const url = 'http://10.26.11.88/';
+//import fetch from 'isomorphic-fetch';
 //--middleware
 
 export function getPost() {
@@ -42,7 +41,10 @@ export function saveChanges(changes) {
 //--requests
 
 function loadPost() {
-    return fetch(url + 'users')
+    return fetch(url + 'users', {
+        credentials: 'include',
+
+    })
         .then(
             function (resp) {
                 if (resp.status === 200) {
@@ -56,6 +58,7 @@ function loadPost() {
 function registrUser(data) {
     fetch(url + 'signup', {
         method: 'post',
+        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
@@ -66,6 +69,8 @@ function registrUser(data) {
 function newChanges(data) {
     fetch(url + 'settings', {
         method: 'post',
+        mode: 'не тут',
+        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
@@ -87,7 +92,12 @@ function sendLoginData(data) {
         },
         body: JSON.stringify(data)
     })
-        .then(resp=> resp.json());
+        .then(
+            resp => {
+                console.log(resp.headers)
+                return resp.json();
+            }
+        );
 }
 function loadProfile(user) {
     return fetch(url + 'profile', {

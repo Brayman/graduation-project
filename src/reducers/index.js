@@ -37,10 +37,12 @@ export function Profile(state = defaultState, action) {
         case 'LOAD_USER_SUCCESS':
             return Object.assign({}, state, {
                 login: action.data.login,
+                picture: action.data.picture,
                 name: action.data.name,
                 description: action.data.description || 'Тут пока что пусто',
                 contacts: Object.assign(state.contacts, {
-                    mail: action.data.contacts.mail
+                    mail: action.data.contacts.mail,
+                    phone: action.data.contacts.phone
                 })
             });
         default:

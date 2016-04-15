@@ -3,10 +3,12 @@ import ListInfo from './ListInfo';
 import {getPost} from '../actions';
 import {connect} from 'react-redux';
 
+
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
     },
+
     render: function () {
         return (
           <div>
@@ -16,14 +18,7 @@ var HomePage = React.createClass({
                 <h2 className="TextHome">Project</h2>
                 <NewsColumn posts={this.props.posts}/>
               </div>
-              <div className="Post">
-                <h2 className="TextHome">Company</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
-              <div className="Post">
-                <h2 className="TextHome">Employee</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
+
             </div>
           </div>
         );
