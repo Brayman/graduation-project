@@ -3,12 +3,10 @@
  */
 import React from 'react';
 import {login} from '../actions';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
+import Message from './ErrorMessage';
 var SignIn = React.createClass({
-  getInitialState: function () {
-      return {color: 'Success'};
-  },
     onLogInClick: function () {
         var name = this.refs.username.value;
         var password = this.refs.password.value;
@@ -20,15 +18,9 @@ var SignIn = React.createClass({
 
     },
     render: function () {
-      var text='FeedBackText '+ this.state.color;
         return (
           <div>
-            <div className="FeedBack NavFeedBack">
-              <i className="Icon small Right ButtonClose">close</i>
-              <div className={text} >
-                  Text feetback.
-              </div>
-            </div>
+              <Message status={this.props.status}/>
                 <div className="RowFlex SignColore">
                      <div className="SignUp">
                      <div className="SignInTextCompany">J O B B O X</div>
@@ -49,13 +41,12 @@ var SignIn = React.createClass({
                                 <input className="InputCheckBox" type="checkbox"/>company
                                 <button className="SettingDontKnow">I forgot my password </button>
                             </div>
-                              <Link to='/'>
+
                             <button className="SignBtton SignInButton"
                                     onClick={this.onLogInClick}
                             >
                                 Sign in
                             </button>
-                            </Link>
                         </div>
                     </div>
                 </div>
@@ -66,7 +57,8 @@ var SignIn = React.createClass({
 export default connect(
     (state)=> {
         return {
-            userData: state.userData
+            userData: state.userData,
+            status: state.status
         };
     }
 )(SignIn);

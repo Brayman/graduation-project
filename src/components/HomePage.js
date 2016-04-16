@@ -2,7 +2,7 @@ import React from 'react';
 import ListInfo from './ListInfo';
 import {getPost} from '../actions';
 import {connect} from 'react-redux';
-
+import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
@@ -43,32 +43,7 @@ var NewsColumn = React.createClass({
         );
     }
 });
-var Message = React.createClass({
-    componentWillMount() {
-        this.setState({status: this.props.status});
-    },
-    close: function () {
-        this.setState({status: null});
-    },
-    render: function () {
-        if (this.state.status === null) {
-            return null;
-        } else {
-            return (
-                <div className="FeedBack NavFeedBack">
-                    <i className="Icon small Right ButtonClose"
-                       onClick={this.close}
-                    >
-                        close
-                    </i>
-                    <div className='green' >
-                        {this.state.status}
-                    </div>
-                </div>
-            );
-        }
-    }
-});
+
 export default connect(
     (state)=> {
         return {
