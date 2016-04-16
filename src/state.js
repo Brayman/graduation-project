@@ -7,6 +7,7 @@ const reducer = combineReducers(reducers);
 const logger = createLogger();
 const cswm = applyMiddleware(sendData, logger)(createStore);
 
+
 const store = cswm(reducer, {
     status: null,
     userData: {},

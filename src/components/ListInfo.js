@@ -12,10 +12,10 @@ var ListInfo = React.createClass({
         return (
           <div className="Block">
             <div className="DisplayBlock Right">
+            <Link to={"/"+this.props.data._id}>
             <img className="MediumImage Hover "
               src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
             alt=""/>
-            <Link to={"/"+this.props.data._id}>
               <button className="ButtonViewProfil">view profile</button>
             </Link>
             </div>
@@ -33,9 +33,17 @@ var ListInfo = React.createClass({
                 </h4>
               </div>
             </div>
-            <p className="PostText">
-                {this.props.data.description}
-            </p>
+            <div className="DFlex">
+              <div className="PostTextLeft">
+                  {this.props.data.description}
+              </div>
+              <div className="PostTextRight">
+                <h4>Contacts:</h4>
+                <div><i className="phone icon"/>+375292297034</div>
+                <div><i className="at icon"/>vlad@mail.ru</div>
+                <div><i className="marker icon"/>Brest</div>
+              </div>
+            </div>
         </div>
         )
     }

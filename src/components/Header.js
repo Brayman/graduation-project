@@ -51,7 +51,7 @@ var Header = React.createClass({
             }
         };
         return (
-            <div>
+              <div>
                 <div className="Nav">
                     <div className="Menu RowFlex">
                         <Link to="/">
@@ -61,7 +61,23 @@ var Header = React.createClass({
                         {panel(this.Click, this.props.userData)}
                     </div>
                 </div>
+                <div className="demo">
                 {this.props.children}
+                </div>
+                  <div className="footer">
+                    <div className="DFlex FooterButtonPosition">
+                      <div className="FooterButton">
+                        Aboute
+                      </div>
+                      <div className="FooterButton">
+                        Support
+                      </div>
+                      <div className="FooterButton">
+                        Version
+                      </div>
+                    </div>
+                    <div>&copy; JobBox</div>
+                </div>
             </div>
         );
     }

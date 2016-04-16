@@ -10,18 +10,10 @@ var HomePage = React.createClass({
     render: function () {
         return (
           <div>
-              <Message status={this.props.status}/>
+          {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
               <div className="Post">
-                <h2 className="TextHome">Project</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
-              <div className="Post">
-                <h2 className="TextHome">Company</h2>
-                <NewsColumn posts={this.props.posts}/>
-              </div>
-              <div className="Post">
-                <h2 className="TextHome">Employee</h2>
+                <h2 className="TextHome">News</h2>
                 <NewsColumn posts={this.props.posts}/>
               </div>
             </div>
@@ -43,12 +35,12 @@ var NewsColumn = React.createClass({
         );
     }
 });
-
 export default connect(
     (state)=> {
         return {
             status: state.status,
-            posts: state.posts
+            posts: state.posts,
+            color: state.color
         };
     }
 )(HomePage);
