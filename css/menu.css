@@ -21,8 +21,8 @@ a{
   display: flex;
 }
 .MenuLeftBtn{
-  margin: 10px 0px 0px 10px;
-  padding: 5px 0px 15.1px 0px;
+  margin: 15px 0px 0px 10px;
+  padding:0px;
   font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
@@ -30,9 +30,13 @@ a{
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  font-weight: 700;
 }
 .MenuLeftBtn:hover{
-  background: #5c6bc0;
+  color: #5c6bc0;
+  font-weight: 400;
+  text-shadow: #000 0.5px 0.5px 0.5px, #000 -0.5px -0.5px 0.5px,
+               #000 -0.5px 0.5px 0.5px, #000 0.5px -0.5px 0.5px;
 }
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;
