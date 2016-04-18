@@ -14,7 +14,7 @@ var ListInfo = React.createClass({
               <Link to={`/${this.props.data._id}`}>
             <div className="DisplayBlock Right">
 
-            <img className="MediumImage Hover "
+            <img className="MassiveImage Hover "
               src={this.props.data.picture}
             alt=""/>
               <button className="ButtonViewProfil">view profile</button>

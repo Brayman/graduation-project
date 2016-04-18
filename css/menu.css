@@ -34,9 +34,9 @@ a{
 }
 .MenuLeftBtn:hover{
   color: #5c6bc0;
-  font-weight: 400;
-  text-shadow: #000 0.5px 0.5px 0.5px, #000 -0.5px -0.5px 0.5px,
-               #000 -0.5px 0.5px 0.5px, #000 0.5px -0.5px 0.5px;
+      font-weight: 400;
+      text-shadow: #8E9EFF 0.5px 0.5px 0.5px, #8E9EFF -0.5px -0.5px 0.5px,
+                   #8E9EFF -0.5px 0.5px 0.5px, #8E9EFF 0.5px -0.5px 0.5px;
 }
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;

@@ -106,7 +106,7 @@ function sendLoginData(data) {
         );
 }
 function loadProfile(user) {
-    return fetch(url + 'profile?id:' + user, {
+    return fetch(url + 'profile', {
         method: 'post',
         headers: {
             Accept: 'application/json',
