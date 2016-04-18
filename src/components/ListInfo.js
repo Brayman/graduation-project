@@ -11,14 +11,16 @@ var ListInfo = React.createClass({
         }*/
         return (
           <div className="Block">
+              <Link to={`/${this.props.data._id}`}>
             <div className="DisplayBlock Right">
-            <Link to={"/"+this.props.data._id}>
+
             <img className="MediumImage Hover "
-              src="https://static-cdn.jtvnw.net/jtv_user_pictures/c_a_k_e-profile_image-b25ae37f0296d0f1-300x300.jpeg"
+              src={this.props.data.picture}
             alt=""/>
               <button className="ButtonViewProfil">view profile</button>
-            </Link>
+
             </div>
+          </Link>
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
@@ -39,13 +41,13 @@ var ListInfo = React.createClass({
               </div>
               <div className="PostTextRight">
                 <h4>Contacts:</h4>
-                <div><i className="phone icon"/>+375292297034</div>
-                <div><i className="at icon"/>vlad@mail.ru</div>
-                <div><i className="marker icon"/>Brest</div>
+                  {this.props.data.contacts ? <div><i className="phone icon"/>{this.props.data.contacts.phone}</div> : null}
+                  {this.props.data.contacts ? <div><i className="at icon"/>{this.props.data.contacts.mail}</div> : null}
+                  {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location}</div> : null}
               </div>
             </div>
         </div>
-        )
+        );
     }
 });
 export default ListInfo;
