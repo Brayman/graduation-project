@@ -21,7 +21,8 @@ a{
   display: flex;
 }
 .MenuLeftBtn{
-  margin: 15px 0px 0px 10px;
+  margin: 10px 0px 0px 10px;
+  padding: 5px 0px 15.1px 0px;
   font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
@@ -31,7 +32,7 @@ a{
   user-select: none;
 }
 .MenuLeftBtn:hover{
-  color:#A0ADF6;
+  background: #5c6bc0;
 }
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;
@@ -90,7 +91,7 @@ a{
 }
 .SignBtton{
   padding: 15px 20px;
-  margin: 20px 0px 100px 120px;
+  margin: 20px 0px 100px 100px;
   cursor: pointer;
   outline: none;
   font-size: 17px;
@@ -117,7 +118,7 @@ a{
 }
 .SignColore{
   flex-wrap: wrap;
-  padding: 100px 0px;
+  padding: 137.5px 0px;
   background: #5c6bc0;
 }
 .SignInButton{
@@ -172,7 +173,7 @@ a{
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  margin-left: 60px;
+  margin-left: 55px;
 }
 .InputCheckBoxText{
   color:#ffffff;

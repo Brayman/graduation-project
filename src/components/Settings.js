@@ -41,17 +41,36 @@ var Settings = React.createClass({
                         })
                 });
                 break;
-            case 'phone':
+            case 'twitter':
                 this.setState({
                     settings: Object.assign({}, this.state.settings,
                         {
                             contacts: Object.assign(this.state.settings.contacts, {
-                                phone: event.target.value
+                                twitter: event.target.value
                             })
                         })
                 });
                 break;
-
+            case 'vk':
+                this.setState({
+                    settings: Object.assign({}, this.state.settings,
+                        {
+                            contacts: Object.assign(this.state.settings.contacts, {
+                                vk: event.target.value
+                            })
+                        })
+                });
+                break;
+            case 'facebook':
+                this.setState({
+                    settings: Object.assign({}, this.state.settings,
+                        {
+                            contacts: Object.assign(this.state.settings.contacts, {
+                                facebook: event.target.value
+                            })
+                        })
+                });
+                break;
             case 'description':
                 this.setState({
                     settings: Object.assign({}, this.state.settings, {description: event.target.value})});
@@ -61,11 +80,11 @@ var Settings = React.createClass({
     Vibor: function (e) {
         this.setState({panel: e.target.id});
     },
-    Click: function () {
+    Save: function () {
         this.props.dispatch(saveChanges(this.state.settings));
     },
     render: function () {
-        let panel = function (a, e, e2) {
+        let panel = function (a, e, Save) {
             switch (a) {
                 case 'profile':
                     return (
@@ -108,8 +127,12 @@ var Settings = React.createClass({
                                         onBlur={e}
                             /></div>
                             <div className="SettingTextInput">Birthdate</div>
-                            <div><input className="SettingsInput"
-                            type="date" placeholder="Write..."/></div>
+                            <div>
+                                <input className="SettingsInput"
+                                       type="date"
+                                       placeholder="Write..."
+                                />
+                            </div>
                             <div className="SettingTextInput">about</div>
                             <div>
                                 <textarea className="SettingsInput"
@@ -121,7 +144,7 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <button className="SettingUpdate"
-                                         onClick={e2}
+                                         onClick={Save}
                                 >
                                     Update profile
                                 </button>
@@ -131,26 +154,74 @@ var Settings = React.createClass({
                 case 'contacts':
                     return (
                           <div>
-                            <div className="SettingTextInput">Mail</div>
-                            <div><input className="SettingsInput"
-                            type="mail" placeholder="Write..."/></div>
-                            <div className="SettingTextInput">Phone</div>
-                            <div><input className="SettingsInput"
+                            <div>
+                                <input className="SettingsInput"
                                         name="phone"
                                         type="number"
                                         placeholder="Write..."
                                         onBlur={e}
-                            /></div>
-                            <div className="SettingTextInput">Twiter</div>
-                            <div><input className="SettingsInput"
-                            type="mail" placeholder="Write..."/></div>
-                            <div className="SettingTextInput">VK</div>
-                            <div><input className="SettingsInput"
-                            type="mail" placeholder="Write..."/></div>
-                            <div className="SettingTextInput">Facebook</div>
-                            <div><input className="SettingsInput"
-                            type="mail" placeholder="Write..."/></div>
-                            <div><button className="SettingUpdate" onClick={e2}>Update contacts</button></div>
+                                />
+                            </div>
+                            <div className="SettingTextInput">
+                                Mail
+                            </div>
+                            <div>
+                                <input className="SettingsInput"
+                                       type="mail"
+                                       name="mail"
+                                       placeholder="Write..."
+                                       onBlur={e}/>
+                            </div>
+                            <div className="SettingTextInput">
+                                Phone
+                            </div>
+                            <div>
+                                <input className="SettingsInput"
+                                       name="phone"
+                                       type="text"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div className="SettingTextInput">
+                                Twitter
+                            </div>
+                            <div>
+                                <input className="SettingsInput"
+                                       name="twitter"
+                                       type="text"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div className="SettingTextInput">
+                                VK
+                            </div>
+                            <div>
+                                <input className="SettingsInput"
+                                       name=""
+                                       type="text"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div className="SettingTextInput">
+                                Facebook
+                            </div>
+                            <div>
+                                <input className="SettingsInput"
+                                       type="mail"
+                                       placeholder="Write..."
+                                       onBlur={e}
+                                />
+                            </div>
+                            <div>
+                                <button className="SettingUpdate"
+                                        onClick={Save}
+                                >
+                                    Update contacts
+                                </button>
+                            </div>
                           </div>
                     );
                 case 'account':
@@ -188,14 +259,18 @@ var Settings = React.createClass({
                                         name="mail"
                                         onBlur={e}
                             /></div>
-                            <div><button className="SettingUpdate" onClick={e2}>Update email</button></div>
+                            <div>
+                                <button className="SettingUpdate" onClick={Save}
+                                >
+                                    Update email
+                                </button>
+                            </div>
                         </div>
                     );
                 default:
                     return null;
             }
         };
-        console.log(this.state.panel);
         return (
             <div className="RowFlexBetween  ">
                 <div className="LeftPanelSetting item1s">
@@ -207,7 +282,7 @@ var Settings = React.createClass({
                 </div>
                 <div className="RightPanelSetting item2s">
                     <div className="SettingsInfoText">Setting</div>
-                    {panel(this.state.panel, this.NewValue, this.Click)}
+                    {panel(this.state.panel, this.NewValue, this.Save)}
                 </div>
             </div>
         );

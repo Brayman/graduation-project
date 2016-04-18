@@ -119,8 +119,13 @@
   flex-basis: 370px;
   flex-grow: 1;
 }
-.PostText{
+.PostTextRight{
   margin:5px;
+  width: 220px;
+}
+.PostTextLeft{
+  margin:5px;
+  flex-basis: 80%;
 }
 .RowAll{
   display: flex;

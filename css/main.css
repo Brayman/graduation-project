@@ -4,6 +4,13 @@ body{
   background-color: #E9E9E9;
   font-family: Ubuntu;
   min-width: 450px;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+h4{
+  margin: 2px;
+  padding: 3px;
 }
 @font-face{
     font-family: Ubuntu;
@@ -19,6 +26,50 @@ body{
     url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
     url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
     url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+  html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  .demo{
+    padding-bottom: 65px;
+    min-height: 740px;
+  }
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #37474f;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 11px;
+  }
+   .TextCenter{
+     text-align: center;
+   }
+   .FooterButton{
+     margin:0px;
+     padding: 14px 10px 5px 10px;
+     font-size: 15px;
+     cursor: pointer;
+     -moz-user-select: -moz-none;
+     -o-user-select: none;
+     -khtml-user-select: none;
+     -webkit-user-select: none;
+     user-select: none;
+     text-transform: uppercase;
+   }
+   .FooterButton:hover{
+     background: #5c6bc0;
+   }
+   .FooterButtonPosition{
+     justify-content:center;
    }
   .Icon {
    font-family: 'Material Icons';

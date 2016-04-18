@@ -28,6 +28,8 @@ export function status(state = '', action) {
             return 'всё хорошо';
         case 'LOAD_POST_FAILURE':
             return action.error.message;
+        case 'SEND_LOGIN_DATA_FAILURE':
+            return action.error.message;
         default:
             return state;
     }
@@ -40,10 +42,7 @@ export function Profile(state = defaultState, action) {
                 picture: action.data.picture,
                 name: action.data.name,
                 description: action.data.description || 'Тут пока что пусто',
-                contacts: Object.assign(state.contacts, {
-                    mail: action.data.contacts.mail,
-                    phone: action.data.contacts.phone
-                })
+                contacts: action.data.contacts
             });
         default:
             return state;

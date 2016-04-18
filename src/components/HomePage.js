@@ -3,7 +3,7 @@ import ListInfo from './ListInfo';
 import {getPost} from '../actions';
 import {connect} from 'react-redux';
 
-
+import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
@@ -12,13 +12,12 @@ var HomePage = React.createClass({
     render: function () {
         return (
           <div>
-              <Message status={this.props.status}/>
+          {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
               <div className="Post">
-                <h2 className="TextHome">Project</h2>
+                <h2 className="TextHome">dashboard</h2>
                 <NewsColumn posts={this.props.posts}/>
               </div>
-
             </div>
           </div>
         );
@@ -38,37 +37,12 @@ var NewsColumn = React.createClass({
         );
     }
 });
-var Message = React.createClass({
-    componentWillMount() {
-        this.setState({status: this.props.status});
-    },
-    close: function () {
-        this.setState({status: null});
-    },
-    render: function () {
-        if (this.state.status === null) {
-            return null;
-        } else {
-            return (
-                <div className="FeedBack NavFeedBack">
-                    <i className="Icon small Right ButtonClose"
-                       onClick={this.close}
-                    >
-                        close
-                    </i>
-                    <div className='green' >
-                        {this.state.status}
-                    </div>
-                </div>
-            );
-        }
-    }
-});
 export default connect(
     (state)=> {
         return {
             status: state.status,
-            posts: state.posts
+            posts: state.posts,
+            color: state.color
         };
     }
 )(HomePage);
