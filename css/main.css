@@ -29,7 +29,7 @@ h4{
 }
   html {
     height: 100%;
-    box-sizing: border-box;
+    box-sizing:border-box;
   }
   *,
   *:before,
