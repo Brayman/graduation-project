@@ -5,7 +5,6 @@ import {getProfileData} from '../actions';
 
 var Profile = React.createClass({
     componentWillMount() {
-        //this.props.dispatch(loadUserData())
         this.props.dispatch(getProfileData(this.props.params.user));
     },
     render: function () {
@@ -17,7 +16,7 @@ var Profile = React.createClass({
             <div>
               <div className="RowFlexBetween FlexEnd">
                 <div className="item3p">
-                  <img src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg"
+                  <img src={this.props.Profile.picture}
                   className="ImageProfile" alt=""/>
                   <div className="MarkerProfile">
                     Rating {this.props.Profile.rating}

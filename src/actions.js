@@ -61,7 +61,15 @@ function registrUser(data) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    });
+    }).then(
+        function (resp) {
+            if (resp.status === 200) {
+                return resp.json();
+            } else {
+                throw new Error(resp.status);
+            }
+        }
+    );
 }
 function newChanges(data) {
     fetch(url + 'settings', {
@@ -87,10 +95,18 @@ function sendLoginData(data) {
         },
         body: JSON.stringify(data)
     })
-        .then(resp=> resp.json());
+        .then(
+            function (resp) {
+                if (resp.status === 200) {
+                    return resp.json();
+                } else {
+                    throw new Error(resp.status);
+                }
+            }
+        );
 }
 function loadProfile(user) {
-    return fetch(url + 'profile', {
+    return fetch(url + 'profile?id:' + user, {
         method: 'post',
         headers: {
             Accept: 'application/json',
@@ -98,7 +114,15 @@ function loadProfile(user) {
         },
         body: JSON.stringify({_id: user})
     })
-        .then(resp=> resp.json());
+        .then(
+            function (resp) {
+                if (resp.status === 200) {
+                    return resp.json();
+                } else {
+                    throw new Error(resp.status);
+                }
+            }
+        );
 }
 
 //--other

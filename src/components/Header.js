@@ -67,16 +67,16 @@ var Header = React.createClass({
                   <div className="footer">
                     <div className="DFlex FooterButtonPosition">
                       <div className="FooterButton">
-                        Aboute
+                          About
                       </div>
                       <div className="FooterButton">
                         Support
                       </div>
                       <div className="FooterButton">
-                        Version
+                        Version 0.1.1
                       </div>
                     </div>
-                    <div>&copy; JobBox</div>
+                    <div>&copy; 220V</div>
                 </div>
             </div>
         );
