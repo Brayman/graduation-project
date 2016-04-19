@@ -24,6 +24,7 @@ a{
   background-color: #37474f;
   color: #ffffff;
   position: fixed;
+  z-index: 1;
 }
 .LeftBtnPanel{
     display: flex;
@@ -97,7 +98,7 @@ a{
 }
 .SignBtton{
   padding: 15px 20px;
-  margin: 20px 0px 100px 120px;
+  margin: 20px 0px 100px 115px;
   cursor: pointer;
   outline: none;
   font-size: 17px;
@@ -214,8 +215,19 @@ a.MenuName:active,a.MenuName:focus{
   background-color: #37474f;
   position: fixed;
 }
+.InputCheckBox{
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  padding: 0px;
+  margin:0px 5px 0px 0px;
 
-
+}
+.InputCheckBoxText{
+  text-align: center;
+  font-size: 17px;
+  color:#E9E9E9;
+}
 
 
 .TextAbout{

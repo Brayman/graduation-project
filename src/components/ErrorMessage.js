@@ -13,10 +13,8 @@ var Message = React.createClass({
             case 'всё хорошо':
                 return (
                     <div className="FeedBack NavFeedBack">
-                        <i className="Icon small Right ButtonClose"
-                           onClick={this.close}
-                        >
-                            close
+                        <i className="remove icon Right ButtonClose"
+                           onClick={this.close}>
                         </i>
                         <div className="FeedBackText Success" >
                             <i className="checkmark icon"/>
