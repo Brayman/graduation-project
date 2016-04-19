@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Registration from './components/Registration';
 import SignIn from './components/SignIn';
 import Settings from './components/Settings';
+import Search from './components/Search';
 import store from './state';
 import About from './components/About'
 
@@ -20,6 +21,7 @@ ReactDOM.render(
                 <Route path="signup" component={Registration}/>
                 <Route path="signin" component={SignIn}/>
                 <Route path="settings" component={Settings}/>
+                <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>
                 <Route path=":user" component={Profile}/>
             </Route>

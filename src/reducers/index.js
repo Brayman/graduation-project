@@ -39,10 +39,11 @@ export function Profile(state = defaultState, action) {
         case 'LOAD_USER_SUCCESS':
             return Object.assign({}, state, {
                 login: action.data.login,
+                picture: action.data.picture,
                 name: action.data.name,
                 description: action.data.description || 'Тут пока что пусто',
-                contacts: action.data.contacts,
-                picture: action.data.picture
+                location: action.data.location,
+                contacts: action.data.contacts
             });
         default:
             return state;
