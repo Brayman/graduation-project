@@ -6,7 +6,7 @@
   display: flex;
   flex-direction:row;
   justify-content:space-around;
-  padding: 16.36em 0em;
+  padding: 175px 0px;
   flex-wrap: wrap;
 }
 .TextRegCompany{
@@ -36,8 +36,7 @@
   user-select: none;
 }
 .InputReg{
-  width: auto;
-  margin: 0em 0.8em 0.8em 0em;
+  margin: 0em 0em 0.8em 0em;
   padding: 0.5em;
   font-size: 1em;
   width: 20em;

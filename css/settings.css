@@ -14,7 +14,7 @@
     flex-grow: 2;
     background: #D7D7D7;
     height: auto;
-    margin: 20px 7px 10px 8px;
+    margin: 7px 7px 10px 8px;
 }
 .item1s {
     flex-grow: 1;
@@ -24,7 +24,7 @@
     padding: 0px;
     flex-basis: 400px;
     flex-grow: 1;
-    margin: 20px 8px 10px 7px;
+    margin: 7px 8px 10px 7px;
 }
 .SettingsInfoText{
     text-align: center;

@@ -7,6 +7,14 @@ a{
   margin: 0em;
   padding: 0em;
 }
+.Van{
+  position: fixed;
+  left: 0; bottom: 0; /* Левый нижний угол */
+  background: #37474f;
+  color: #fff;
+  width: 100%;
+  height: 65px;
+}
 .Menu{
   text-transform: uppercase;
   clear: both;
@@ -15,14 +23,13 @@ a{
   height: 65px;
   background-color: #37474f;
   color: #ffffff;
-  z-index: 1;
+  position: fixed;
 }
 .LeftBtnPanel{
-  display: flex;
+    display: flex;
 }
 .MenuLeftBtn{
-  margin: 10px 0px 0px 10px;
-  padding: 5px 0px 15.1px 0px;
+  margin: 15px 0px 0px 0px;
   font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
@@ -32,7 +39,7 @@ a{
   user-select: none;
 }
 .MenuLeftBtn:hover{
-  background: #5c6bc0;
+  color:#9BAAFF;
 }
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;
@@ -49,11 +56,10 @@ a{
   background: #5c6bc0;
 }
 .RowFlex{
-  min-width: 396px;
   width: 100%;
   flex-direction:row;
   justify-content:space-around;
-  flex-wrap: nowrap;
+  flex-wrap:wrap;
   display: flex;
 }
 .SignInTextRight{
@@ -80,7 +86,7 @@ a{
 }
 .SignInTextCompany{
   text-align: center;
-  font-size: 63px;
+  font-size: 67px;
   margin: 100px 0px 50px 0px;
   -moz-user-select: -moz-none;
   -o-user-select: none;
@@ -91,7 +97,7 @@ a{
 }
 .SignBtton{
   padding: 15px 20px;
-  margin: 20px 0px 100px 100px;
+  margin: 20px 0px 100px 120px;
   cursor: pointer;
   outline: none;
   font-size: 17px;
@@ -99,7 +105,7 @@ a{
   border: solid 2px;
 }
 .SignInput{
-  width: 310px;
+  width: 320px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -110,15 +116,8 @@ a{
 .SignInput:focus{
   border:solid 3px #4CAF50;
 }
-.SignIn{
-  order: 1;
-}
-.SignUp{
-  order: 2;
-}
 .SignColore{
-  flex-wrap: wrap;
-  padding: 137.5px 0px;
+  padding: 70px 0px;
   background: #5c6bc0;
 }
 .SignInButton{
@@ -167,15 +166,159 @@ a{
   color:#478189;
 }
 .PaddingSignIn{
-  padding: 70px 0px;
+  padding: 100px 0px;
 }
-.InputCheckBox{
-  width: 20px;
-  height: 20px;
+.MenuAvatar{
+  margin:12.5px 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  object-fit: cover;
   vertical-align: middle;
-  margin-left: 55px;
 }
-.InputCheckBoxText{
-  color:#ffffff;
+.MenuName{
+  text-transform: none;
+  text-decoration: none;
   font-size: 20px;
+}
+a.ManuName{
+  color: #5c6bc0;
+  outline: none;
+}
+a.MenuName:active,a.MenuName:focus{
+  color: #37474F;
+}
+.MenuButtonSignIn{
+  margin: 12.5px 10px 12.5px 30px;
+  padding: 10px;
+  cursor: pointer;
+  background: #5c6bc0;
+  color:#ffffff;
+  border:solid 2px #5c6bc0;
+}
+.MenuButtonSignIn:hover{
+  opacity: 0.6;
+}
+.MenuSignIn{
+  display: flex;
+}
+.MenuTextName{
+  margin-left: 30px;
+}
+.Footer{
+  height: 65px;
+  width: 100%;
+  font-size:30px;
+  color:#ffffff;
+  background-color: #37474f;
+  position: fixed;
+}
+
+
+
+
+.TextAbout{
+  margin-top: -1px;
+  padding: 120px 0px 10px;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+div.TextHistory:before, div.TextHistory:after {
+    content: "";
+    width: 70px;
+    height: 6px;
+    border-top: 1px solid #ffffff;
+    display: inline-block;
+    margin: 0 10px;
+}
+.TextHistory{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.TextHistoryDescription{
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 24px;
+    font-size: 15px;
+    padding: 0px 35px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.ColorAbout{
+  color:#ffffff;
+  background-color: #37474f;
+  margin-top: -2px;
+}
+.TextTeam{
+    margin: 30px auto 0px;
+    width: 200px;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 22px;
+    border-bottom: 1px solid #CECECE;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.PanelAbout{
+  text-align: center;
+  margin: 30px 0px;
+  flex-wrap: wrap;
+}
+.ButtonAbout{
+  padding: 20px;
+  width: 220px;
+  margin: 5px 10px;
+  font-size: 20px;
+  border: solid 0.5px #37474F;
+  background: none;
+  cursor: pointer;
+  color: #37474F;
+}
+.ButtonAbout:hover,.ButtonAbout:focus{
+  background: #37474F;
+  color:#ffffff;
+}
+.AboutWorker{
+  text-align:center;
+  margin: 50px 0px 120px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ImgAbout{
+  border-radius: 50%;
+  margin: 12px 0px 5px;
+  object-fit: cover;
+}
+.AboutMargin{
+  margin: 20px 60px;
 }
