@@ -7,6 +7,9 @@ var Header = React.createClass({
     getInitialState: function () {
         return {open: false};
     },
+    componentWillMount() {
+        this.props.dispatch(Actions.InitialUser());
+    },
     Click: function (e) {
         this.setState({open: !this.state.open});
         if (e.target.id === 'out') {
@@ -19,8 +22,9 @@ var Header = React.createClass({
             if (userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
-
-                        <div className="MenuRightBtn">Search</div>
+                        <Link to="search">
+                            <div className="MenuRightBtn">Search</div>
+                        </Link>
                         <Link to="signup">
                             <div className="MenuRightBtn">signup</div>
                         </Link>
