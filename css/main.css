@@ -16,17 +16,6 @@ h4{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
    }
-  @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot);
-    src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-    url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
-    url(../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
-}
   html {
     height: 100%;
     box-sizing:border-box;
@@ -71,30 +60,6 @@ h4{
    .FooterButtonPosition{
      justify-content:center;
    }
-  .Icon {
-   font-family: 'Material Icons';
-   font-weight: normal;
-   font-style: normal;
-   display: inline-block;
-   line-height: 1;
-   text-transform: none;
-   letter-spacing: normal;
-   word-wrap: normal;
-   margin: 0em;
-   padding: 0em;
-   vertical-align: middle;
-   white-space: nowrap;
-   direction: ltr;
-   -moz-user-select: -moz-none;
-   -o-user-select: none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   user-select: none;
-  -webkit-font-smoothing: antialiased;
-   text-rendering: optimizeLegibility;
-   -moz-osx-font-smoothing: grayscale;
-   font-feature-settings: 'liga';
-}
 .Icon.small{
     font-size: 26px;
 }
