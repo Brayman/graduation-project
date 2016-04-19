@@ -31,6 +31,13 @@ export function getProfileData(user) {
         promise: loadProfile(user)
     };
 }
+export function InitialUser(user) {
+    return {
+        type: 'REQUEST',
+        actions: ['LOAD_USER', 'SEND_LOGIN_DATA_SUCCESS', 'LOAD_USER_FAILURE'],
+        promise: initialUser(user)
+    };
+}
 export function saveChanges(changes) {
     return {
         type: 'REQUEST',
@@ -42,6 +49,20 @@ export function saveChanges(changes) {
 
 function loadPost() {
     return fetch(url + 'users', {
+        credentials: 'include'
+    })
+        .then(
+            function (resp) {
+                if (resp.status === 200) {
+                    return resp.json();
+                } else {
+                    throw new Error(resp.status);
+                }
+            }
+        );
+}
+function initialUser() {
+    return fetch(`${url}login`, {
         credentials: 'include'
     })
         .then(
@@ -93,6 +114,7 @@ function newChanges(data) {
 function sendLoginData(data) {
     return fetch(url + 'login', {
         method: 'post',
+        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
@@ -109,14 +131,13 @@ function sendLoginData(data) {
             }
         );
 }
-function loadProfile(user) {
-    return fetch(url + 'profile?id:' + user, {
-        method: 'post',
+function loadProfile(user_id) {
+    return fetch(`${url}users/${user_id}`, {
+        method: 'get',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({_id: user})
+        }
     })
         .then(
             function (resp) {
