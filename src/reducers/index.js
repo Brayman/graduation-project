@@ -42,6 +42,7 @@ export function Profile(state = defaultState, action) {
                 picture: action.data.picture,
                 name: action.data.name,
                 description: action.data.description || 'Тут пока что пусто',
+                location: action.data.location,
                 contacts: action.data.contacts
             });
         default:

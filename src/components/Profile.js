@@ -30,10 +30,10 @@ var Profile = React.createClass({
                 <div className="item1p">
                   <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
                   <div className="ProfileDescriptionText">Information</div>
-                    {this.props.Profile.contacts.facebook ? (<div>
+                    {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
                         <i className="facebook icon"/>
                             {this.props.Profile.contacts.facebook}
-                    </div>) : null}
+                    </a>) : null}
                     {this.props.Profile.contacts.mail ? (<div>
                         <i className="mail icon"/>
                         {this.props.Profile.contacts.mail}
@@ -50,13 +50,12 @@ var Profile = React.createClass({
                         <i className="twitter icon"/>
                         {this.props.Profile.contacts.twitter}
                     </div>) : null}
-                    {this.props.Profile.contacts.location ? (<div>
+                    {this.props.Profile.location ? (<div>
                         <i className="marker icon"/>
-                        {this.props.Profile.contacts.location}
+                        {this.props.Profile.location}
                     </div>) : null}
                 </div>
               </div>
-              
             </div>
         );
     }

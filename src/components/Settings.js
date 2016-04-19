@@ -154,14 +154,6 @@ var Settings = React.createClass({
                 case 'contacts':
                     return (
                           <div>
-                            <div>
-                                <input className="SettingsInput"
-                                        name="phone"
-                                        type="number"
-                                        placeholder="Write..."
-                                        onBlur={e}
-                                />
-                            </div>
                             <div className="SettingTextInput">
                                 Mail
                             </div>
@@ -199,7 +191,7 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
-                                       name=""
+                                       name="vk"
                                        type="text"
                                        placeholder="Write..."
                                        onBlur={e}
@@ -210,7 +202,8 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
-                                       type="mail"
+                                       name="facebook"
+                                       type="text"
                                        placeholder="Write..."
                                        onBlur={e}
                                 />
