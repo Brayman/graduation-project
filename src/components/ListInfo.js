@@ -11,7 +11,7 @@ var ListInfo = React.createClass({
         }*/
         return (
           <div className="Block">
-              <Link to={`/${this.props.data._id}`}>
+              <Link to={`/${this.props.data.type}/${this.props.data._id}`}>
             <div className="DisplayBlock Right">
 
             <img className="MassiveImage Hover "

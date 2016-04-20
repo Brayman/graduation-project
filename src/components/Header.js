@@ -10,11 +10,8 @@ var Header = React.createClass({
     componentWillMount() {
         this.props.dispatch(Actions.InitialUser());
     },
-    Click: function (e) {
-        this.setState({open: !this.state.open});
-        if (e.target.id === 'out') {
-            this.props.dispatch(Actions.signOut());
-        }
+    Click: function () {
+        this.props.dispatch(Actions.signout());
     },
     render: function () {
         var action = bindActionCreators(Actions, this.props.dispatch);
@@ -46,7 +43,7 @@ var Header = React.createClass({
                         >
                             signout
                         </div>
-                        <Link to={'/' + userData._id}>
+                        <Link to={`/${userData.type}/${userData._id}`}>
                             <div className="MenuRightBtn">
                                 {userData.login}
                             </div>

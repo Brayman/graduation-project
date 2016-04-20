@@ -22,6 +22,14 @@ export function posts(state = [], action) {
             return state;
     }
 }
+export function companys(state = [], action) {
+    switch (action.type) {
+        case 'LOAD_COMP_SUCCESS':
+            return action.data;
+        default:
+            return state;
+    }
+}
 export function status(state = '', action) {
     switch (action.type) {
         case 'LOAD_POST_SUCCESS':
