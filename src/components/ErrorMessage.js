@@ -25,11 +25,9 @@ var Message = React.createClass({
             case '404':
                 return (
                     <div className="FeedBack NavFeedBack">
-                        <i className="Icon small Right ButtonClose"
-                           onClick={this.close}
-                        >
-                            close
-                        </i>
+                    <i className="remove icon Right ButtonClose"
+                       onClick={this.close}>
+                    </i>
                         <div className="FeedBackText Error" >
                             <i className="checkmark icon"/>
                             «не найдено» {this.state.status}
@@ -39,11 +37,9 @@ var Message = React.createClass({
             case '500':
                 return (
                     <div className="FeedBack NavFeedBack">
-                        <i className="Icon small Right ButtonClose"
-                           onClick={this.close}
-                        >
-                            close
-                        </i>
+                    <i className="remove icon Right ButtonClose"
+                       onClick={this.close}>
+                    </i>
                         <div className="FeedBackText Error" >
                             <i className="checkmark icon"/>
                             Bнутренняя ошибка сервера {this.state.status}

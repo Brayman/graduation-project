@@ -112,7 +112,7 @@ function newChanges(data) {
         );
 }
 function sendLoginData(data) {
-    return fetch(url + 'login', {
+    return fetch(url + 'users/login', {
         method: 'post',
         credentials: 'include',
         headers: {
