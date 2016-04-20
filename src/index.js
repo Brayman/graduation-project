@@ -25,7 +25,7 @@ ReactDOM.render(
                 <Route path="about" component={About}/>
                 <Route path=":type/:user" component={Profile}/>
             </Route>
-
+            
         </Router>
     </Provider>,
     document.getElementById('root')
