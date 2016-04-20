@@ -2576,11 +2576,22 @@ i.icon.mars.stroke.horizontal:before {
 i.icon.facebook.official {
   content: "\f230";
 }
+i.icon.facebook:hover {
+  color: #3E5C9A;
+  content: "\f230";
+}
+i.icon.twitter:hover {
+  color: #1da1f2;
+  content: "\f099";
+}
 i.icon.pinterest.official {
   content: "\f231";
 }
 i.icon.bed:before {
   content: "\f236";
+}
+#twitter:hover{
+  color: #1da1f2;
 }
 
 
