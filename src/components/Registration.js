@@ -18,7 +18,7 @@ var Registration = React.createClass({
 });
 var Inputs = React.createClass({
     getInitialState: function () {
-        return {err: null, company: null};
+        return {err: null, company: false};
     },
     GetValues: function () {
         var name = this.refs.username.value;
@@ -44,7 +44,11 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="text" ref="username" placeholder="Pick a username"/>
                 </div>
                 <div>
-                    <input className="InputReg" type="email" ref="email" placeholder="Your email address" onBlur={e=>{console.log(e.target)}}/>
+                    <input className="InputReg"
+                           type="email"
+                           ref="email"
+                           placeholder="Your email address"
+                    />
                 </div>
                 <div style={{backgroundColor: 'red'}}
                      onClick={()=>{

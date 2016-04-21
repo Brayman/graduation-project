@@ -81,8 +81,7 @@ var Settings = React.createClass({
         this.setState({panel: e.target.id});
     },
     Save: function () {
-        //this.props.dispatch(saveChanges(this.state.settings));
-        console.log(this.state.settings)
+        this.props.dispatch(saveChanges(this.state.settings));
     },
     render: function () {
         let panel = function (a, e, Save, state) {
