@@ -3,15 +3,18 @@ import React from 'react';
 const Search = React.createClass({
     render() {
         return (
-            <div>
-                <input type="text"/>
-                <button>
-                    <i className="search icon"
-                    />
-                </button>
-                <button>ремонт</button>
-                <button>авто</button>
-                <button>прицепы</button>
+            <div className="RowFlex">
+                <div>
+                  <input type="text"/>
+                  <button>
+                    <i className="search icon"/>
+                  </button>
+                </div>
+                <div>
+                  <button>ремонт</button>
+                  <button>авто</button>
+                  <button>прицепы</button>
+                </div>
             </div>
         );
     }

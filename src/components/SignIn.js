@@ -97,12 +97,14 @@ var SignIn = React.createClass({
         };
         return (
             <div className="SelectionSign">
+               <Message status={this.props.status}/>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
                </div>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionСompany" id="company" onClick={this.Vibor}>Company</button>
                </div>
+
                 {panel(this.state.panel, this.onLogInClick)}
             </div>
          );

@@ -106,13 +106,14 @@ a{
   border: solid 2px;
 }
 .SignInput{
-    width: 440px;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    border-radius: 5px;
-    outline: none;
-    border: solid 3px #3949AB;
+  width: 440px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  vertical-align: top;
+  outline: none;
+  border: solid 3px #3949AB;
 }
 .SignInput:focus{
   border:solid 3px #4CAF50;
@@ -346,6 +347,7 @@ div.TextHistory:before, div.TextHistory:after {
   justify-content: space-between;
   flex-wrap: wrap;
   display: flex;
+  z-index: 1;
 }
 .ButtonSelectionСompany{
   width: 100%;
@@ -355,8 +357,8 @@ div.TextHistory:before, div.TextHistory:after {
   border: none;
   outline: none;
   background: #009688;
-  cursor: pointer;
   color:#ffffff;
+  z-index: 2;
 }
 .ButtonSelectionEmployee{
   width: 100%;
