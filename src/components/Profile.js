@@ -5,8 +5,7 @@ import {getProfileData} from '../actions';
 
 var Profile = React.createClass({
     componentWillMount() {
-        console.log(this.props.params)
-        this.props.dispatch(getProfileData(this.props.params.type, this.props.params.user));
+        this.props.dispatch(getProfileData(this.props.params.user));
     },
     render: function () {
         var settings;
@@ -57,6 +56,7 @@ var Profile = React.createClass({
                     </div>) : null}
                 </div>
               </div>
+<<<<<<< HEAD
 
               <div className="ProfileDescriptionText">
                 Comentarios
@@ -96,6 +96,9 @@ var Profile = React.createClass({
                   </div>
                 </div>
               </div>
+=======
+                {this.props.children}
+>>>>>>> 6cee04ff79f77163e68decbed12b52f39c84d9f4
             </div>
         );
     }

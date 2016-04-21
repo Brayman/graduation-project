@@ -2,8 +2,6 @@ import React from 'react';
 import ListInfo from './ListInfo';
 import {getPost, getCompanys} from '../actions';
 import {connect} from 'react-redux';
-
-import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
