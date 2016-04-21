@@ -60,7 +60,11 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="password" ref="password2" placeholder="Confirm a password"/>
                 </div>
                 <div className="InputCheckBoxText">
-                    <input className="InputCheckBox" type="checkbox"/>sign up how company
+                  <div className="toggle">
+                    <input className="InputSignUp" type="checkbox" id="checktoggle" />
+                    <label className="LabelSignUp" htmlFor="checktoggle"></label>
+                  </div>
+                    sign up how company
                 </div>
                 <div>
                         <button onClick={this.GetValues}

@@ -94,13 +94,13 @@ render: function () {
   };
             return (
             <div className="SelectionSign">
+               <Message status={this.props.status}/>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
                </div>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionСompany" id="company" checked="checked" onClick={this.Vibor}>Company</button>
                </div>
-                <Message status={this.props.status}/>
                 {panel(this.state.panel,this.onLogInClick)}
             </div>
          );
