@@ -60,13 +60,6 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="password" ref="password2" placeholder="Confirm a password"/>
                 </div>
                 <div className="InputCheckBoxText">
-<<<<<<< HEAD
-                  <div className="toggle">
-                    <input className="InputSignUp" type="checkbox" id="checktoggle" />
-                    <label className="LabelSignUp" htmlFor="checktoggle"></label>
-                  </div>
-                    sign up how company
-=======
                     <input className="InputCheckBox"
                            type="checkbox"
                            onClick={(e) => {
@@ -74,7 +67,6 @@ var Inputs = React.createClass({
                                this.setState({company: e.target.checked});
                            }}
                     />sign up how company
->>>>>>> b9007104ff50ef40c57d2b018df6e2065f6113aa
                 </div>
                 <div>
                         <button onClick={this.GetValues}
