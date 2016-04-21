@@ -18,7 +18,7 @@ var Registration = React.createClass({
 });
 var Inputs = React.createClass({
     getInitialState: function () {
-        return {err: null};
+        return {err: null, company: null};
     },
     GetValues: function () {
         var name = this.refs.username.value;
@@ -26,7 +26,7 @@ var Inputs = React.createClass({
         if (name && mail !== null) {
             if (this.refs.password.value === this.refs.password2.value) {
                 var password = this.refs.password.value;
-                this.props.registrData({login: name, contacts: {mail: mail}, password: password});
+                this.props.registrData({company: this.state.company, login: name, contacts: {mail: mail}, password: password});
             } else {
                 this.setState({err: 'пароли не совпадают'});
             }
@@ -60,11 +60,21 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="password" ref="password2" placeholder="Confirm a password"/>
                 </div>
                 <div className="InputCheckBoxText">
+<<<<<<< HEAD
                   <div className="toggle">
                     <input className="InputSignUp" type="checkbox" id="checktoggle" />
                     <label className="LabelSignUp" htmlFor="checktoggle"></label>
                   </div>
                     sign up how company
+=======
+                    <input className="InputCheckBox"
+                           type="checkbox"
+                           onClick={(e) => {
+                               console.log(e.target.checked);
+                               this.setState({company: e.target.checked});
+                           }}
+                    />sign up how company
+>>>>>>> b9007104ff50ef40c57d2b018df6e2065f6113aa
                 </div>
                 <div>
                         <button onClick={this.GetValues}

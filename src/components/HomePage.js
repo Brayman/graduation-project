@@ -1,12 +1,13 @@
 import React from 'react';
 import ListInfo from './ListInfo';
-import {getPost} from '../actions';
+import {getPost, getCompanys} from '../actions';
 import {connect} from 'react-redux';
 
 import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
+        this.props.dispatch(getCompanys());
     },
 
     render: function () {
@@ -15,9 +16,13 @@ var HomePage = React.createClass({
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
               <div className="Post">
-                <h2 className="TextHome">dashboard</h2>
-                <NewsColumn posts={this.props.posts}/>
+                <h2 className="TextHome">Companys</h2>
+                <NewsColumn posts={this.props.companys}/>
               </div>
+                <div className="Post">
+                    <h2 className="TextHome">Users</h2>
+                    <NewsColumn posts={this.props.posts}/>
+                </div>
             </div>
           </div>
         );
@@ -41,6 +46,7 @@ export default connect(
     (state)=> {
         return {
             status: state.status,
+            companys: state.companys,
             posts: state.posts,
             color: state.color
         };

@@ -5,7 +5,8 @@ import {getProfileData} from '../actions';
 
 var Profile = React.createClass({
     componentWillMount() {
-        this.props.dispatch(getProfileData(this.props.params.user));
+        console.log(this.props.params)
+        this.props.dispatch(getProfileData(this.props.params.type, this.props.params.user));
     },
     render: function () {
         var settings;

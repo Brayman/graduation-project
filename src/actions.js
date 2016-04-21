@@ -1,104 +1,78 @@
 //const url = 'https://gentle-meadow-48046.herokuapp.com/';
 const url = 'http://10.26.11.88/';
 import fetch from 'isomorphic-fetch';
-//--middleware
 
-export function getPost() {
+export function requestAction(actions, promise) {
     return {
         type: 'REQUEST',
-        actions: ['LOAD_POST', 'LOAD_POST_SUCCESS', 'LOAD_POST_FAILURE'],
-        promise: loadPost()
+        actions,
+        promise
     };
+}
+//--middleware
+export function getPost() {
+    return requestAction(['LOAD_POST', 'LOAD_POST_SUCCESS', 'LOAD_POST_FAILURE'], loadPost());
 }
 export function registration(impotantData) {
-    return {
-        type: 'REQUEST',
-        actions: ['SEND_DATA', 'SEND_DATA_SUCCESS', 'SEND_DATA_FAILURE'],
-        promise: registrUser(impotantData)
-    };
+    return requestAction(['SEND_DATA', 'SEND_DATA_SUCCESS', 'SEND_DATA_FAILURE'], registrUser(impotantData));
 }
 export function login(data) {
-    return {
-        type: 'REQUEST',
-        actions: ['SEND_LOGIN_DATA', 'SEND_LOGIN_DATA_SUCCESS', 'SEND_LOGIN_DATA_FAILURE'],
-        promise: sendLoginData(data)
-    };
+    return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], loginReq(data));
 }
-export function getProfileData(user) {
-    return {
-        type: 'REQUEST',
-        actions: ['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'],
-        promise: loadProfile(user)
-    };
+export function getProfileData(type, user) {
+    return requestAction(['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'], loadProfile(type, user));
 }
 export function InitialUser(user) {
-    return {
-        type: 'REQUEST',
-        actions: ['LOAD_USER', 'SEND_LOGIN_DATA_SUCCESS', 'LOAD_USER_FAILURE'],
-        promise: initialUser(user)
-    };
+    return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], initialUser(user));
 }
 export function saveChanges(changes) {
-    return {
-        type: 'REQUEST',
-        actions: ['SAVE_USER', 'SAVE_USER_SUCCESS', 'SAVE_USER_FAILURE'],
-        promise: newChanges(changes)
-    };
+    return requestAction(['SAVE_USER', 'SAVE_USER_SUCCESS', 'SAVE_USER_FAILURE'], newChanges(changes));
+}
+export function signout() {
+    return requestAction(['SIGNOUT', 'SIGNOUT_SUCCESS', 'SIGNOUT_FAILURE'], signoutReq());
+}
+export function getCompanys() {
+    return requestAction(['LOAD', 'LOAD_COMP_SUCCESS', 'LOAD_COMP_FAILURE'], loadCompanys());
 }
 //--requests
 
-function loadPost() {
-    return fetch(url + 'users', {
-        credentials: 'include'
-    })
+function req(url, headers) {
+    return fetch(url, headers)
         .then(
-            function (resp) {
+            (resp) => {
                 if (resp.status === 200) {
                     return resp.json();
-                } else {
-                    throw new Error(resp.status);
                 }
+                throw new Error(resp.status);
             }
         );
+}
+
+function loadCompanys() {
+    return req(`${url}companys`);
+}
+function signoutReq() {
+    return req(`${url}logout`, {credentials: 'include'});
+}
+function loadPost() {
+    return req(`${url}users`);
 }
 function initialUser() {
-    return fetch(`${url}login`, {
-        credentials: 'include'
-    })
-        .then(
-            function (resp) {
-                if (resp.status === 200) {
-                    return resp.json();
-                } else {
-                    throw new Error(resp.status);
-                }
-            }
-        );
+    return req(`${url}login`, {credentials: 'include'});
 }
 function registrUser(data) {
-    fetch(url + 'signup', {
+    req(`${url}signup`, {
         method: 'post',
-        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(
-        function (resp) {
-            if (resp.status === 200) {
-                return resp.json();
-            } else {
-                throw new Error(resp.status);
-            }
-        }
-    );
+    });
 }
 function newChanges(data) {
-    fetch(url + 'settings', {
+    req(`${url}settings`, {
         method: 'post',
-        mode: 'не тут',
-        credentials: 'include',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
@@ -111,8 +85,8 @@ function newChanges(data) {
             }
         );
 }
-function sendLoginData(data) {
-    return fetch(url + 'users/login', {
+function loginReq(data) {
+    return req(`${url}login`, {
         method: 'post',
         credentials: 'include',
         headers: {
@@ -120,46 +94,8 @@ function sendLoginData(data) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    })
-        .then(
-            function (resp) {
-                if (resp.status === 200) {
-                    return resp.json();
-                } else {
-                    throw new Error(resp.status);
-                }
-            }
-        );
+    });
 }
-function loadProfile(user_id) {
-    return fetch(`${url}users/${user_id}`, {
-        method: 'get',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(
-            function (resp) {
-                if (resp.status === 200) {
-                    return resp.json();
-                } else {
-                    throw new Error(resp.status);
-                }
-            }
-        );
-}
-
-//--other
-
-export function signOut() {
-    return {
-        type: 'SIGNOUT'
-    };
-}
-export function newUser(impotantData) {
-    return {
-        type: 'REGISTRATION_NEW_USER',
-        impotantData
-    };
+function loadProfile(type, user) {
+    return req(`${url+type}/${user}`);
 }
