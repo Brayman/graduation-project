@@ -227,12 +227,12 @@ a.MenuName:active,a.MenuName:focus{
   vertical-align: middle;
   padding: 0px;
   margin:0px 5px 0px 0px;
-
 }
 .InputCheckBoxText{
   text-align: center;
   font-size: 17px;
   color:#E9E9E9;
+  margin-left: 20px;
 }
 
 

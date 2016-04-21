@@ -34,14 +34,14 @@ var SignIn = React.createClass({
                   <div className="RowFlex SignColoreEmployee">
                     <div className="SignUp">
                       <div className="SignInTextCompany">J O B B O X</div>
-                     <div className="SignInTextDisription">Go in frilans service how Employee.</div>
-                       <Link to='/signup'>
-                          <button className="SignBtton SignUpButton">Sign up</button>
-                        </Link>
-                     </div>
+                      <div className="SignInTextDisription">Go in frilans service how User now.</div>
+                      <Link to='/signup'>
+                        <button className="SignBtton SignUpButton">Sign up</button>
+                      </Link>
+                    </div>
                      <div className="SignIn">
                      <div className="PaddingSignIn">
-                        <div className="SignInTextRight">USERNAME EMPLOYEE</div>
+                        <div className="SignInTextRight">USERNAME</div>
                      <div>
                          <input className="SignInput" type="text" ref="username" placeholder="Write..."/>
                      </div>
@@ -99,7 +99,7 @@ var SignIn = React.createClass({
             <div className="SelectionSign">
                <Message status={this.props.status}/>
                <div className="BlockSelectionSign">
-                 <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
+                 <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Users</button>
                </div>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionСompany" id="company"  onClick={this.Vibor}>Company</button>
