@@ -28,7 +28,7 @@ var SignIn = React.createClass({
     },
     render: function () {
         let panel = function (a, onLogInClick) {
-<<<<<<< HEAD
+
         switch (a) {
             case 'employee':
                 return (
@@ -68,16 +68,6 @@ var SignIn = React.createClass({
                             <div className="SignInTextCompany">J O B B O X</div>
                             <div className="SignInTextDisription">Go in frilans service how Company.</div>
                             <Link to='/signup'>
-=======
-            switch (a) {
-                case 'employee':
-                    return (
-                      <div className="RowFlex SignColoreEmployee">
-                        <div className="SignUp">
-                          <div className="SignInTextCompany">J O B B O X</div>
-                        <div className="SignInTextDisription">Go in frilans service how Employee.</div>
-                          <Link to='/signup'>
->>>>>>> 6cee04ff79f77163e68decbed12b52f39c84d9f4
                               <button className="SignBtton SignUpButton">Sign up</button>
                             </Link>
                         </div>

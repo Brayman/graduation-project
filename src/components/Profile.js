@@ -56,7 +56,6 @@ var Profile = React.createClass({
                     </div>) : null}
                 </div>
               </div>
-<<<<<<< HEAD
 
               <div className="ProfileDescriptionText">
                 Comentarios
@@ -96,9 +95,7 @@ var Profile = React.createClass({
                   </div>
                 </div>
               </div>
-=======
                 {this.props.children}
->>>>>>> 6cee04ff79f77163e68decbed12b52f39c84d9f4
             </div>
         );
     }
