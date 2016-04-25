@@ -1,0 +1,64 @@
+button {
+    border: none;
+    outline: none;
+    background-color: hsl(0, 0%, 95%);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+button.primary {
+    background-color: #21BA45;
+}
+button.primary:hover {
+    background-color: hsla(135,70%,35%,1)
+}
+button:hover {
+  opacity: 0.8;
+}
+input {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: solid 1px #edeeee;
+  background-color: none;
+  margin-bottom: 5px;
+}
+textarea {
+  color: #6F7276;
+  font-size: 20px;
+  padding: 9px;
+  outline: none;
+  border: solid 2px #37474f;
+  border-radius: 7px;
+  background-color: none;
+}
+textarea:focus {
+  color: black;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 5px;
+  background-color: white;
+  resize: none;
+}
+img{
+    object-fit: cover;
+}
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
+@font-face{
+    font-family: Ubuntu;
+    src: url(ubuntu/Ubuntu.ttf);
+   }
+body{
+  margin: 0em;
+  padding: 0em;
+  background-color: #FAFAFA;
+  font-family: Ubuntu;
+  min-width: 500px;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 5px;
+}
