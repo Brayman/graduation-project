@@ -27,56 +27,19 @@ var Profile = React.createClass({
                             {this.props.Profile.name || this.props.Profile.login}
                         </h2>
                         {settings}
-                        
+
                     </div>
                     <div className='header-second'>
-                        
+
                         <div>
                             Rating: {this.props.Profile.rating || 10}
                         </div>
                         <div>
                             reviews: {this.props.Profile.rating || 1}
                         </div>
-                    </div> 
+                    </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div className="item1p">
-                  <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
-                  <div className="ProfileDescriptionText">Information</div>
-                    <div>
-                        {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
-                            <i className="facebook icon"/>
-                                {this.props.Profile.contacts.facebook}
-                        </a>) : null}
-                    </div>
-                    <div>
-                        {this.props.Profile.contacts.mail ? (<div>
-                            <i className="mail icon"/>
-                            {this.props.Profile.contacts.mail}
-                        </div>) : null}
-                    </div>
-                    <div>
-                        {this.props.Profile.contacts.phone ? (<div>
-                            <i className="phone icon"/>
-                            {this.props.Profile.contacts.phone}
-                        </div>) : null}
-                    </div>
-                    <div>
-                        {this.props.Profile.contacts.vk ? (<a href={`https://www.vk.com/${this.props.Profile.contacts.vk}`}>
-                            <i className="vk icon"/>
-                            {this.props.Profile.contacts.vk}
-                        </a>) : null}
-                    </div>
-                    {this.props.Profile.contacts.twitter ? (<div>
-                        <i className="twitter icon"/>
-                        {this.props.Profile.contacts.twitter}
-                    </div>) : null}
-                    {this.props.Profile.location ? (<div>
-                        <i className="marker icon"/>
-                        {this.props.Profile.location}
-                    </div>) : null}
-=======
                 <div className='profile-body'>
                     <div className='contacts'>
                         <div>
@@ -120,7 +83,6 @@ var Profile = React.createClass({
                             <Comment/>
                         </div>
                     </div>
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
                 </div>
             </div>
             //   <div className="RowFlexBetween FlexEnd">

@@ -84,10 +84,7 @@ function loginReq(data) {
 }
 function loadProfile(user) {
     return req(`${url}users/${user}`);
-<<<<<<< HEAD
-=======
 }
 function searchReq(params) {
     return req(`${url}search?text=${params}`);
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
