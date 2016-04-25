@@ -29,3 +29,19 @@ input:focus {
   border-radius: 5px;
   background-color: white;
 }
+textarea {
+  color: #6F7276;
+  font-size: 20px;
+  padding: 9px;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 7px;
+  background-color: #fafafa;
+}
+textarea:focus {
+  color: black;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 5px;
+  background-color: white;
+}

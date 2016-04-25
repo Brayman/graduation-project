@@ -27,14 +27,46 @@ var SignIn = React.createClass({
     },
     render: function () {
         let panel = function (a, onLogInClick) {
-            switch (a) {
-                case 'employee':
-                    return (
-                      <div className="RowFlex SignColoreEmployee">
-                        <div className="SignUp">
-                          <div className="SignInTextCompany">J O B B O X</div>
-                        <div className="SignInTextDisription">Go in frilans service how Employee.</div>
-                          <Link to='/signup'>
+
+        switch (a) {
+            case 'employee':
+                return (
+                  <div className="RowFlex SignColoreEmployee">
+                    <div className="SignUp">
+                      <div className="SignInTextCompany">J O B B O X</div>
+                      <div className="SignInTextDisription">Go in frilans service how User now.</div>
+                      <Link to='/signup'>
+                        <button className="SignBtton SignUpButton">Sign up</button>
+                      </Link>
+                    </div>
+                     <div className="SignIn">
+                     <div className="PaddingSignIn">
+                        <div className="SignInTextRight">USERNAME</div>
+                     <div>
+                         <input className="SignInput" type="text" ref="username" placeholder="Write..."/>
+                     </div>
+                    <div className="SignInTextRight">PASSWORD</div>
+                    <div>
+                         <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
+                    </div>
+                    <div className="InputCheckBoxText">
+                          <button className="SettingDontKnow">I forgot my password </button>
+                    </div>
+                        <button className="SignBtton SignInButton"
+                        onClick={onLogInClick}>
+                          Sign in
+                        </button>
+                    </div>
+                  </div>
+                </div>
+            );
+            case 'company':
+                return (
+                      <div className="RowFlex SignColoreCompany">
+                          <div className="SignUp">
+                            <div className="SignInTextCompany">J O B B O X</div>
+                            <div className="SignInTextDisription">Go in frilans service how Company.</div>
+                            <Link to='/signup'>
                               <button className="SignBtton SignUpButton">Sign up</button>
                             </Link>
                         </div>
@@ -97,7 +129,7 @@ var SignIn = React.createClass({
         return (
             <div className="SelectionSign">
                <div className="BlockSelectionSign">
-                 <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
+                 <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Users</button>
                </div>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionСompany" id="company" onClick={this.Vibor}>Company</button>
