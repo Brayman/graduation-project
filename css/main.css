@@ -22,6 +22,16 @@
 .TextComent{
   margin-top: 25px;
 }
+<<<<<<< HEAD
+=======
+body{
+  margin: 0em;
+  padding: 0em;
+  background-color: #FAFAFA;
+  font-family: Ubuntu;
+  min-width: 460px;
+}
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 .card {
   background-color: white;
   width: 98%;
@@ -30,7 +40,11 @@
   border-radius: 5px;
 }
 header.card-header {
+<<<<<<< HEAD
   padding: 0px 20px;
+=======
+  padding: 5px 20px;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
   border-bottom: solid 1px #edeeee;
 }
 .card-body {
@@ -38,6 +52,7 @@ header.card-header {
   justify-content: space-between;
 }
 .card-image {
+<<<<<<< HEAD
   flex-basis: 150px;
   padding: 5px;
 }
@@ -50,16 +65,63 @@ header.card-header {
   flex-basis: 200px;
   padding: 5px;
   border-right: solid 1px #edeeee;
+=======
+  flex-shrink: 0;  
+  flex-basis: 150px;
+  padding: 5px;
+}
+.card-info {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 150px;
+  padding: 5px;
+  border-right: solid 1px #edeeee;
+}
+img.card-image {
+  max-height: 150px;
+  max-width: 150px;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 button.card-button {
   width: 150px;
   margin: 5px 5px 10px 5px;
 }
+<<<<<<< HEAD
   .footer {
     position: fixed;
+=======
+/*
+h3,p{
+  margin: 0px 0px 3px 5px;
+  padding: 0px;
+}
+h4{
+  margin: 2px;
+  padding: 3px;
+}*/
+@font-face{
+    font-family: Ubuntu;
+    src: url(ubuntu/Ubuntu.ttf);
+   }/*
+  html {
+    height: 100%;
+    box-sizing:border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  .demo{
+    padding-bottom: 65px;
+    min-height: 740px;
+  }*/
+  .footer {/*
+    position: absolute;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;*/
     background-color: #37474f;
     text-align: center;
     color: #fff;
@@ -87,8 +149,30 @@ button.card-button {
    }
    .FooterButtonPosition{
      justify-content:center;
+<<<<<<< HEAD
    }
 .DFlex{
+=======
+   }/*
+.Icon.small{
+    font-size: 26px;
+}
+.PanelForMenu{
+  height: 3.5em;
+  margin: 0em;
+  padding: 0em;
+}
+.Menu{
+  text-transform: uppercase;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  clear: both;
+  margin: 0em;
+  padding: 0em;
+  height: 3.5em;
+  background-color: #FD7C16;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
   display: flex;
 }
 .ProfilImage{
@@ -271,6 +355,7 @@ button.card-button {
 .SettingUpdate:hover{
     opacity: 0.6;
 }
+<<<<<<< HEAD
 .SettingDontKnow{
     border: none;
     cursor: pointer;
@@ -301,6 +386,12 @@ input[type=date]::-webkit-clear-button{
 .SettingName{
     text-align: center;
     margin:5px 0px 30px 0px;
+=======
+/*color
+.GreenBtn{
+  background-color: #74C658;
+  border: solid 2px #74C658;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 .SettingConteiner{
     display: flex;
@@ -408,6 +499,7 @@ input[type=date]::-webkit-clear-button{
 .text{
   margin-bottom: 6px;
 }
+<<<<<<< HEAD
 .RegBlok{
   background-color: rgba(118, 118, 118, 0.59);
   display: flex;
@@ -453,3 +545,18 @@ input[type=date]::-webkit-clear-button{
 .RegAlignTextCenter{
   text-align: center;
 }
+=======
+@keyframes openSignUp{
+  from{
+    transform: translateY(-120px);
+  }
+  to{
+    transform: translateY(0px);
+}
+.NavFeedBack{
+  height: 95px;
+  margin: 0em;
+  padding: 0em;
+  width: 100%;
+}*/
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a

@@ -13,20 +13,34 @@ var Profile = React.createClass({
             settings = <Settings/>;
         }
         return (
-            <div>
-              <div className="RowFlexBetween FlexEnd">
-                <div className="item3p">
-                  <img src={this.props.Profile.picture}
-                  className="ImageProfile" alt=""/>
-                  <div className="MarkerProfile">
-                    Rating {this.props.Profile.rating}
-                  </div>
-                    {settings}
+            <div className='profile'>
+                <div className='profile-header'>
+                    <img src={this.props.Profile.picture}
+                         className="ImageProfile" alt=""
+                    />
+                    <div>
+                        <div className='header-main'>
+                        {!this.props.Profile.company ? (
+                                                        <i className="suitcase icon" />
+                                                      ) : null}
+                        <h2>
+                            {this.props.Profile.name || this.props.Profile.login}
+                        </h2>
+                        {settings}
+                        
+                    </div>
+                    <div className='header-second'>
+                        
+                        <div>
+                            Rating: {this.props.Profile.rating || 10}
+                        </div>
+                        <div>
+                            reviews: {this.props.Profile.rating || 1}
+                        </div>
+                    </div> 
+                    </div>
                 </div>
-                <div className="item2p">
-                  <div className="ProfileDescriptionText ProfileTextMyselfMargin">About myself</div>
-                  <div className="ProfileTextMyself">{this.props.Profile.description || 'Здесь пока пусто.'}</div>
-                </div>
+<<<<<<< HEAD
                 <div className="item1p">
                   <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
                   <div className="ProfileDescriptionText">Information</div>
@@ -62,14 +76,127 @@ var Profile = React.createClass({
                         <i className="marker icon"/>
                         {this.props.Profile.location}
                     </div>) : null}
+=======
+                <div className='profile-body'>
+                    <div className='contacts'>
+                        <div>
+                            {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
+                                <i className="facebook icon"/>
+                                    {this.props.Profile.contacts.facebook}
+                            </a>) : null}
+                        </div>
+                        <div>
+                            {this.props.Profile.contacts.mail ? (<div>
+                                <i className="mail icon"/>
+                                {this.props.Profile.contacts.mail}
+                            </div>) : null}
+                        </div>
+                        <div>
+                            {this.props.Profile.contacts.phone ? (<div>
+                                <i className="phone icon"/>
+                                {this.props.Profile.contacts.phone}
+                            </div>) : null}
+                        </div>
+                        <div>
+                            {this.props.Profile.contacts.vk ? (<a href={`https://www.vk.com/${this.props.Profile.contacts.vk}`}>
+                                <i className="vk icon"/>
+                                {this.props.Profile.contacts.vk}
+                            </a>) : null}
+                        </div>
+                        {this.props.Profile.contacts.twitter ? (<div>
+                            <i className="twitter icon"/>
+                            {this.props.Profile.contacts.twitter}
+                        </div>) : null}
+                        {this.props.Profile.location ? (<div>
+                            <i className="marker icon"/>
+                            {this.props.Profile.location}
+                        </div>) : null}
+                    </div>
+                    <div className='content'>
+                        <div className='about'>
+                            {this.props.Profile.description || 'Здесь пока пусто.'}
+                        </div>
+                        <div className='comments'>
+                            <Comment/>
+                        </div>
+                    </div>
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
                 </div>
-              </div>
+            </div>
+            //   <div className="RowFlexBetween FlexEnd">
+            //     <div className="item3p">
+            //       <img src={this.props.Profile.picture}
+            //       className="ImageProfile" alt=""/>
+            //       <div className="MarkerProfile">
+            //         Rating {this.props.Profile.rating}
+            //       </div>
+            //         {settings}
+            //     </div>
+            //     <div className="item2p">
+            //       <div className="ProfileDescriptionText ProfileTextMyselfMargin">About myself</div>
+            //       <div className="ProfileTextMyself">{this.props.Profile.description || 'Здесь пока пусто.'}</div>
+            //     </div>
+            //     <div className="item1p">
+            //       <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
+            //       <div className="ProfileDescriptionText">Information</div>
+            //         <div>
+            //             {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
+            //                 <i className="facebook icon"/>
+            //                     {this.props.Profile.contacts.facebook}
+            //             </a>) : null}
+            //         </div>
+            //         <div>
+            //             {this.props.Profile.contacts.mail ? (<div>
+            //                 <i className="mail icon"/>
+            //                 {this.props.Profile.contacts.mail}
+            //             </div>) : null}
+            //         </div>
+            //         <div>
+            //             {this.props.Profile.contacts.phone ? (<div>
+            //                 <i className="phone icon"/>
+            //                 {this.props.Profile.contacts.phone}
+            //             </div>) : null}
+            //         </div>
+            //         <div>
+            //             {this.props.Profile.contacts.vk ? (<a href={`https://www.vk.com/${this.props.Profile.contacts.vk}`}>
+            //                 <i className="vk icon"/>
+            //                 {this.props.Profile.contacts.vk}
+            //             </a>) : null}
+            //         </div>
+            //         {this.props.Profile.contacts.twitter ? (<div>
+            //             <i className="twitter icon"/>
+            //             {this.props.Profile.contacts.twitter}
+            //         </div>) : null}
+            //         {this.props.Profile.location ? (<div>
+            //             <i className="marker icon"/>
+            //             {this.props.Profile.location}
+            //         </div>) : null}
+            //     </div>
+            //   </div>
 
-              <div className="ProfileDescriptionText">
-                Comentarios
-              </div>
-
-              <div className="RowFlexBetween">
+            //   <div className="ProfileDescriptionText">
+            //     Comentarios
+            //   </div>
+            //   <Comment/>
+            // </div>
+        );
+    }
+});
+var Settings = React.createClass({
+    render: function () {
+        return (
+            <Link to="/settings">
+                <button className="settings">
+                    <i className="setting icon"/>
+                </button>
+            </Link>
+        );
+    }
+});
+var Comment = React.createClass({
+    render: function () {
+        return (
+            <div className="RowFlexBetween">
                 <div className="DFlex BlockComent">
                   <div>
                     <h3>
@@ -101,22 +228,7 @@ var Profile = React.createClass({
                       -Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </div>
                   </div>
-                </div>
-              </div>
-                {this.props.children}
-            </div>
-        );
-    }
-});
-var Settings = React.createClass({
-    render: function () {
-        return (
-            <Link to="/settings">
-                <button className="Button Settings">
-                    <i className="setting icon"/>
-                    settings
-                </button>
-            </Link>
+                </div></div>
         );
     }
 });

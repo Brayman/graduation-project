@@ -5,7 +5,10 @@ button {
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
+<<<<<<< HEAD
     cursor:pointer;
+=======
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 button.primary {
     background-color: #21BA45;
@@ -14,6 +17,7 @@ button.primary:hover {
     background-color: hsla(135,70%,35%,1)
 }
 button:hover {
+<<<<<<< HEAD
   opacity: 0.8;
 }
 input {
@@ -23,15 +27,40 @@ input {
   border: solid 1px #edeeee;
   background-color: none;
   margin-bottom: 5px;
+=======
+  background-color: hsl(0, 0%, 90%);
+}
+input {
+  color: #6F7276;
+  font-size: 20px;
+  padding: 9px;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 7px;
+  background-color: #fafafa;
+}
+input:focus {
+  color: black;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 5px;
+  background-color: white;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 textarea {
   color: #6F7276;
   font-size: 20px;
   padding: 9px;
   outline: none;
+<<<<<<< HEAD
   border: solid 2px #37474f;
   border-radius: 7px;
   background-color: none;
+=======
+  border: solid 2px #edeeee;
+  border-radius: 7px;
+  background-color: #fafafa;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 textarea:focus {
   color: black;
@@ -39,6 +68,7 @@ textarea:focus {
   border: solid 2px #edeeee;
   border-radius: 5px;
   background-color: white;
+<<<<<<< HEAD
   resize: none;
 }
 img{
@@ -62,3 +92,6 @@ body{
 h1,h2,h3,h4,h5,h6{
   margin: 5px;
 }
+=======
+}
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a

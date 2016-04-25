@@ -34,6 +34,9 @@ export function signout() {
 export function getCompanys() {
     return requestAction(['LOAD', 'LOAD_COMP_SUCCESS', 'LOAD_COMP_FAILURE'], loadCompanys());
 }
+export function search(params) {
+    return requestAction(['SEARCH', 'SEARCH_SUCCESS', 'SEARCH_FAILURE'], searchReq(params));
+}
 //--requests
 function headers(data) {
     return {
@@ -81,4 +84,10 @@ function loginReq(data) {
 }
 function loadProfile(user) {
     return req(`${url}users/${user}`);
+<<<<<<< HEAD
+=======
+}
+function searchReq(params) {
+    return req(`${url}search?text=${params}`);
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
