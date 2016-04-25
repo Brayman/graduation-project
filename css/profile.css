@@ -21,13 +21,23 @@
     border-right: solid 1px #edeeee;
     border-bottom: solid 1px #edeeee;
 }
+.comment {
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #ffffff;
+    min-width: 400px;
+    border: solid 1px #edeeee;
+    border-radius: 5px;
+    display: flex;
+}
 .content {
     flex-wrap: wrap;
     flex-grow: 3;
     flex-basis: 450px;
 }
 .about {
-    padding: 10px;
+    padding: 20px 15px;
+    border-bottom: solid 1px #edeeee;
 }
 .header-main {
     width: 100%;
@@ -38,22 +48,29 @@
     align-items: baseline;
 }
 .header-second {
+    padding: 20px 1px 0px 3px;
     font-weight: bold;
     justify-content: space-around;
     font-size: 15px;
     display: flex;
     flex-direction: row;
     color: #6F7276;
+    align-self: stretch;
 }
 button.settings {
-    /*margin: 0.8em;*/
+    color: black;
 }
 .comments {
     background-color: #FAFAFA;
+    padding: 10px;
+}
+.item {
+    height: 37px;
+    padding: 0px 10px;
 }
 .ImageProfile{
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     margin: 5px;
     border-radius: 5px;
     object-fit: cover;
@@ -94,6 +111,13 @@ button.settings {
 }
 .FlexEnd{
     flex-direction: row-reverse;
+}
+.BlockComent {
+    padding: 10px;
+    background: #ffffff;
+    min-width: 400px;
+    border: solid 1px #edeeee;
+    border-radius: 5px;
 }
 .item3p{
     order: 0;

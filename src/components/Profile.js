@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {getProfileData} from '../actions';
+import '../../css/profile.css';
 
 var Profile = React.createClass({
     componentWillMount() {
@@ -31,10 +32,10 @@ var Profile = React.createClass({
                     </div>
                     <div className='header-second'>
 
-                        <div>
+                        <div className="item">
                             Rating: {this.props.Profile.rating || 10}
                         </div>
-                        <div>
+                        <div className="item">
                             reviews: {this.props.Profile.rating || 1}
                         </div>
                     </div>
@@ -80,6 +81,9 @@ var Profile = React.createClass({
                             {this.props.Profile.description || 'Здесь пока пусто.'}
                         </div>
                         <div className='comments'>
+                            <Comment/>
+                            <Comment/>
+                            <Comment/>
                             <Comment/>
                         </div>
                     </div>
@@ -158,8 +162,7 @@ var Settings = React.createClass({
 var Comment = React.createClass({
     render: function () {
         return (
-            <div className="RowFlexBetween">
-                <div className="DFlex BlockComent">
+            <div className="comment">
                   <div>
                     <h3>
                       Name
@@ -190,7 +193,7 @@ var Comment = React.createClass({
                       -Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </div>
                   </div>
-                </div></div>
+                </div>
         );
     }
 });

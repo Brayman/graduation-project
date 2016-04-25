@@ -5,7 +5,6 @@
   padding: 10px;
   background: #ffffff;
   min-width: 400px;
-  margin: 10px;
   border:solid 5px rgba(118, 118, 118, 0.3);
 }
 .BlockImg{
@@ -19,11 +18,9 @@
   margin: 2px 15px;
   color: gray;
 }
-.TextComent{
+.TextComent {
   margin-top: 25px;
 }
-<<<<<<< HEAD
-=======
 body{
   margin: 0em;
   padding: 0em;
@@ -31,7 +28,6 @@ body{
   font-family: Ubuntu;
   min-width: 460px;
 }
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 .card {
   background-color: white;
   width: 98%;
@@ -40,11 +36,8 @@ body{
   border-radius: 5px;
 }
 header.card-header {
-<<<<<<< HEAD
   padding: 0px 20px;
-=======
   padding: 5px 20px;
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
   border-bottom: solid 1px #edeeee;
 }
 .card-body {
@@ -52,7 +45,6 @@ header.card-header {
   justify-content: space-between;
 }
 .card-image {
-<<<<<<< HEAD
   flex-basis: 150px;
   padding: 5px;
 }
@@ -65,7 +57,6 @@ header.card-header {
   flex-basis: 200px;
   padding: 5px;
   border-right: solid 1px #edeeee;
-=======
   flex-shrink: 0;  
   flex-basis: 150px;
   padding: 5px;
@@ -80,16 +71,14 @@ header.card-header {
 img.card-image {
   max-height: 150px;
   max-width: 150px;
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 button.card-button {
   width: 150px;
   margin: 5px 5px 10px 5px;
 }
-<<<<<<< HEAD
-  .footer {
+.footer {
     position: fixed;
-=======
+}
 /*
 h3,p{
   margin: 0px 0px 3px 5px;
@@ -149,11 +138,11 @@ h4{
    }
    .FooterButtonPosition{
      justify-content:center;
-<<<<<<< HEAD
    }
 .DFlex{
-=======
-   }/*
+
+}
+/*
 .Icon.small{
     font-size: 26px;
 }
@@ -477,7 +466,7 @@ input[type=date]::-webkit-clear-button{
 }
 .SettingImgBtn input[type="file"]{
     display: none; /* Обязательно скрываем настоящий Input File */
-}
+
 .SettingImgBtn label {
     /* Растягиваем label на всю возможную площадь блока .file-upload */
     display: block;
@@ -499,7 +488,6 @@ input[type=date]::-webkit-clear-button{
 .text{
   margin-bottom: 6px;
 }
-<<<<<<< HEAD
 .RegBlok{
   background-color: rgba(118, 118, 118, 0.59);
   display: flex;
@@ -545,18 +533,17 @@ input[type=date]::-webkit-clear-button{
 .RegAlignTextCenter{
   text-align: center;
 }
-=======
 @keyframes openSignUp{
   from{
     transform: translateY(-120px);
   }
-  to{
+  to {
     transform: translateY(0px);
+  }
 }
 .NavFeedBack{
   height: 95px;
   margin: 0em;
   padding: 0em;
   width: 100%;
-}*/
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
+}

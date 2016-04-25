@@ -1,33 +1,28 @@
 button {
+    color: #6F7276;
     border: none;
     outline: none;
-    background-color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 90%);
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
-<<<<<<< HEAD
-    cursor:pointer;
-=======
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 button.primary {
+    color: white;
     background-color: #21BA45;
 }
 button.primary:hover {
     background-color: hsla(135,70%,35%,1)
 }
 button:hover {
-<<<<<<< HEAD
-  opacity: 0.8;
+    background-color: hsl(0, 0%, 85%);
 }
 input {
   font-size: 20px;
   border-radius: 5px;
   padding: 5px 10px;
   border: solid 1px #edeeee;
-  background-color: none;
   margin-bottom: 5px;
-=======
   background-color: hsl(0, 0%, 90%);
 }
 input {
@@ -45,22 +40,15 @@ input:focus {
   border: solid 2px #edeeee;
   border-radius: 5px;
   background-color: white;
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 textarea {
   color: #6F7276;
   font-size: 20px;
   padding: 9px;
   outline: none;
-<<<<<<< HEAD
-  border: solid 2px #37474f;
   border-radius: 7px;
-  background-color: none;
-=======
   border: solid 2px #edeeee;
-  border-radius: 7px;
   background-color: #fafafa;
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
 textarea:focus {
   color: black;
@@ -68,7 +56,6 @@ textarea:focus {
   border: solid 2px #edeeee;
   border-radius: 5px;
   background-color: white;
-<<<<<<< HEAD
   resize: none;
 }
 img{
@@ -81,17 +68,7 @@ a{
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
-   }
-body{
-  margin: 0em;
-  padding: 0em;
-  background-color: #FAFAFA;
-  font-family: Ubuntu;
-  min-width: 500px;
 }
 h1,h2,h3,h4,h5,h6{
   margin: 5px;
 }
-=======
-}
->>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a

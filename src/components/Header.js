@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 var Header = React.createClass({
     getInitialState: function () {
         return {open: false};
@@ -12,8 +12,11 @@ var Header = React.createClass({
     Click: function () {
         this.props.dispatch(Actions.signout());
     },
+    goTo: function () {
+        browserHistory.push(`/${this.props.userData._id}`);
+    },
     render: function () {
-        let panel = function (Click, userData) {
+        let panel = function (Click, userData, goTo) {
             if (userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
@@ -43,11 +46,13 @@ var Header = React.createClass({
                         >
                             signout
                         </div>
-                        <Link to={`/${userData._id}`}>
-                            <div className="MenuRightBtn">
+
+                            <div className="MenuRightBtn"
+                                 onClick={goTo}
+                            >
                                 {userData.login}
                             </div>
-                        </Link>
+
                     </div>
                 );
             }
@@ -60,7 +65,7 @@ var Header = React.createClass({
                             <div className="MenuLeftBtn MenuBtn">JobBox</div>
                         </Link>
 
-                        {panel(this.Click, this.props.userData)}
+                        {panel(this.Click, this.props.userData, this.goTo)}
                     </div>
                 </div>
                 <div className="demo">

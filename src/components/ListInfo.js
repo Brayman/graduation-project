@@ -1,7 +1,9 @@
 var React = require('react');
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 var ListInfo = React.createClass({
-
+    goTo: function () {
+        browserHistory.push(`/${this.props.data._id}`);
+    },
     render: function () {
         /*var description;
         if(this.props.data.profile.description.length>100){
@@ -32,11 +34,12 @@ var ListInfo = React.createClass({
                     <img className="card-image"
                          src={this.props.data.picture}
                     width="150px" height="150px"/>
-                    <Link to={`/${this.props.data._id}`}>
-                        <button className="primary card-button">
+
+                        <button className="primary card-button"
+                                onClick={this.goTo}
+                        >
                             view profile
                         </button>
-                    </Link>
                 </div>
             </div>
               {/*<Link to={`/${this.props.data._id}`}>
