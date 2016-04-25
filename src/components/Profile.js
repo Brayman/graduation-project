@@ -30,22 +30,30 @@ var Profile = React.createClass({
                 <div className="item1p">
                   <div className="ProfileNameText">{this.props.Profile.name || this.props.Profile.login}</div>
                   <div className="ProfileDescriptionText">Information</div>
-                    {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
-                        <i className="facebook icon"/>
-                            {this.props.Profile.contacts.facebook}
-                    </a>) : null}
-                    {this.props.Profile.contacts.mail ? (<div>
-                        <i className="mail icon"/>
-                        {this.props.Profile.contacts.mail}
-                    </div>) : null}
-                    {this.props.Profile.contacts.phone ? (<div>
-                        <i className="phone icon"/>
-                        {this.props.Profile.contacts.phone}
-                    </div>) : null}
-                    {this.props.Profile.contacts.vk ? (<div>
-                        <i className="vk icon"/>
-                        {this.props.Profile.contacts.vk}
-                    </div>) : null}
+                    <div>
+                        {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
+                            <i className="facebook icon"/>
+                                {this.props.Profile.contacts.facebook}
+                        </a>) : null}
+                    </div>
+                    <div>
+                        {this.props.Profile.contacts.mail ? (<div>
+                            <i className="mail icon"/>
+                            {this.props.Profile.contacts.mail}
+                        </div>) : null}
+                    </div>
+                    <div>
+                        {this.props.Profile.contacts.phone ? (<div>
+                            <i className="phone icon"/>
+                            {this.props.Profile.contacts.phone}
+                        </div>) : null}
+                    </div>
+                    <div>
+                        {this.props.Profile.contacts.vk ? (<a href={`https://www.vk.com/${this.props.Profile.contacts.vk}`}>
+                            <i className="vk icon"/>
+                            {this.props.Profile.contacts.vk}
+                        </a>) : null}
+                    </div>
                     {this.props.Profile.contacts.twitter ? (<div>
                         <i className="twitter icon"/>
                         {this.props.Profile.contacts.twitter}

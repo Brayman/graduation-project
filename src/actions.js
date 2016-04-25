@@ -74,11 +74,11 @@ function registrUser(data) {
     req(`${url}signup`, headers(data));
 }
 function newChanges(data) {
-    req(`${url}/${data._id}`, headers(data));
+    req(`${url}users/${data._id}`, headers(data));
 }
 function loginReq(data) {
     return req(`${url}login`, headers(data));
 }
 function loadProfile(user) {
-    return req(`${url + user}`);
+    return req(`${url}users/${user}`);
 }

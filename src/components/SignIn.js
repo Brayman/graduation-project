@@ -5,7 +5,6 @@ import React from 'react';
 import {login} from '../actions';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-// import Message from './ErrorMessage';
 var SignIn = React.createClass({
     getInitialState: function () {
         return {settings: {}, panel: 'employee', company: false};
@@ -97,7 +96,6 @@ var SignIn = React.createClass({
         };
         return (
             <div className="SelectionSign">
-               <Message status={this.props.status}/>
                <div className="BlockSelectionSign">
                  <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
                </div>

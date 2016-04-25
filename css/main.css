@@ -1,21 +1,53 @@
 body{
   margin: 0em;
   padding: 0em;
-  background-color: #E9E9E9;
+  background-color: #FAFAFA;
   font-family: Ubuntu;
   min-width: 450px;
-  position: relative;
-  margin: 0;
-  min-height: 100%;
 }
+.card {
+  background-color: white;
+  width: 98%;
+  margin: 1%;
+  border: solid 1px #edeeee;
+  border-radius: 5px;
+}
+header.card-header {
+  padding: 5px 20px;
+  border-bottom: solid 1px #edeeee;
+}
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.card-image {  
+  flex-basis: 150px;
+  padding: 5px;
+}
+.card-info {
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 150px;
+  padding: 5px;
+  border-right: solid 1px #edeeee;
+}
+img.card-image {
+  max-height: 150px;
+  max-width: 150px;
+}
+button.card-button {
+  width: 150px;
+  margin: 5px 5px 10px 5px;
+}
+/*
 h4{
   margin: 2px;
   padding: 3px;
-}
+}*/
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
-   }
+   }/*
   html {
     height: 100%;
     box-sizing:border-box;
@@ -28,7 +60,7 @@ h4{
   .demo{
     padding-bottom: 65px;
     min-height: 740px;
-  }
+  }*/
   .footer {
     position: absolute;
     right: 0;
@@ -59,7 +91,7 @@ h4{
    }
    .FooterButtonPosition{
      justify-content:center;
-   }
+   }/*
 .Icon.small{
     font-size: 26px;
 }
@@ -163,7 +195,7 @@ h4{
   background-color: #ffffff;
   overflow: hidden;
 }
-/*color*/
+/*color
 .GreenBtn{
   background-color: #74C658;
   border: solid 2px #74C658;
@@ -216,4 +248,4 @@ h4{
   margin: 0em;
   padding: 0em;
   width: 100%;
-}
+}*/

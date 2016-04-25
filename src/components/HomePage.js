@@ -13,10 +13,6 @@ var HomePage = React.createClass({
           <div>
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
-              <div className="Post">
-                <h2 className="TextHome">Companys</h2>
-                <NewsColumn posts={this.props.companys}/>
-              </div>
                 <div className="Post">
                     <h2 className="TextHome">Users</h2>
                     <NewsColumn posts={this.props.posts}/>
