@@ -1,7 +1,60 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 2px #edeeee;
+}
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.contacts {
+    flex-shrink: 0;
+    flex-basis: 203px;
+    padding: 10px;
+    flex-grow: 1;
+    border-right: solid 1px #edeeee;
+    border-bottom: solid 1px #edeeee;
+}
+.content {
+    flex-wrap: wrap;
+    flex-grow: 3;
+    flex-basis: 450px;
+}
+.about {
+    padding: 10px;
+}
+.header-main {
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.header-second {
+    font-weight: bold;
+    justify-content: space-around;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    color: #6F7276;
+}
+button.settings {
+    /*margin: 0.8em;*/
+}
+.comments {
+    background-color: #FAFAFA;
+}
 .ImageProfile{
-    width: 300px;
-    height: 300px;
-    margin: 5px 0px 0px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
     border-radius: 5px;
     object-fit: cover;
 }

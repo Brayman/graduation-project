@@ -31,7 +31,9 @@ var Header = React.createClass({
             } else {
                 return (
                     <div className="LeftBtnPanel">
-                        <div className="MenuRightBtn">Search</div>
+                        <Link to="search">
+                            <div className="MenuRightBtn">Search</div>
+                        </Link>
                         <Link to="signin">
                             <div className="MenuRightBtn">Message</div>
                         </Link>

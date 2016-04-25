@@ -16,16 +16,18 @@ button:hover {
   background-color: hsl(0, 0%, 90%);
 }
 input {
+  color: #6F7276;
   font-size: 20px;
-  padding: 0px 20px;
+  padding: 9px;
   outline: none;
-  border: solid 1px #edeeee;
-  border-radius: 5px 1px;
+  border: solid 2px #edeeee;
+  border-radius: 7px;
   background-color: #fafafa;
 }
 input:focus {
+  color: black;
   outline: none;
-  border: solid 1px #edeeee;
+  border: solid 2px #edeeee;
   border-radius: 5px;
   background-color: white;
 }

@@ -24,7 +24,7 @@ body{
   padding: 0em;
   background-color: #FAFAFA;
   font-family: Ubuntu;
-  min-width: 450px;
+  min-width: 460px;
 }
 .card {
   background-color: white;
@@ -41,12 +41,13 @@ header.card-header {
   display: flex;
   justify-content: space-between;
 }
-.card-image {  
+.card-image {
+  flex-shrink: 0;  
   flex-basis: 150px;
   padding: 5px;
 }
 .card-info {
-  flex-shrink: 0;
+  flex-shrink: 1;
   flex-grow: 1;
   flex-basis: 150px;
   padding: 5px;
@@ -86,11 +87,11 @@ h4{
     padding-bottom: 65px;
     min-height: 740px;
   }*/
-  .footer {
+  .footer {/*
     position: absolute;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;*/
     background-color: #37474f;
     text-align: center;
     color: #fff;
