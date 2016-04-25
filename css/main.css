@@ -1,21 +1,108 @@
+.NameText{
+  margin:15px 0px;
+}
+.BlockComent{
+  padding: 10px;
+  background: #ffffff;
+  min-width: 400px;
+  margin: 10px;
+  border:solid 5px rgba(118, 118, 118, 0.3);
+}
+.BlockImg{
+  padding: 10px;
+  background: #ffffff;
+  margin: 0px 5px 0px 0px;
+  border:solid 1px rgba(118, 118, 118, 0.3);
+}
+.TextDataTime{
+  font-size: 12px;
+  margin: 2px 15px;
+  color: gray;
+}
+.TextComent{
+  margin-top: 25px;
+}
+<<<<<<< HEAD
+=======
 body{
   margin: 0em;
   padding: 0em;
-  background-color: #E9E9E9;
+  background-color: #FAFAFA;
   font-family: Ubuntu;
-  min-width: 450px;
-  position: relative;
-  margin: 0;
-  min-height: 100%;
+  min-width: 460px;
+}
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
+.card {
+  background-color: white;
+  width: 98%;
+  margin: 1%;
+  border: solid 1px #edeeee;
+  border-radius: 5px;
+}
+header.card-header {
+<<<<<<< HEAD
+  padding: 0px 20px;
+=======
+  padding: 5px 20px;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
+  border-bottom: solid 1px #edeeee;
+}
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.card-image {
+<<<<<<< HEAD
+  flex-basis: 150px;
+  padding: 5px;
+}
+.card-info1 {
+  flex-basis: 80%;
+  padding: 5px;
+  border-right: solid 1px #edeeee;
+}
+.card-info2 {
+  flex-basis: 200px;
+  padding: 5px;
+  border-right: solid 1px #edeeee;
+=======
+  flex-shrink: 0;  
+  flex-basis: 150px;
+  padding: 5px;
+}
+.card-info {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 150px;
+  padding: 5px;
+  border-right: solid 1px #edeeee;
+}
+img.card-image {
+  max-height: 150px;
+  max-width: 150px;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
+}
+button.card-button {
+  width: 150px;
+  margin: 5px 5px 10px 5px;
+}
+<<<<<<< HEAD
+  .footer {
+    position: fixed;
+=======
+/*
+h3,p{
+  margin: 0px 0px 3px 5px;
+  padding: 0px;
 }
 h4{
   margin: 2px;
   padding: 3px;
-}
+}*/
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
-   }
+   }/*
   html {
     height: 100%;
     box-sizing:border-box;
@@ -28,23 +115,25 @@ h4{
   .demo{
     padding-bottom: 65px;
     min-height: 740px;
-  }
-  .footer {
+  }*/
+  .footer {/*
     position: absolute;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;*/
     background-color: #37474f;
     text-align: center;
     color: #fff;
     padding-bottom: 11px;
+    min-width: 450px;
   }
    .TextCenter{
      text-align: center;
    }
    .FooterButton{
      margin:0px;
-     padding: 14px 10px 5px 10px;
+     padding:14px 10px;
      font-size: 15px;
      cursor: pointer;
      -moz-user-select: -moz-none;
@@ -55,11 +144,16 @@ h4{
      text-transform: uppercase;
    }
    .FooterButton:hover{
-     background: #5c6bc0;
+     background: #edeeee;
+     color: #37474f;
    }
    .FooterButtonPosition{
      justify-content:center;
+<<<<<<< HEAD
    }
+.DFlex{
+=======
+   }/*
 .Icon.small{
     font-size: 26px;
 }
@@ -78,134 +172,383 @@ h4{
   padding: 0em;
   height: 3.5em;
   background-color: #FD7C16;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
   display: flex;
-  flex-direction:row;
-  justify-content:space-between;
 }
-.Label{
-  background-color: #ffffff;
-  border-radius: 0.3em;
-  border: 0.225em solid #ffffff;
-  outline:none;
+.ProfilImage{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 10px;
 }
-.Label:active{
-  border: 0.225em solid #1abc9c;
-}
-.Label:focus{
-  border: 0.225em solid #1abc9c;
-}
-.Label:hover{
-  border: 0.225em solid #1abc9c;
-}
-.Label:visited{
-  border: 0.225em solid #1abc9c;
-}
-.Button{
-  outline:none;
-  border-radius: 0.3em;
+.BtnSettings{
+	background-color:#FD7C16;
+  color:white;
+  width: 300px;
+  height: 52px;
+  margin: 0px 10px;
+  padding:0px;
+  border: solid 2px #FD7C16;
   cursor: pointer;
-  background-color: #FD7C16;
-  color: #ffffff;
-  border:solid 2px #FD7C16;
 }
-.Button.Settings{
-    height: 45px;
-    width: 300px;
-    margin: 0px;
-    font-size: 26px;
-    background-color: #37474f;
-    color: #ffffff;
-    border:solid 2px #37474f;
+.BtnSettings:hover{
+  color: #FD7C16;
+  background-color:white;
+  border: solid 2px #FD7C16;
 }
-.Button:active{
-  opacity: 0.6;
+.BtnSettings:focus{
+  color: #FD7C16;
+  background-color:white;
+  border: solid 2px #FD7C16;
+  outline: 0px;
 }
-.Button:hover{
-  opacity: 0.6;
+.ImgBtn{
+  background-color: #FF5022;
+  padding:10px 5px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  float: left;
 }
-.Button:visited{
-  opacity: 0.6;
+.BtnText{
+  margin:16px 0px;
+  font-family: Ubuntu-M;
 }
-.Image{
+.ProfilContent{
+  flex-direction: row-reverse;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  width: auto;
+  background-color: white;
+  margin: 0px 3%;
+}
+.item1 {
+    order: 0;
+    height: auto;
+    background: white;
+    margin:0px;
+    padding-bottom: 10px;
+    flex-basis: 300px;
+}
+
+.item2 {
+    order: 1;
+    height: auto;
+    background: white;
+    margin:0px;
+    padding-bottom: 10px;
+    flex-basis: 600px;
+}
+.SignIn{
+  order: 0;
+}
+.SignUp{
+  order: 1;
+}
+.Column{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  justify-content:flex-start;
+}
+.ImgProfilInfo{
+  margin:2px 10px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
   vertical-align: middle;
 }
-.Circle{
-  border-radius: 50%
+.PadingText{
+  margin: 10px 0px 0px 30px;
 }
-.Square{
-  border-radius: 0.3em;
+.NameFont{
+  margin: 10px 0px 10px 30px;
 }
-.DFlex{
-  display: flex;
+.Text{
+  margin:10px;
+  width:auto;
 }
-.RowArround{
-  flex-direction:row;
-  justify-content:space-around;
-  flex-wrap:wrap;
+.ProfilInfo{
+  height: auto;
+  min-width:300px;
+  max-width: 600px;
+  margin: 10px;
 }
-.RowBetween{
-  flex-direction:row;
-  justify-content:space-between;
-  flex-wrap:wrap;
+.white{
+  height: auto;
+  background: white;
+  margin:0px;
+  padding-bottom: 10px;
 }
-.ColumnArround{
-  flex-direction:column;
-  justify-content:space-around;
-  flex-wrap:wrap;
+.RowFlexBetween{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
 }
-.ColumnBetwen{
-  flex-direction:column;
-  justify-content:space-between;
-  flex-wrap:wrap;
+.item2s{
+    flex-grow: 2;
+    order: 1;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 593px;
+    flex-grow: 2;
+    background: #D7D7D7;
+    height: auto;
+    margin: 7px 7px 10px 8px;
 }
-.Block{
-  background-color: #ffffff;
-  overflow: hidden;
+.item1s {
+    flex-grow: 1;
+    order: 0;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 400px;
+    flex-grow: 1;
+    margin: 7px 8px 10px 7px;
 }
-/*color*/
+.SettingsInfoText{
+    text-align: center;
+    padding: 10px;
+    background-color: #5C6BC0;
+    color: #ffffff;
+    font-size: 21px;
+    cursor: default;
+}
+.SettingsExpander{
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size:17px;
+    background: #D7D7D7;
+}
+.SettingsExpander:hover{
+    background: #4CAF50;
+}
+.SettingsInput{
+    padding: 5px 10px;
+    font-size: 18px;
+    margin: 5px 0px 0px 20px;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px #A9A9A9;
+    width: 83%;
+}
+.SettingsInput:focus{
+    border: solid 1px #4CAF50;
+}
+.SettingTextInput{
+    padding: 15px 0px 5px 50px;
+}
+.SettingUpdate{
+    border: none;
+    padding: 7px 10px;
+    font-size: 17px;
+    background: #1abc9c;
+    color: #ffffff;
+    margin: 30px 0px 15px 20px;
+    cursor: pointer;
+    outline: none;
+}
+.SettingUpdate:hover{
+    opacity: 0.6;
+}
+<<<<<<< HEAD
+.SettingDontKnow{
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 14px;
+    background: none;
+    outline: none;
+    margin-left: 70px;
+}
+.SettingDontKnow:hover{
+    color:#FF5722;
+    background: none;
+}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button,
+input[type=date]::-webkit-clear-button{
+  -webkit-appearance:none;
+  margin:0;
+  display: none;
+}
+.SettingContent {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:nowrap;
+    margin: 10px;
+}
+.SettingName{
+    text-align: center;
+    margin:5px 0px 30px 0px;
+=======
+/*color
 .GreenBtn{
   background-color: #74C658;
   border: solid 2px #74C658;
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 }
-.WhiteBtn{
-  background-color: #ffffff;
-  color: #000000;
-  border: solid 2px #ffffff;
+.SettingConteiner{
+    display: flex;
 }
-.DisplayBlock{
-  display: block;
+.SettingBtn{
+    border:solid 2px #1abc9c;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #1abc9c;
+    padding: 5px 20px;
+    font-size: 1em;
+    margin: 46px 0px 10px 355px;
+    color: #000000;
 }
-.RadioButton{
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin: 5px 2px 0px 30px;
+.SettingInput{
+    margin: 0em 0.8em 0.8em 0em;
+    padding: 0.5em;
+    font-size: 0.8em;
+    width: 32.4em;
+    border-radius: 5px;
+    background-color: #E9E9E9;
 }
-.ButtonClose{
+.SettingTextarea{
+    margin: 0em 0.8em -40px 0em;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 32em;
+    height: 5em;
+    border-radius: 5px;
+    border: 2px inset;
+    resize: none;
+    background-color: #E9E9E9;
+}
+.SettingTextarea:focus{
+    outline:none;
+    border: 2px solid #1abc9c;
+}
+.SettingTextarea:hover{
+    outline:none;
+}
+.SettingBtn:hover{
+    border:solid 2px #000000;
+    background-color: #ffffff;
+}
+.SettingBtn:focus{
+    border:solid 2px #1abc9c;
+    background-color: #1abc9c;
+    outline: none;
+}
+.SettingBtn:active{
+    border:solid 2px #000000;
+    background-color: #ffffff;
+}
+.SettingInput:active{
+    color: #ffffff;
+}
+.SettingInput:focus{
+    outline:none;
+    border: 2px solid #1abc9c;
+}
+.SettingImg{
+    width:397px;
+    height:397px;
+    border-radius: 10px;
+    margin: 5px 30px;
+}
+.SettingImgBtn {
+    position: relative;
+    overflow: hidden;
+    width: 35em;
+    height: 17px;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 8px 4px;
+    text-align: center;
+    margin: 5px 0px 10px 0px;
+    font-size: 0.8em;
+    border: 2px inset;
+    background-color: #E9E9E9;
+}
+.SettingImgBtn:hover {
+    border: 2px solid #1abc9c;
+}
+.SettingImgBtn input[type="file"]{
+    display: none; /* Обязательно скрываем настоящий Input File */
+}
+.SettingImgBtn label {
+    /* Растягиваем label на всю возможную площадь блока .file-upload */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30em;
     cursor: pointer;
 }
-.FeedBack{
-    font-size: 30px;
-    animation-name: openSignUp;
-    animation-duration: 1.5s;
-    position:absolute;
-    width: 100%;
-    min-width:450px;
+.SettingImgBtn span {
+    line-height: 36px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
 }
-.FeedBackText{
-    padding: 30px 10px;
-    text-align: center;
+.SettingColor{
+    background-color: #ffffff;
+    padding:0px 10px;
+    margin: -10px;
 }
-.Error{
-    background-color: #F44336;
+.text{
+  margin-bottom: 6px;
 }
-.Success{
-    background-color: #8BC34A;
+<<<<<<< HEAD
+.RegBlok{
+  background-color: rgba(118, 118, 118, 0.59);
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  padding: 175px 0px;
+  flex-wrap: wrap;
 }
+.TextRegCompany{
+  text-align: center;
+  color: #ffffff;
+  font-weight:bolder;
+  font-size: 3em;
+  margin: 0em 1em 0.5em 0.7em;
+  cursor: default;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.TextRegInfo{
+  text-align: center;
+  color: #ffffff;
+  font-weight:bolder;
+  font-size: 2em;
+  margin: 0em 1em 0.3em 1em;
+  cursor: default;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.InputReg{
+  width: 300px;
+  padding: 10px;
+}
+.BtnReg{
+  width: 323px;
+  margin-top: 7px;
+}
+.RegAlignTextCenter{
+  text-align: center;
+}
+=======
 @keyframes openSignUp{
   from{
-    transform: translateY(-105px);
+    transform: translateY(-120px);
   }
   to{
     transform: translateY(0px);
@@ -215,4 +558,5 @@ h4{
   margin: 0em;
   padding: 0em;
   width: 100%;
-}
+}*/
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a

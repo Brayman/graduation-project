@@ -1,5 +1,5 @@
 var React = require('react');
-import { Link} from 'react-router';
+import {Link} from 'react-router';
 var ListInfo = React.createClass({
 
     render: function () {
@@ -10,21 +10,56 @@ var ListInfo = React.createClass({
             description = this.props.data.profile.description
         }*/
         return (
-          <div className="Block">
-              <Link to={`/${this.props.data.type}/${this.props.data._id}`}>
+          <div className="card">
+            <header className='card-header'>
+                <h3 className="NameText">
+                    <Link to={`/${this.props.data._id}`}>
+                        {this.props.data.name || this.props.data.login}
+                    </Link>
+                </h3>
+            </header>
+            <div className='card-body'>
+                <div className='card-info1'>
+                    {this.props.data.description}
+                </div>
+                <div className='card-info1'>
+                    <h4>Contacts:</h4>
+                    {this.props.data.contacts ? <div><i className="phone icon"/>{this.props.data.contacts.phone}</div> : null}
+                    {this.props.data.contacts ? <div><i className="at icon"/>{this.props.data.contacts.mail}</div> : null}
+                    {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location}</div> : null}
+                </div>
+                <div className='card-image'>
+                    <img className="card-image"
+                         src={this.props.data.picture}
+                    width="150px" height="150px"/>
+                    <Link to={`/${this.props.data._id}`}>
+                        <button className="primary card-button">
+                            view profile
+                        </button>
+                    </Link>
+                </div>
+            </div>
+              {/*<Link to={`/${this.props.data._id}`}>
             <div className="DisplayBlock Right">
 
-            <img className="MassiveImage Hover "
-              src={this.props.data.picture}
-            alt=""/>
-              <button className="ButtonViewProfil">view profile</button>
+<<<<<<< HEAD
+
+
+=======
+
+
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
 
             </div>
           </Link>
             <div className="RowAll">
               <div>
                 <h4 className="PostText">
-                    {this.props.data.name || this.props.data.login}
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
                 </h4>
               </div>
               <div>
@@ -37,15 +72,19 @@ var ListInfo = React.createClass({
             </div>
             <div className="DFlex">
               <div className="PostTextLeft">
-                  {this.props.data.description}
+<<<<<<< HEAD
+
               </div>
               <div className="PostTextRight">
-                <h4>Contacts:</h4>
-                  {this.props.data.contacts ? <div><i className="phone icon"/>{this.props.data.contacts.phone}</div> : null}
-                  {this.props.data.contacts ? <div><i className="at icon"/>{this.props.data.contacts.mail}</div> : null}
-                  {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location}</div> : null}
+
+=======
+
               </div>
-            </div>
+              <div className="PostTextRight">
+
+>>>>>>> 8d2427853396d8c77ecb2e133083d6644273395a
+              </div>
+            </div>*/}
         </div>
         );
     }

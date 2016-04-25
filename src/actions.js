@@ -19,8 +19,8 @@ export function registration(impotantData) {
 export function login(data) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], loginReq(data));
 }
-export function getProfileData(type, user) {
-    return requestAction(['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'], loadProfile(type, user));
+export function getProfileData(user) {
+    return requestAction(['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'], loadProfile(user));
 }
 export function InitialUser(user) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], initialUser(user));
@@ -34,8 +34,21 @@ export function signout() {
 export function getCompanys() {
     return requestAction(['LOAD', 'LOAD_COMP_SUCCESS', 'LOAD_COMP_FAILURE'], loadCompanys());
 }
+export function search(params) {
+    return requestAction(['SEARCH', 'SEARCH_SUCCESS', 'SEARCH_FAILURE'], searchReq(params));
+}
 //--requests
-
+function headers(data) {
+    return {
+        method: 'post',
+        credentials: 'include',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+}
 function req(url, headers) {
     return fetch(url, headers)
         .then(
@@ -49,7 +62,7 @@ function req(url, headers) {
 }
 
 function loadCompanys() {
-    return req(`${url}companys`);
+    return req(`${url}companies`);
 }
 function signoutReq() {
     return req(`${url}logout`, {credentials: 'include'});
@@ -61,41 +74,17 @@ function initialUser() {
     return req(`${url}login`, {credentials: 'include'});
 }
 function registrUser(data) {
-    req(`${url}signup`, {
-        method: 'post',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
+    req(`${url}signup`, headers(data));
 }
 function newChanges(data) {
-    req(`${url}settings`, {
-        method: 'post',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(
-            resp => {
-                return resp.statusText;
-            }
-        );
+    req(`${url}users/${data._id}`, headers(data));
 }
 function loginReq(data) {
-    return req(`${url}login`, {
-        method: 'post',
-        credentials: 'include',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
+    return req(`${url}login`, headers(data));
 }
-function loadProfile(type, user) {
-    return req(`${url+type}/${user}`);
+function loadProfile(user) {
+    return req(`${url}users/${user}`);
+}
+function searchReq(params) {
+    return req(`${url}search?text=${params}`);
 }

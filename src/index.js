@@ -23,9 +23,8 @@ ReactDOM.render(
                 <Route path="settings" component={Settings}/>
                 <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>
-                <Route path=":type/:user" component={Profile}/>
+                <Route path=":user" component={Profile}/>
             </Route>
-
         </Router>
     </Provider>,
     document.getElementById('root')

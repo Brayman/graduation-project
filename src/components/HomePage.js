@@ -2,8 +2,6 @@ import React from 'react';
 import ListInfo from './ListInfo';
 import {getPost, getCompanys} from '../actions';
 import {connect} from 'react-redux';
-
-import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.dispatch(getPost());
@@ -15,10 +13,6 @@ var HomePage = React.createClass({
           <div>
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
-              <div className="Post">
-                <h2 className="TextHome">Companys</h2>
-                <NewsColumn posts={this.props.companys}/>
-              </div>
                 <div className="Post">
                     <h2 className="TextHome">Users</h2>
                     <NewsColumn posts={this.props.posts}/>

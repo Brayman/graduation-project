@@ -18,7 +18,7 @@ var Registration = React.createClass({
 });
 var Inputs = React.createClass({
     getInitialState: function () {
-        return {err: null, company: null};
+        return {err: null, company: false};
     },
     GetValues: function () {
         var name = this.refs.username.value;
@@ -44,7 +44,11 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="text" ref="username" placeholder="Pick a username"/>
                 </div>
                 <div>
-                    <input className="InputReg" type="email" ref="email" placeholder="Your email address" onBlur={e=>{console.log(e.target)}}/>
+                    <input className="InputReg"
+                           type="email"
+                           ref="email"
+                           placeholder="Your email address"
+                    />
                 </div>
                 <div style={{backgroundColor: 'red'}}
                      onClick={()=>{
@@ -60,13 +64,14 @@ var Inputs = React.createClass({
                     <input className="InputReg" type="password" ref="password2" placeholder="Confirm a password"/>
                 </div>
                 <div className="InputCheckBoxText">
-                    <input className="InputCheckBox"
-                           type="checkbox"
-                           onClick={(e) => {
-                               console.log(e.target.checked);
-                               this.setState({company: e.target.checked});
-                           }}
-                    />sign up how company
+                  <div className="toggle">
+                      <input type="checkbox" id="checktoggle"
+                      onClick={(e) => {
+                          console.log(e.target.checked);
+                          this.setState({company: e.target.checked});
+                      }}/>
+                      <label htmlFor="checktoggle"></label>
+                  </div>sign up how company
                 </div>
                 <div>
                         <button onClick={this.GetValues}

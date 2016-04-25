@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link} from 'react-router';
 var Header = React.createClass({
@@ -14,7 +13,6 @@ var Header = React.createClass({
         this.props.dispatch(Actions.signout());
     },
     render: function () {
-        var action = bindActionCreators(Actions, this.props.dispatch);
         let panel = function (Click, userData) {
             if (userData.login == null) {
                 return (
@@ -33,7 +31,9 @@ var Header = React.createClass({
             } else {
                 return (
                     <div className="LeftBtnPanel">
-                        <div className="MenuRightBtn">Search</div>
+                        <Link to="search">
+                            <div className="MenuRightBtn">Search</div>
+                        </Link>
                         <Link to="signin">
                             <div className="MenuRightBtn">Message</div>
                         </Link>
@@ -43,7 +43,7 @@ var Header = React.createClass({
                         >
                             signout
                         </div>
-                        <Link to={`/${userData.type}/${userData._id}`}>
+                        <Link to={`/${userData._id}`}>
                             <div className="MenuRightBtn">
                                 {userData.login}
                             </div>

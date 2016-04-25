@@ -84,7 +84,7 @@ var Settings = React.createClass({
         this.props.dispatch(saveChanges(this.state.settings));
     },
     render: function () {
-        let panel = function (a, e, Save) {
+        let panel = function (a, e, Save, state) {
             switch (a) {
                 case 'profile':
                     return (
@@ -93,17 +93,19 @@ var Settings = React.createClass({
                             <div>
                                 <input className="SettingsInput"
                                        name="picture"
+                                       value={state.picture}
                                        type="text"
                                        placeholder="write URL on image..."
-                                       onBlur={e}
+                                       onChange={e}
                                 /></div>
                             <div className="SettingTextInput">Name</div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.name}
                                        name="name"
                                        type="text"
                                        placeholder="Write..."
-                                       onBlur={e}
+                                       onChange={e}
                                 />
                             </div>
                             <div className="SettingTextInput">Sex</div>
@@ -117,14 +119,15 @@ var Settings = React.createClass({
                             <div><input className="SettingsInput"
                                         type="text"
                                         placeholder="Write..."
-                                        onBlur={e}
+                                        onChange={e}
                             /></div>
                             <div className="SettingTextInput">Location</div>
                             <div><input className="SettingsInput"
+                                        value={state.location}
                                         name="location"
                                         type="text"
                                         placeholder="City"
-                                        onBlur={e}
+                                        onChange={e}
                             /></div>
                             <div className="SettingTextInput">Birthdate</div>
                             <div>
@@ -136,10 +139,11 @@ var Settings = React.createClass({
                             <div className="SettingTextInput">about</div>
                             <div>
                                 <textarea className="SettingsInput"
-                                       type="text"
-                                       name="description"
-                                       placeholder="Write..."
-                                       onBlur={e}
+                                          value={state.description}
+                                          type="text"
+                                          name="description"
+                                          placeholder="Write..."
+                                          onChange={e}
                                 />
                             </div>
                             <div>
@@ -159,20 +163,22 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.contacts.mail}
                                        type="mail"
                                        name="mail"
                                        placeholder="Write..."
-                                       onBlur={e}/>
+                                       onChange={e}/>
                             </div>
                             <div className="SettingTextInput">
                                 Phone
                             </div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.contacts.phone}
                                        name="phone"
                                        type="text"
                                        placeholder="Write..."
-                                       onBlur={e}
+                                       onChange={e}
                                 />
                             </div>
                             <div className="SettingTextInput">
@@ -180,10 +186,11 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.contacts.twitter}
                                        name="twitter"
                                        type="text"
                                        placeholder="Write..."
-                                       onBlur={e}
+                                       onChange={e}
                                 />
                             </div>
                             <div className="SettingTextInput">
@@ -191,10 +198,11 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.contacts.vk}
                                        name="vk"
                                        type="text"
                                        placeholder="Write..."
-                                       onBlur={e}
+                                       onChange={e}
                                 />
                             </div>
                             <div className="SettingTextInput">
@@ -202,10 +210,11 @@ var Settings = React.createClass({
                             </div>
                             <div>
                                 <input className="SettingsInput"
+                                       value={state.contacts.facebook}
                                        name="facebook"
                                        type="text"
                                        placeholder="Write..."
-                                       onBlur={e}
+                                       onChange={e}
                                 />
                             </div>
                             <div>
@@ -250,7 +259,7 @@ var Settings = React.createClass({
                                         type="mail"
                                         placeholder="Write..."
                                         name="mail"
-                                        onBlur={e}
+                                        onChange={e}
                             /></div>
                             <div>
                                 <button className="SettingUpdate" onClick={Save}
@@ -275,7 +284,7 @@ var Settings = React.createClass({
                 </div>
                 <div className="RightPanelSetting item2s">
                     <div className="SettingsInfoText">Setting</div>
-                    {panel(this.state.panel, this.NewValue, this.Save)}
+                    {panel(this.state.panel, this.NewValue, this.Save, this.state.settings)}
                 </div>
             </div>
         );

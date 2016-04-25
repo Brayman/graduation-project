@@ -5,11 +5,10 @@ import React from 'react';
 import {login} from '../actions';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import Message from './ErrorMessage';
 var SignIn = React.createClass({
-  getInitialState: function () {
-      return {settings: {}, panel: 'employee', company: false};
-  },
+    getInitialState: function () {
+        return {settings: {}, panel: 'employee', company: false};
+    },
     onLogInClick: function () {
         var name = this.refs.username.value;
         var password = this.refs.password.value;
@@ -27,87 +26,39 @@ var SignIn = React.createClass({
         }
     },
     render: function () {
-        let panel = function (a, onLogInClick) {
-        switch (a) {
-            case 'employee':
                 return (
-                  <div className="RowFlex SignColoreEmployee">
+                  <div className="RowFlex SignColore">
                     <div className="SignUp">
                       <div className="SignInTextCompany">J O B B O X</div>
-                     <div className="SignInTextDisription">Go in frilans service how Employee.</div>
-                       <Link to='/signup'>
-                          <button className="SignBtton SignUpButton">Sign up</button>
-                        </Link>
-                     </div>
-                     <div className="SignIn">
+                      <div className="SignInTextDisription">Frilans service for company  and</div>
+                      <div className="SignInTextDisription">employee.</div>
+                      <Link to='/signup'>
+                        <button className="SignBtton SignUpButton">Sign up</button>
+                      </Link>
+                    </div>
+                    <div className="SignIn">
                      <div className="PaddingSignIn">
-                        <div className="SignInTextRight">USERNAME EMPLOYEE</div>
-                     <div>
-                         <input className="SignInput" type="text" ref="username" placeholder="Write..."/>
-                     </div>
-                    <div className="SignInTextRight">PASSWORD</div>
-                    <div>
-                         <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
-                    </div>
-                    <div className="InputCheckBoxText">
+                        <div className="SignInTextRight">USERNAME</div>
+                      <div>
+                         <input className="SignInput" type="text" ref="username"/>
+                      </div>
+                      <div className="SignInTextRight">PASSWORD</div>
+                        <div>
+                         <input className="SignInput" type="password" ref="password"/>
+                        </div>
+                        <div className="SettingDontKnow">
                           <button className="SettingDontKnow">I forgot my password </button>
-                    </div>
+                        </div>
                         <button className="SignBtton SignInButton"
-                        onClick={onLogInClick}>
+                        onClick={this.onLogInClick}>
                           Sign in
                         </button>
                     </div>
                   </div>
                 </div>
-            );
-            case 'company':
-                return (
-                      <div className="RowFlex SignColoreCompany">
-                          <div className="SignUp">
-                            <div className="SignInTextCompany">J O B B O X</div>
-                            <div className="SignInTextDisription">Go in frilans service how Company.</div>
-                            <Link to='/signup'>
-                              <button className="SignBtton SignUpButton">Sign up</button>
-                            </Link>
-                          </div>
-                          <div className="SignIn">
-                            <div className="PaddingSignIn">
-                              <div className="SignInTextRight">USERNAME COMPANY</div>
-                              <div>
-                                <input className="SignInput" type="text" ref="username" placeholder="Write..."/>
-                              </div>
-                            <div className="SignInTextRight">PASSWORD</div>
-                            <div>
-                              <input className="SignInput" type="password" ref="password" placeholder="Write..."/>
-                            </div>
-                            <div className="InputCheckBoxText">
-                              <button className="SettingDontKnow">I forgot my password </button>
-                            </div>
-                              <button className="SignBtton SignInButton"
-                              onClick={onLogInClick}>
-                                Sign in
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                );
-            default:
-                return null;
-      }
-  };
-            return (
-            <div className="SelectionSign">
-               <div className="BlockSelectionSign">
-                 <button className="ButtonSelectionEmployee" id="employee" onClick={this.Vibor}>Employee</button>
-               </div>
-               <div className="BlockSelectionSign">
-                 <button className="ButtonSelectionСompany" id="company"  onClick={this.Vibor}>Company</button>
-               </div>
-                {panel(this.state.panel, this.onLogInClick)}
-            </div>
          );
-      }
-  });
+    }
+});
 export default connect(
       (state)=> {
           return {
