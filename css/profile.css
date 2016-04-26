@@ -16,7 +16,7 @@
 .contacts {
     flex-shrink: 0;
     flex-basis: 203px;
-    padding: 10px;
+    padding: 20px 15px;
     flex-grow: 1;
     border-right: solid 1px #edeeee;
     border-bottom: solid 1px #edeeee;

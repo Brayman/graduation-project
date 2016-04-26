@@ -21,7 +21,7 @@ var Profile = React.createClass({
                     />
                     <div>
                         <div className='header-main'>
-                        {!this.props.Profile.company ? (
+                        {this.props.Profile.company ? (
                                                         <i className="suitcase icon" />
                                                       ) : null}
                         <h2>

@@ -25,15 +25,6 @@ input {
   margin-bottom: 5px;
   background-color: hsl(0, 0%, 90%);
 }
-input {
-  color: #6F7276;
-  font-size: 20px;
-  padding: 9px;
-  outline: none;
-  border: solid 2px #edeeee;
-  border-radius: 7px;
-  background-color: #fafafa;
-}
 input:focus {
   color: black;
   outline: none;
