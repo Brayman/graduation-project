@@ -1,5 +1,5 @@
 const url = 'https://gentle-meadow-48046.herokuapp.com/';
-//const url = 'http://10.26.11.88/';
+// const url = 'http://10.26.11.88/';
 import fetch from 'isomorphic-fetch';
 
 export function requestAction(actions, promise) {
@@ -93,5 +93,5 @@ function loadProfile(user) {
     return req(`${url}users/${user}`);
 }
 function searchReq(params) {
-    return req(`${url}search?text=${params}`);
+    return req(`${url}search${params}`);
 }

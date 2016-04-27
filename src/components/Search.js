@@ -4,32 +4,72 @@ import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
 
 const Search = React.createClass({
-    getInitialState() {
-        return {url: `/search?`}
-    },
-    search(e) {
-        this.setState({url: `text=${this.refs.text.value}&`})
-        browserHistory.push(`/search?text=${this.refs.text.value}&`);
-        console.log(e.target);
-        this.props.dispatch(search(this.refs.text.value));
+    search() {
+        this.props.dispatch(search(this.props.location.search));
     },
     tags(e) {
-        this.setState({url: `${this.state.url}tag=${e.target.value}&`})
-        this.props.dispatch(search(this.state.url));
+        if (!e.target.checked) {
+            return browserHistory.push('/search');
+        }
+        switch (e.target.id) {
+            case '1':
+                return browserHistory.push(`/search?rm=${e.target.id}`);
+            case '2':
+                return browserHistory.push(`/search?eat=${e.target.id}`);
+            case '3':
+                return browserHistory.push(`/search?fun=${e.target.id}`);
+            case '4':
+                return browserHistory.push(`/search?des=${e.target.id}`);
+            case '5':
+                return browserHistory.push(`/search?pr=${e.target.id}`);
+        }
     },
     render() {
         return (
-            <div className="RowFlex">
-                <div>
-                  <input type="text" ref='text'/>
-                  <button onClick={this.search}>
-                    <i className="search icon"/>
-                  </button>
+            <div className="RowFlex JCC">
+                <div className="item3p BorderRight">
+                  <h2 className="BorderBottom h2">Критерии поиска </h2>
+                  <h4 className="h4SC">Теги</h4>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="1" onClick={this.tags}/>
+                      <label htmlFor="1"></label>
+                    </div><span className="SD">Ремонт</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="2" onClick={this.tags}/>
+                      <label htmlFor="2"></label>
+                    </div><span className="SD">Питание</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="3" onClick={this.tags}/>
+                      <label htmlFor="3"></label>
+                    </div><span className="SD">Развлечения</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="4" onClick={this.tags}/>
+                      <label htmlFor="4"></label>
+                    </div><span className="SD">Дизайн</span>
+                  </div>
+                  <div className="SearchChet BorderBottom">
+                    <div className="toggle">
+                      <input type="checkbox" id="5" onClick={this.tags}/>
+                      <label htmlFor="5"></label>
+                    </div><span className="SD">Продукты</span>
+                  </div>
+                  <h4 className="h4S">Местоположение</h4>
+                  <input className="SI" type="text"/>
                 </div>
-                <div>
-                  <button onClick={this.tags}>repair</button>
-                  <button>авто</button>
-                  <button onClick={()=> browserHistory.goBack()}>прицепы</button>
+                <div className="item2p">
+                  <div className="BorderBottom">
+                    <input className="InputSearch" type="text" ref='text'/>
+                    <button className="BtnSearch" onClick={this.search}>
+                      <i className="search icon"/>
+                    </button>
+                  </div>
                 </div>
             </div>
         );
