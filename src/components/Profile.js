@@ -6,6 +6,7 @@ import '../../css/profile.css';
 
 var Profile = React.createClass({
     componentWillMount() {
+       
         this.props.dispatch(getProfileData(this.props.params.user));
     },
     render: function () {
@@ -37,6 +38,12 @@ var Profile = React.createClass({
                         </div>
                         <div className="item">
                             reviews: {this.props.Profile.rating || 1}
+                        </div>
+                        <div className="item">
+                            follow: {this.props.Profile.rating || 0}
+                        </div>
+                        <div className="item">
+                            following: {this.props.Profile.rating || 10}
                         </div>
                     </div>
                     </div>

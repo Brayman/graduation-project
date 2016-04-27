@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link, browserHistory} from 'react-router';
 var Header = React.createClass({
@@ -7,7 +8,8 @@ var Header = React.createClass({
         return {open: false};
     },
     componentWillMount() {
-        this.props.dispatch(Actions.InitialUser());
+        // this.props.dispatch(Actions.InitialUser());
+        this.props.actions.InitialUser();
     },
     Click: function () {
         this.props.dispatch(Actions.signout());
@@ -91,12 +93,15 @@ var Header = React.createClass({
         );
     }
 });
+function states(state) {
+    return {
+        userData: state.userData
+    };
+}
 
-
-export default connect(
-    (state)=> {
-        return {
-            userData: state.userData
-        };
-    }
-)(Header);
+function actions(dispatch) {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    };
+}
+export default connect(states, actions)(Header);

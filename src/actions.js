@@ -9,6 +9,13 @@ export function requestAction(actions, promise) {
         promise
     };
 }
+export function redirectAction(actions, promise) {
+    return {
+        type: 'REQUEST',
+        actions,
+        promise
+    };
+}
 //--middleware
 export function getPost() {
     return requestAction(['LOAD_POST', 'LOAD_POST_SUCCESS', 'LOAD_POST_FAILURE'], loadPost());
