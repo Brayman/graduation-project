@@ -6,6 +6,7 @@ button {
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }
 button.primary {
     color: white;
@@ -28,8 +29,8 @@ input {
 input:focus {
   color: black;
   outline: none;
-  border: solid 2px #edeeee;
-  border-radius: 5px;
+  border: solid 1px #edeeee;
+  border-radius: 3px;
   background-color: white;
 }
 textarea {
