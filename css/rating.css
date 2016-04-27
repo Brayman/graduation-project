@@ -9,7 +9,7 @@ fieldset, label { margin: 0; padding: 0; }
   margin-right: -400px;
 }
 .TextComent{
-  margin-top: 25px;
+  margin-top: 35px;
 }
 .rating > input { display: none; }
 .rating > label:before {

@@ -14,6 +14,7 @@ var Header = React.createClass({
     },
     goTo: function () {
         browserHistory.push(`/${this.props.userData._id}`);
+        console.log(this.props);
     },
     render: function () {
         let panel = function (Click, userData, goTo) {

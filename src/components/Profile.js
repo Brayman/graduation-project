@@ -6,9 +6,15 @@ import '../../css/profile.css';
 
 var Profile = React.createClass({
     componentWillMount() {
-        this.props.dispatch(getProfileData(this.props.params.user));
+        //this.props.dispatch(getProfileData(this.props.params.user));
+        this.props.route.onChange(this.props.params.user);
+        console.log(this.props)
+    },
+    go() {
+
     },
     render: function () {
+
         var settings;
         if (this.props.userData.login === this.props.Profile.login) {
             settings = <Settings/>;

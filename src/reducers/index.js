@@ -3,16 +3,16 @@
  */
 //import posts from './posts'
 import userData from './user';
-const defaultState= {
-        login: null,
-        name: null,
-        description: null,
-        rating: null,
-        contacts: {
-            twitter: null,
-            mail: null,
-            phone: null
-        }
+const defaultState = {
+    login: null,
+    name: null,
+    description: null,
+    rating: null,
+    contacts: {
+        twitter: null,
+        mail: null,
+        phone: null
+    }
 };
 export function posts(state = [], action) {
     switch (action.type) {
