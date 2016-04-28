@@ -28,6 +28,7 @@ const Search = React.createClass({
     },
     render() {
         return (
+
             <div className="RowFlex JCC">
                 <div className="item2 BorderRight">
                   <h2 className="BorderBottom h2">Критерии поиска </h2>
@@ -75,6 +76,7 @@ const Search = React.createClass({
                   </div>
                 </div>
             </div>
+
         );
     }
 });

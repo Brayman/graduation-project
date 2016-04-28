@@ -56,15 +56,17 @@ button.card-button {
   width: 150px;
   margin: 5px 5px 10px 5px;
 }
-.ProfilContent{
-  flex-direction: row-reverse;
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  width: auto;
-  background-color: white;
-  margin: 0px 3%;
+@font-face{
+    font-family: Ubuntu;
+    src: url(ubuntu/Ubuntu.ttf);
+   }
+.Icon.small{
+    font-size: 26px;
+}
+.PanelForMenu{
+  height: 3.5em;
+  margin: 0em;
+  padding: 0em;
 }
 .PadingText{
   margin: 10px 0px 0px 30px;
@@ -87,7 +89,6 @@ button.card-button {
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-}
 @keyframes openSignUp{
   from{
     transform: translateY(-120px);
