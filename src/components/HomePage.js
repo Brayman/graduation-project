@@ -36,13 +36,15 @@ var NewsColumn = React.createClass({
         );
     }
 });
+function ratingSort(a, b) {
+  return b.rating - a.rating;
+}
 export default connect(
     (state)=> {
         return {
             status: state.status,
             companys: state.companys,
-            posts: state.posts,
-            color: state.color
+            posts: state.posts
         };
     }
 )(HomePage);

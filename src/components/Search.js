@@ -1,21 +1,75 @@
 import React from 'react';
 import {search} from '../actions';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 
 const Search = React.createClass({
+    search() {
+        this.props.dispatch(search(this.props.location.search));
+    },
+    tags(e) {
+        if (!e.target.checked) {
+            return browserHistory.push('/search');
+        }
+        switch (e.target.id) {
+            case '1':
+                return browserHistory.push(`/search?rm=${e.target.id}`);
+            case '2':
+                return browserHistory.push(`/search?eat=${e.target.id}`);
+            case '3':
+                return browserHistory.push(`/search?fun=${e.target.id}`);
+            case '4':
+                return browserHistory.push(`/search?des=${e.target.id}`);
+            case '5':
+                return browserHistory.push(`/search?pr=${e.target.id}`);
+        }
+    },
     render() {
         return (
-            <div className="RowFlex">
-                <div>
-                  <input type="text" ref='text'/>
-                  <button onClick={() => this.props.dispatch(search(this.refs.text.value))}>
-                    <i className="search icon"/>
-                  </button>
+            <div className="RowFlex JCC">
+                <div className="item3p BorderRight">
+                  <h2 className="BorderBottom h2">Критерии поиска </h2>
+                  <h4 className="h4SC">Теги</h4>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="1" onClick={this.tags}/>
+                      <label htmlFor="1"></label>
+                    </div><span className="SD">Ремонт</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="2" onClick={this.tags}/>
+                      <label htmlFor="2"></label>
+                    </div><span className="SD">Питание</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="3" onClick={this.tags}/>
+                      <label htmlFor="3"></label>
+                    </div><span className="SD">Развлечения</span>
+                  </div>
+                  <div className="SearchChet">
+                    <div className="toggle">
+                      <input type="checkbox" id="4" onClick={this.tags}/>
+                      <label htmlFor="4"></label>
+                    </div><span className="SD">Дизайн</span>
+                  </div>
+                  <div className="SearchChet BorderBottom">
+                    <div className="toggle">
+                      <input type="checkbox" id="5" onClick={this.tags}/>
+                      <label htmlFor="5"></label>
+                    </div><span className="SD">Продукты</span>
+                  </div>
+                  <h4 className="h4S">Местоположение</h4>
+                  <input className="SI" type="text"/>
                 </div>
-                <div>
-                  <button onClick={() => this.props.dispatch(search('repair'))}>ремонт</button>
-                  <button>авто</button>
-                  <button>прицепы</button>
+                <div className="item2p">
+                  <div className="BorderBottom">
+                    <input className="InputSearch" type="text" ref='text'/>
+                    <button className="BtnSearch" onClick={this.search}>
+                      <i className="search icon"/>
+                    </button>
+                  </div>
                 </div>
             </div>
         );
@@ -28,7 +82,6 @@ export default connect(
         };
     }
 )(Search);
-export default Search;
 /**
  * Created by Artsiom_Rakitski on 4/19/2016.
  */

@@ -6,6 +6,7 @@ button {
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }
 button.primary {
     color: white;
@@ -18,18 +19,19 @@ button:hover {
     background-color: hsl(0, 0%, 85%);
 }
 input {
+  color: #6F7276;
   font-size: 20px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: solid 1px #edeeee;
-  margin-bottom: 5px;
-  background-color: hsl(0, 0%, 90%);
+  padding: 9px;
+  outline: none;
+  border: solid 2px #edeeee;
+  border-radius: 7px;
+  background-color: #fafafa;
 }
 input:focus {
   color: black;
   outline: none;
-  border: solid 2px #edeeee;
-  border-radius: 5px;
+  border: solid 1px #edeeee;
+  border-radius: 3px;
   background-color: white;
 }
 textarea {

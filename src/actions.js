@@ -1,8 +1,16 @@
 const url = 'https://gentle-meadow-48046.herokuapp.com/';
-//const url = 'http://10.26.11.88/';
+// const url = 'http://10.26.11.88/';
+import {browserHistory} from 'react-router';
 import fetch from 'isomorphic-fetch';
 
 export function requestAction(actions, promise) {
+    return {
+        type: 'REQUEST',
+        actions,
+        promise
+    };
+}
+export function redirectAction(actions, promise) {
     return {
         type: 'REQUEST',
         actions,
@@ -86,5 +94,11 @@ function loadProfile(user) {
     return req(`${url}users/${user}`);
 }
 function searchReq(params) {
-    return req(`${url}search?text=${params}`);
+    return req(`${url}search${params}`);
+}
+export function openProfile(user) {
+    return {
+        type: 'OPEN_PROFILE',
+        promise: browserHistory.push(`/${user}`)
+    };
 }

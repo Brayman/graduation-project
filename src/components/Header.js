@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link, browserHistory} from 'react-router';
 var Header = React.createClass({
@@ -7,18 +8,19 @@ var Header = React.createClass({
         return {open: false};
     },
     componentWillMount() {
-        this.props.dispatch(Actions.InitialUser());
+        // this.props.dispatch(Actions.InitialUser());
+        this.props.actions.InitialUser();
     },
     Click: function () {
-        this.props.dispatch(Actions.signout());
+        this.props.actions.signout();
     },
     goTo: function () {
         browserHistory.push(`/${this.props.userData._id}`);
         console.log(this.props);
     },
     render: function () {
-        let panel = function (Click, userData, goTo) {
-            if (userData.login == null) {
+        let panel = function (Click, props, goTo) {
+            if (props.userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
                         <Link to="search">
@@ -49,9 +51,9 @@ var Header = React.createClass({
                         </div>
 
                             <div className="MenuRightBtn"
-                                 onClick={goTo}
+                                 onClick={() => props.actions.openProfile(props.userData._id)}
                             >
-                                {userData.login}
+                                {props.userData.login}
                             </div>
 
                     </div>
@@ -66,7 +68,7 @@ var Header = React.createClass({
                             <div className="MenuLeftBtn MenuBtn">JobBox</div>
                         </Link>
 
-                        {panel(this.Click, this.props.userData, this.goTo)}
+                        {panel(this.Click, this.props, this.goTo)}
                     </div>
                 </div>
                 <div className="demo">
@@ -92,12 +94,15 @@ var Header = React.createClass({
         );
     }
 });
+function states(state) {
+    return {
+        userData: state.userData
+    };
+}
 
-
-export default connect(
-    (state)=> {
-        return {
-            userData: state.userData
-        };
-    }
-)(Header);
+function actions(dispatch) {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    };
+}
+export default connect(states, actions)(Header);
