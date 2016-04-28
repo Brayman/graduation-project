@@ -1,3 +1,10 @@
+body{
+  margin: 0em;
+  padding: 0em;
+  background-color: #FAFAFA;
+  font-family: Ubuntu;
+  min-width: 460px;
+}
 .RegBlok{
   background-color: rgba(118, 118, 118, 0.59);
   display: flex;
@@ -34,7 +41,7 @@
 }
 .InputReg{
   width: 300px;
-  padding: 10px;
+  padding: 8px;
 }
 .BtnReg{
   width: 323px;
@@ -66,13 +73,6 @@
 .TextComent {
   margin-top: 25px;
 }
-body{
-  margin: 0em;
-  padding: 0em;
-  background-color: #FAFAFA;
-  font-family: Ubuntu;
-  min-width: 460px;
-}
 .card {
   background-color: white;
   width: 98%;
@@ -98,14 +98,6 @@ header.card-header {
   padding: 5px;
   border-right: solid 1px #edeeee;
 }
-.card-info2 {
-  flex-basis: 200px;
-  padding: 5px;
-  border-right: solid 1px #edeeee;
-  flex-shrink: 0;
-  flex-basis: 150px;
-  padding: 5px;
-}
 .card-info {
   flex-shrink: 1;
   flex-grow: 1;
@@ -121,9 +113,6 @@ button.card-button {
   width: 150px;
   margin: 5px 5px 10px 5px;
 }
-.footer {
-  align-self: flex-end;
-}
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
@@ -135,9 +124,6 @@ button.card-button {
     padding-bottom: 11px;
     min-width: 450px;
   }
-   .TextCenter{
-     text-align: center;
-   }
    .FooterButton{
      margin:0px;
      padding:14px 10px;
@@ -155,16 +141,9 @@ button.card-button {
      color: #37474f;
    }
    .FooterButtonPosition{
-     justify-content:center;
+     display: flex;
+     justify-content: center;
    }
-.Icon.small{
-    font-size: 26px;
-}
-.PanelForMenu{
-  height: 3.5em;
-  margin: 0em;
-  padding: 0em;
-}
 .ProfilImage{
   width: 300px;
   height: 300px;
