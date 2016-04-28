@@ -71,7 +71,6 @@ body{
   padding: 0em;
   background-color: #FAFAFA;
   font-family: Ubuntu;
-  min-width: 460px;
 }
 .card {
   background-color: white;
@@ -121,42 +120,11 @@ button.card-button {
   width: 150px;
   margin: 5px 5px 10px 5px;
 }
-.footer {
-  align-self: flex-end;
-}
 @font-face{
     font-family: Ubuntu;
     src: url(ubuntu/Ubuntu.ttf);
    }
-  .footer {
-    background-color: #37474f;
-    text-align: center;
-    color: #fff;
-    padding-bottom: 11px;
-    min-width: 450px;
-  }
-   .TextCenter{
-     text-align: center;
-   }
-   .FooterButton{
-     margin:0px;
-     padding:14px 10px;
-     font-size: 15px;
-     cursor: pointer;
-     -moz-user-select: -moz-none;
-     -o-user-select: none;
-     -khtml-user-select: none;
-     -webkit-user-select: none;
-     user-select: none;
-     text-transform: uppercase;
-   }
-   .FooterButton:hover{
-     background: #edeeee;
-     color: #37474f;
-   }
-   .FooterButtonPosition{
-     justify-content:center;
-   }
+
 .Icon.small{
     font-size: 26px;
 }

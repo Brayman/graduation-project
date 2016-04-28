@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link, browserHistory} from 'react-router';
+import '../../css/header-footer.css'
 var Header = React.createClass({
     getInitialState: function () {
         return {open: false};
@@ -61,7 +62,7 @@ var Header = React.createClass({
             }
         };
         return (
-              <div>
+              <div className='app'>
                 <div className="Nav">
                     <div className="Menu RowFlex">
                         <Link to="/">

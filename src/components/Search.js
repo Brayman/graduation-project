@@ -26,52 +26,7 @@ const Search = React.createClass({
     },
     render() {
         return (
-            <div className="RowFlex JCC">
-                <div className="item3p BorderRight">
-                  <h2 className="BorderBottom h2">Критерии поиска </h2>
-                  <h4 className="h4SC">Теги</h4>
-                  <div className="SearchChet">
-                    <div className="toggle">
-                      <input type="checkbox" id="1" onClick={this.tags}/>
-                      <label htmlFor="1"></label>
-                    </div><span className="SD">Ремонт</span>
-                  </div>
-                  <div className="SearchChet">
-                    <div className="toggle">
-                      <input type="checkbox" id="2" onClick={this.tags}/>
-                      <label htmlFor="2"></label>
-                    </div><span className="SD">Питание</span>
-                  </div>
-                  <div className="SearchChet">
-                    <div className="toggle">
-                      <input type="checkbox" id="3" onClick={this.tags}/>
-                      <label htmlFor="3"></label>
-                    </div><span className="SD">Развлечения</span>
-                  </div>
-                  <div className="SearchChet">
-                    <div className="toggle">
-                      <input type="checkbox" id="4" onClick={this.tags}/>
-                      <label htmlFor="4"></label>
-                    </div><span className="SD">Дизайн</span>
-                  </div>
-                  <div className="SearchChet BorderBottom">
-                    <div className="toggle">
-                      <input type="checkbox" id="5" onClick={this.tags}/>
-                      <label htmlFor="5"></label>
-                    </div><span className="SD">Продукты</span>
-                  </div>
-                  <h4 className="h4S">Местоположение</h4>
-                  <input className="SI" type="text"/>
-                </div>
-                <div className="item2p">
-                  <div className="BorderBottom">
-                    <input className="InputSearch" type="text" ref='text'/>
-                    <button className="BtnSearch" onClick={this.search}>
-                      <i className="search icon"/>
-                    </button>
-                  </div>
-                </div>
-            </div>
+            <button> ok</button>
         );
     }
 });

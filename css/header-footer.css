@@ -1,0 +1,119 @@
+
+.Nav{
+  height: 65px;
+  margin: 0em;
+  padding: 0em;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+.RowFlex{
+  width: 100%;
+  flex-direction:row;
+  justify-content:space-around;
+  display: flex;
+}
+.Menu{
+  text-transform: uppercase;
+  clear: both;
+  margin: 0em;
+  padding: 0em;
+  height: 65px;
+  background-color: #37474f;
+  color: #ffffff;
+  position: fixed;
+  z-index: 1;
+}
+.LeftBtnPanel{
+    display: flex;
+}
+.MenuLeftBtn{
+  margin: 18px 0px 0px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.MenuLeftBtn:hover{
+  opacity: 0.4;
+}
+.MenuRightBtn{
+  margin: 20px 0px 0px 0px;
+  padding: 14px 1px;
+  font-size: 15px;
+  cursor: pointer;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.MenuRightBtn:hover{
+  background: #5c6bc0;
+}
+.MenuName{
+  text-transform: none;
+  text-decoration: none;
+  font-size: 20px;
+}
+a.ManuName{
+  color: #5c6bc0;
+  outline: none;
+}
+a.MenuName:active,a.MenuName:focus{
+  color: #37474F;
+}
+.MenuButtonSignIn{
+  margin: 12.5px 10px 12.5px 30px;
+  padding: 10px;
+  cursor: pointer;
+  background: #5c6bc0;
+  color:#ffffff;
+  border:solid 2px #5c6bc0;
+}
+.MenuButtonSignIn:hover{
+  opacity: 0.6;
+}
+.MenuSignIn{
+  display: flex;
+}
+.MenuTextName{
+  margin-left: 30px;
+}
+  .footer {
+    background-color: #37474f;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 11px;
+    align-self: flex-end;
+    width: 100%
+  }
+   .TextCenter{
+     text-align: center;
+   }
+   .FooterButton{
+     margin:0px;
+     padding:14px 10px;
+     font-size: 15px;
+     cursor: pointer;
+     -moz-user-select: -moz-none;
+     -o-user-select: none;
+     -khtml-user-select: none;
+     -webkit-user-select: none;
+     user-select: none;
+     text-transform: uppercase;
+   }
+   .FooterButton:hover{
+     background: #edeeee;
+     color: #37474f;
+   }
+   .FooterButtonPosition{
+     justify-content:center;
+   }
+   

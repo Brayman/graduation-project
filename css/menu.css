@@ -2,11 +2,7 @@
   text-align: center;
   margin: 5px;
 }
-.Nav{
-  height: 65px;
-  margin: 0em;
-  padding: 0em;
-}
+
 .Van{
   position: fixed;
   left: 0; bottom: 0; /* Левый нижний угол */
@@ -15,55 +11,9 @@
   width: 100%;
   height: 65px;
 }
-.Menu{
-  text-transform: uppercase;
-  clear: both;
-  margin: 0em;
-  padding: 0em;
-  height: 65px;
-  background-color: #37474f;
-  color: #ffffff;
-  position: fixed;
-  z-index: 1;
-  min-width: 450px;
-}
-.LeftBtnPanel{
-    display: flex;
-}
-.MenuLeftBtn{
-  margin: 15px 0px 0px 0px;
-  font-size: 30px;
-  cursor: pointer;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.MenuLeftBtn:hover{
-  opacity: 0.4;
-}
-.MenuRightBtn{
-  margin: 20px 0px 0px 0px;
-  padding: 14px 10px;
-  font-size: 15px;
-  cursor: pointer;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.MenuRightBtn:hover{
-  background: #5c6bc0;
-}
-.RowFlex{
-  width: 100%;
-  flex-direction:row;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  display: flex;
-}
+
+
+
 .SignInTextRight{
   text-align: center;
   margin: 10px 0px;
@@ -182,35 +132,7 @@
   object-fit: cover;
   vertical-align: middle;
 }
-.MenuName{
-  text-transform: none;
-  text-decoration: none;
-  font-size: 20px;
-}
-a.ManuName{
-  color: #5c6bc0;
-  outline: none;
-}
-a.MenuName:active,a.MenuName:focus{
-  color: #37474F;
-}
-.MenuButtonSignIn{
-  margin: 12.5px 10px 12.5px 30px;
-  padding: 10px;
-  cursor: pointer;
-  background: #5c6bc0;
-  color:#ffffff;
-  border:solid 2px #5c6bc0;
-}
-.MenuButtonSignIn:hover{
-  opacity: 0.6;
-}
-.MenuSignIn{
-  display: flex;
-}
-.MenuTextName{
-  margin-left: 30px;
-}
+
 .InputCheckBox{
   width: 22px;
   height: 22px;
