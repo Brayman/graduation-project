@@ -26,12 +26,10 @@ input {
   border: solid 2px #edeeee;
   border-radius: 7px;
   background-color: #fafafa;
+  margin: 3px 0px;
 }
 input:focus {
-  color: black;
-  outline: none;
-  border: solid 1px #edeeee;
-  border-radius: 3px;
+  border: solid 2px #edeeee;
   background-color: white;
 }
 textarea {

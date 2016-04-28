@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link, browserHistory} from 'react-router';
-import '../../css/header-footer.css'
+import '../../css/header-footer.css';
 var Header = React.createClass({
     getInitialState: function () {
         return {open: false};
@@ -72,11 +72,9 @@ var Header = React.createClass({
                         {panel(this.Click, this.props, this.goTo)}
                     </div>
                 </div>
-                <div className="demo">
-                {this.props.children}
-                </div>
+                  {this.props.children}
                   <div className="footer">
-                    <div className="DFlex FooterButtonPosition">
+                    <div className="FooterButtonPosition">
                       <Link to="/about">
                         <div className="FooterButton">
                           About
