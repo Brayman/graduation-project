@@ -3,7 +3,6 @@ body{
   padding: 0em;
   background-color: #FAFAFA;
   font-family: Ubuntu;
-  min-width: 460px;
 } 
 @font-face{
     font-family: Ubuntu;
@@ -40,7 +39,6 @@ input {
   margin: 3px 0px;
 }
 input:focus {
-  border: solid 2px #edeeee;
   background-color: white;
 }
 textarea {

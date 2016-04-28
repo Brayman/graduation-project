@@ -24,9 +24,11 @@ var Header = React.createClass({
             if (props.userData.login == null) {
                 return (
                     <div className="LeftBtnPanel">
-                        <Link to="search">
-                            <div className="MenuRightBtn">Search</div>
-                        </Link>
+                        <div className="MenuRightBtn"
+                             onClick={() => props.actions.openSearch()}
+                        >
+                            Search
+                        </div>
                         <Link to="signup">
                             <div className="MenuRightBtn">signup</div>
                         </Link>
@@ -38,9 +40,11 @@ var Header = React.createClass({
             } else {
                 return (
                     <div className="LeftBtnPanel">
-                        <Link to="search">
-                            <div className="MenuRightBtn">Search</div>
-                        </Link>
+                        <div className="MenuRightBtn"
+                                 onClick={() => props.actions.openSearch()}
+                        >
+                            Search
+                        </div>
                         <Link to="signin">
                             <div className="MenuRightBtn">Message</div>
                         </Link>
@@ -52,7 +56,7 @@ var Header = React.createClass({
                         </div>
 
                             <div className="MenuRightBtn"
-                                 onClick={() => props.actions.openProfile(props.userData._id)}
+                                 onClick={() => props.actions.getProfileData(props.userData._id)}
                             >
                                 {props.userData.login}
                             </div>

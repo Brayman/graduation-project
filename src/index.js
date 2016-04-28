@@ -24,7 +24,7 @@ ReactDOM.render(
                 <Route path="settings" component={Settings}/>
                 <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>
-                <Route path=":user" component={Profile} onChange={e => store.dispatch(getProfileData(e))}/>
+                <Route path=":user" component={Profile}/>
             </Route>
         </Router>
     </Provider>,

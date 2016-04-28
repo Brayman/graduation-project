@@ -24,7 +24,6 @@
   border-radius: 5px;
 }
 header.card-header {
-  padding: 0px 20px;
   padding: 5px 20px;
   border-bottom: solid 1px #edeeee;
 }
@@ -37,24 +36,31 @@ header.card-header {
   padding: 5px;
 }
 .card-info1 {
-  flex-basis: 80%;
+  flex-grow: 1;
   padding: 5px;
-  border-right: solid 1px #edeeee;
+  border: solid 1px #edeeee;
+  border-left: none;
+  margin: 0px -1px -1px 0;
+  flex-basis: 150px;
 }
 .card-info {
-  flex-shrink: 1;
+  margin: -1px 0px;
   flex-grow: 1;
-  flex-basis: 150px;
-  padding: 5px;
-  border-right: solid 1px #edeeee;
+  display: flex;
+  flex-direction: row;
+  border: solid 1px #edeeee;
+  border-top: none;
+  border-left: none;
+  flex-wrap: wrap;
 }
 img.card-image {
-  max-height: 150px;
-  max-width: 150px;
+  max-height: 120px;
+  max-width: 120px;
 }
 button.card-button {
-  width: 150px;
+  width: 120px;
   margin: 5px 5px 10px 5px;
+  padding: 9px;
 }
 @font-face{
     font-family: Ubuntu;
@@ -84,11 +90,12 @@ button.card-button {
   max-width: 600px;
   margin: 10px;
 }
-.RowFlexBetween{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
+.RowFlexBetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+}
 @keyframes openSignUp{
   from{
     transform: translateY(-120px);

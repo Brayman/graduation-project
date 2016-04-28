@@ -1,8 +1,16 @@
-// const url = 'https://gentle-meadow-48046.herokuapp.com/';
-const url = 'http://10.26.11.88/';
+const url = 'https://gentle-meadow-48046.herokuapp.com/';
+//const url = 'http://10.26.11.88/';
 import {browserHistory} from 'react-router';
 import fetch from 'isomorphic-fetch';
 
+export function routeAction(actions, url, promise) {
+    return {
+        type: 'ROUTING',
+        actions,
+        url,
+        promise
+    };
+}
 export function requestAction(actions, promise) {
     return {
         type: 'REQUEST',
@@ -28,13 +36,13 @@ export function login(data) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], loginReq(data));
 }
 export function getProfileData(user) {
-    return requestAction(['LOAD_USER', 'LOAD_USER_SUCCESS', 'LOAD_USER_FAILURE'], loadProfile(user));
+    return routeAction(['OPEN_PROFILE', 'LOAD_PROFILE_SUCCESS', 'LOAD_PROFILE_FAILURE'], `/${user}`, loadProfile(user));
 }
 export function InitialUser(user) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], initialUser(user));
 }
 export function saveChanges(changes) {
-    return requestAction(['SAVE_USER', 'SAVE_USER_SUCCESS', 'SAVE_USER_FAILURE'], newChanges(changes));
+    return requestAction(['SAVE_SETTINGS', 'SAVE_SETTINGS_SUCCESS', 'SAVE_SETTINGS_FAILURE'], newChanges(changes));
 }
 export function signout() {
     return requestAction(['SIGNOUT', 'SIGNOUT_SUCCESS', 'SIGNOUT_FAILURE'], signoutReq());
@@ -49,7 +57,6 @@ export function search(params) {
 function headers(data) {
     return {
         method: 'post',
-        mode: 'no-cors',
         credentials: 'include',
         headers: {
             Accept: 'application/json',
@@ -97,9 +104,15 @@ function loadProfile(user) {
 function searchReq(params) {
     return req(`${url}search${params}`);
 }
-export function openProfile(user) {
+function openProfile(user) {
     return {
         type: 'OPEN_PROFILE',
         promise: browserHistory.push(`/${user}`)
+    };
+}
+export function openSearch() {
+    return {
+        type: 'OPEN_SEARCH',
+        promise: browserHistory.push('/search')
     };
 }

@@ -7,7 +7,7 @@ const routing = store => next => action =>{
     store.dispatch({
         type: startAction
     });
-
+    browserHistory.push(action.url);
     action.promise.then(
         (data)=>{
             browserHistory.goBack();

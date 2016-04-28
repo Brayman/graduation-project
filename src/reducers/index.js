@@ -44,7 +44,7 @@ export function status(state = '', action) {
 }
 export function Profile(state = defaultState, action) {
     switch (action.type) {
-        case 'LOAD_USER_SUCCESS':
+        case 'LOAD_PROFILE_SUCCESS':
             return Object.assign({}, state, {
                 login: action.data.login,
                 picture: action.data.picture,

@@ -72,7 +72,6 @@ const Search = React.createClass({
                     <button className="BtnSearch" onClick={this.search}>
                       <i className="search icon"/>
                     </button>
-                    <HomePage/>
                   </div>
                 </div>
             </div>

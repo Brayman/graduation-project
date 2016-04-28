@@ -1,50 +1,57 @@
 import React from 'react';
 import ListInfo from './ListInfo';
-import {getPost, getCompanys} from '../actions';
+import {bindActionCreators} from 'redux';
+import * as Actions from '../actions';
 import {connect} from 'react-redux';
 var HomePage = React.createClass({
     componentWillMount() {
-        this.props.dispatch(getPost());
-        this.props.dispatch(getCompanys());
+        //this.props.actions.getPost();
+        //this.props.actions.getCompanys();
     },
 
     render: function () {
+        var actions = this.props.actions;
+        var post = this.props.posts;
         return (
           <div>
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
                 <div className="Post">
                     <h2 className="TextHome">Users</h2>
-                    <NewsColumn posts={this.props.posts}/>
+                    <div>
+                        {post.map(function (post) {
+                            return (
+                                <ListInfo key={post._id} data={post} action={action => actions.getProfileData(action)}/>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
           </div>
         );
     }
 });
-var NewsColumn = React.createClass({
+var NewsColumnn = React.createClass({
     render: function () {
-        var post = this.props.posts;
         return (
-            <div>
-                {post.map(function (post) {
-                    return (
-                        <ListInfo key={post._id} data={post}/>
-                    );
-                })}
-            </div>
+            <p></p>
         );
     }
 });
 function ratingSort(a, b) {
-  return b.rating - a.rating;
+    return b.rating - a.rating;
 }
-export default connect(
-    (state)=> {
-        return {
-            status: state.status,
-            companys: state.companys,
-            posts: state.posts
-        };
-    }
-)(HomePage);
+function states(state) {
+    return {
+        status: state.status,
+        companys: state.companys,
+        posts: state.posts
+    };
+}
+
+function actions(dispatch) {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    };
+}
+export default connect(states, actions)(HomePage);
