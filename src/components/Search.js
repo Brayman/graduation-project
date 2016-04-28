@@ -2,6 +2,8 @@ import React from 'react';
 import {search} from '../actions';
 import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
+import HomePage from './HomePage';
+import '../../css/search.css';
 
 const Search = React.createClass({
     search() {
@@ -27,7 +29,7 @@ const Search = React.createClass({
     render() {
         return (
             <div className="RowFlex JCC">
-                <div className="item3p BorderRight">
+                <div className="item2 BorderRight">
                   <h2 className="BorderBottom h2">Критерии поиска </h2>
                   <h4 className="h4SC">Теги</h4>
                   <div className="SearchChet">
@@ -63,12 +65,13 @@ const Search = React.createClass({
                   <h4 className="h4S">Местоположение</h4>
                   <input className="SI" type="text"/>
                 </div>
-                <div className="item2p">
+                <div className="item1">
                   <div className="BorderBottom">
                     <input className="InputSearch" type="text" ref='text'/>
                     <button className="BtnSearch" onClick={this.search}>
                       <i className="search icon"/>
                     </button>
+                    <HomePage/>
                   </div>
                 </div>
             </div>

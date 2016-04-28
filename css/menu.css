@@ -7,19 +7,11 @@
   margin: 0em;
   padding: 0em;
 }
-.Van{
-  position: fixed;
-  left: 0; bottom: 0; /* Левый нижний угол */
-  background: #37474f;
-  color: #fff;
-  width: 100%;
-  height: 65px;
-}
 .Menu{
   text-transform: uppercase;
   clear: both;
-  margin: 0em;
-  padding: 0em;
+  margin: 0px;
+  padding: 0px;
   height: 65px;
   background-color: #37474f;
   color: #ffffff;
@@ -57,349 +49,37 @@
 .MenuRightBtn:hover{
   background: #5c6bc0;
 }
+.footer {
+  background-color: #37474f;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 2px;
+  min-width: 450px;
+}
+ .FooterButton{
+   margin:0px;
+   padding:14px 10px;
+   font-size: 15px;
+   cursor: pointer;
+   -moz-user-select: -moz-none;
+   -o-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   text-transform: uppercase;
+ }
+ .FooterButton:hover{
+   background: #edeeee;
+   color: #37474f;
+ }
+ .FooterButtonPosition{
+   display: flex;
+   justify-content: center;
+ }
 .RowFlex{
   width: 100%;
   flex-direction:row;
   justify-content:space-around;
-  flex-wrap:wrap;
-  display: flex;
-}
-.SignInTextRight{
-  text-align: center;
-  margin: 10px 0px;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  font-size: 20px;
-  cursor: default;
-}
-.SignInTextDisription{
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 10px;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-.SignInTextCompany{
-  text-align: center;
-  font-size: 67px;
-  margin: 100px 0px 50px 0px;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-.SignBtton{
-  padding: 15px 20px;
-  margin: 20px 0px 100px 160px;
-  cursor: pointer;
-  outline: none;
-  font-size: 17px;
-  border-radius: 5px;
-  border: solid 2px;
-}
-.SignInput{
-  width: 400px;
-  font-size: 20px;
-  padding:10px 14px;
-  border:solid 1px #37474F;
-  border-radius: 3px;
-  background-color: #ffffff;
-}
-.SignColore{
-  padding: 80px 0px;
-  background: #5C6BC0;
-}
-.SignInButton{
-  background-color: #37474F;
-  border-color: #37474F;
-  color: #ffffff;
-}
-.SignUpButton{
-  background-color: #ffffff;
-  border-color: #37474F;
-  color:#37474F;
-}
-.SignUpButton:hover{
-  background-color: #37474F;
-  border-color: #37474F;
-  color:#ffffff;
-  opacity: 1;
-}
-.SignInButton:hover{
-  background-color: #ffffff;
-  border-color: #37474F;
-  color: #37474F;
-  opacity: 1;
-}
-.PanelInfo{
-  font-size: 18px;
-  background: #4DB6AC;
-}
-.Welcome{
-  padding: 40px 0px;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-.ImgInfo{
-  margin: 0px 105px;
-  background-color: #FFFFFF;
-  padding: 10px;
-  border-radius: 50%;
-}
-.BlockInfo{
-  width: 280px;
-  height: 220px;
-  padding: 40px 0px;
-  margin: 60px 0px;
-  background-color: #D7D7D7;
-}
-.TextInfoColor{
-  margin: 10px 0px;
-  color:#478189;
-}
-.PaddingSignIn{
-  padding: 100px 0px;
-}
-.MenuAvatar{
-  margin:12.5px 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  object-fit: cover;
-  vertical-align: middle;
-}
-.MenuName{
-  text-transform: none;
-  text-decoration: none;
-  font-size: 20px;
-}
-a.ManuName{
-  color: #5c6bc0;
-  outline: none;
-}
-a.MenuName:active,a.MenuName:focus{
-  color: #37474F;
-}
-.MenuButtonSignIn{
-  margin: 12.5px 10px 12.5px 30px;
-  padding: 10px;
-  cursor: pointer;
-  background: #5c6bc0;
-  color:#ffffff;
-  border:solid 2px #5c6bc0;
-}
-.MenuButtonSignIn:hover{
-  opacity: 0.6;
-}
-.MenuSignIn{
-  display: flex;
-}
-.MenuTextName{
-  margin-left: 30px;
-}
-.InputCheckBox{
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  padding: 0px;
-  margin:0px 5px 0px 0px;
-}
-.InputCheckBoxText{
-  text-align: center;
-  font-size: 17px;
-  color:#E9E9E9;
-  margin-left: 20px;
-}
-
-
-.TextAbout{
-  margin-top: -1px;
-  padding: 120px 0px 10px;
-  font-size: 40px;
-  width: 100%;
-  text-align: center;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-div.TextHistory:before, div.TextHistory:after {
-    content: "";
-    width: 70px;
-    height: 6px;
-    border-top: 1px solid #ffffff;
-    display: inline-block;
-    margin: 0 10px;
-}
-.TextHistory{
-  width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-.TextHistoryDescription{
-    letter-spacing: 0.5px;
-    max-width: 600px;
-    margin: 30px auto;
-    line-height: 24px;
-    font-size: 15px;
-    padding: 0px 35px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-}
-.ColorAbout{
-  color:#ffffff;
-  background-color: #37474f;
-  margin-top: -2px;
-}
-.TextTeam{
-    margin: 30px auto 0px;
-    width: 200px;
-    text-align: center;
-    padding: 10px 0px;
-    font-size: 22px;
-    border-bottom: 1px solid #CECECE;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-}
-.PanelAbout{
-  text-align: center;
-  margin: 30px 0px;
-  flex-wrap: wrap;
-}
-.ButtonAbout{
-  padding: 20px;
-  width: 220px;
-  margin: 5px 10px;
-  font-size: 20px;
-  border: solid 0.5px #37474F;
-  background: none;
-  cursor: pointer;
-  color: #37474F;
-  outline:none;
-}
-.ButtonAbout:hover,.ButtonAbout:focus{
-  background: #37474F;
-  color:#ffffff;
-}
-.AboutWorker{
-  text-align:center;
-  margin: 50px 0px 120px;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-}
-.ImgAbout{
-  border-radius: 50%;
-  margin: 12px 0px 5px;
-  object-fit: cover;
-}
-.AboutMargin{
-  margin: 20px 60px;
-}
-.SelectionSign{
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
   display: flex;
-  z-index: 1;
-}
-.ButtonSelection{
-  width: 100%;
-  height: 70px;
-  font-size: 30px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  z-index: 2;
-  border: solid 1px #37474F;
-  color: #37474F;
-  margin: 5px;
-}
-.ButtonSelection:hover{
-  border: solid 1px #37474F;
-  background: #37474F;
-  color: #ffffff;
-}
-.BlockSelectionSign{
-  display:flex;
-  width: 99%;
-}
-.InputSearch{
-  width: 80%;
-  padding: 8px;
-  border-radius: 5px 0px 0px 5px;
-  border: solid 1px #37474F;
-  margin:15px 0px;
-}
-.BtnSearch{
-  border-radius: 0px 5px 5px 0px;
-  border: solid 1px #37474F;
-  padding: 8px;
-}
-.JCC{
-  justify-content: center;
-}
-.BorderBottom{
-  border-bottom: solid 1px #edeeee;
-}
-.BorderRight{
-  border-right: solid 1px #edeeee;
-}
-.SearchChet{
-  padding: 15px 0px;
-}
-.SD{
-  margin-left: 75px;
-  font-size: 18px;
-}
-.h4S{
-  text-align: center;
-  margin-top: 10px;
-}
-.h4SC{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: -10px;
-}
-.h2{
-  margin:42px 0px 21px;
-}
-.SI{
-  margin: 5px;
 }

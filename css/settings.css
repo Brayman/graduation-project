@@ -1,0 +1,185 @@
+.item2s{
+    flex-grow: 2;
+    order: 1;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 593px;
+    flex-grow: 2;
+    background: #D7D7D7;
+    height: auto;
+    margin: 7px 7px 10px 8px;
+}
+.item1s {
+    flex-grow: 1;
+    order: 0;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex-basis: 400px;
+    flex-grow: 1;
+    margin: 7px 8px 10px 7px;
+}
+.SettingsInfoText{
+    text-align: center;
+    padding: 10px;
+    background-color: #5C6BC0;
+    color: #ffffff;
+    font-size: 21px;
+    cursor: default;
+}
+.SettingsExpander{
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size:17px;
+    background: #D7D7D7;
+}
+.SettingsExpander:hover{
+    background: #4CAF50;
+}
+.SettingsInput{
+    padding: 5px 10px;
+    font-size: 18px;
+    margin: 5px 0px 0px 20px;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px #A9A9A9;
+    width: 83%;
+}
+.SettingsInput:focus{
+    border: solid 1px #4CAF50;
+}
+.SettingTextInput{
+    padding: 15px 0px 5px 50px;
+}
+.SettingUpdate{
+    border: none;
+    padding: 7px 10px;
+    font-size: 17px;
+    background: #1abc9c;
+    color: #ffffff;
+    margin: 30px 0px 15px 20px;
+    cursor: pointer;
+    outline: none;
+}
+.SettingUpdate:hover{
+    opacity: 0.6;
+}
+.SettingDontKnow{
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 14px;
+    background: none;
+    outline: none;
+    margin-left: 70px;
+    color: #000;
+}
+.SettingDontKnow:hover{
+    color:#FF5722;
+    background: none;
+}
+
+.SettingContent {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:nowrap;
+    margin: 10px;
+}
+.SettingName{
+    text-align: center;
+    margin:5px 0px 30px 0px;
+    color:#fff;
+  }
+.GreenBtn{
+  background-color: #74C658;
+  border: solid 2px #74C658;
+}
+.SettingConteiner{
+    display: flex;
+}
+.SettingBtn{
+    border:solid 2px #1abc9c;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #1abc9c;
+    padding: 5px 20px;
+    font-size: 1em;
+    margin: 46px 0px 10px 355px;
+    color: #000000;
+}
+.SettingInput{
+    margin: 0em 0.8em 0.8em 0em;
+    padding: 0.5em;
+    font-size: 0.8em;
+    width: 32.4em;
+    border-radius: 5px;
+    background-color: #E9E9E9;
+}
+.SettingTextarea{
+    margin: 0em 0.8em -40px 0em;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 32em;
+    height: 5em;
+    border-radius: 5px;
+    border: 2px inset;
+    resize: none;
+    background-color: #E9E9E9;
+}
+.SettingTextarea:focus{
+    outline:none;
+    border: 2px solid #1abc9c;
+}
+.SettingTextarea:hover{
+    outline:none;
+}
+.SettingBtn:hover{
+    border:solid 2px #000000;
+    background-color: #ffffff;
+}
+.SettingBtn:focus{
+    border:solid 2px #1abc9c;
+    background-color: #1abc9c;
+    outline: none;
+}
+.SettingBtn:active{
+    border:solid 2px #000000;
+    background-color: #ffffff;
+}
+.SettingInput:active{
+    color: #ffffff;
+}
+.SettingInput:focus{
+    outline:none;
+    border: 2px solid #1abc9c;
+}
+.SettingImg{
+    width:397px;
+    height:397px;
+    border-radius: 10px;
+    margin: 5px 30px;
+}
+.SettingImgBtn {
+    position: relative;
+    overflow: hidden;
+    width: 35em;
+    height: 17px;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 8px 4px;
+    text-align: center;
+    margin: 5px 0px 10px 0px;
+    font-size: 0.8em;
+    border: 2px inset;
+    background-color: #E9E9E9;
+}
+.TextDataTime{
+  font-size: 12px;
+  margin: 2px 15px;
+  color: gray;
+}
+.text{
+  margin-bottom: 6px;
+}

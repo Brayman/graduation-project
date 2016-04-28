@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {saveChanges} from '../actions';
+import '../../css/settings.css';
 
 var Settings = React.createClass({
     getInitialState: function () {

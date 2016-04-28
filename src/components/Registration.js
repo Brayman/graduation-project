@@ -1,6 +1,7 @@
 var React = require('react');
 import {connect} from 'react-redux';
 import {registration} from '../actions';
+import '../../css/registration.css';
 
 var Registration = React.createClass({
     render: function () {

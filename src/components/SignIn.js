@@ -1,10 +1,8 @@
-/**
- * Created by Artsiom_Rakitski on 4/6/2016.
- */
 import React from 'react';
 import {login} from '../actions';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+import '../../css/signin.css';
 var SignIn = React.createClass({
     getInitialState: function () {
         return {settings: {}, panel: 'employee', company: false};

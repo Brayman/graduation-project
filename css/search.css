@@ -1,0 +1,54 @@
+.InputSearch{
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px 0px 0px 5px;
+  border: solid 1px #37474F;
+  border-right: none;
+  margin:15px 0px 15px 15px;
+}
+.InputSearch:focus {
+  border: solid 1px #edeeee;
+  border-right: none;
+}
+.BtnSearch{
+  border-radius: 0px 5px 5px 0px;
+  border: solid 1px #37474F;
+  padding: 8px;
+}
+.JCC{
+  justify-content: center;
+}
+.BorderBottom{
+  border-bottom: solid 1px #edeeee;
+}
+.BorderRight{
+  border-right: solid 1px #edeeee;
+}
+.SearchChet{
+  padding: 15px 0px;
+}
+.SD{
+  margin-left: 75px;
+  font-size: 18px;
+}
+.h4S{
+  text-align: center;
+  margin-top: 10px;
+}
+.h4SC{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+.h2{
+  margin:42px 0px 21px;
+}
+.SI{
+  margin: 5px;
+}
+.item1{
+flex-basis:650px;
+}
+.item2{
+flex-basis:auto;
+}

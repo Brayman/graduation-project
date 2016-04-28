@@ -1,0 +1,105 @@
+.TextAbout{
+  margin-top: -1px;
+  padding: 120px 0px 10px;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+div.TextHistory:before, div.TextHistory:after {
+    content: "";
+    width: 70px;
+    height: 6px;
+    border-top: 1px solid #ffffff;
+    display: inline-block;
+    margin: 0 10px;
+}
+.TextHistory{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.TextHistoryDescription{
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 24px;
+    font-size: 15px;
+    padding: 0px 35px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.ColorAbout{
+  color:#ffffff;
+  background-color: #37474f;
+  margin-top: -2px;
+}
+.TextTeam{
+    margin: 30px auto 0px;
+    width: 200px;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 22px;
+    border-bottom: 1px solid #CECECE;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.PanelAbout{
+  text-align: center;
+  margin: 30px 0px;
+  flex-wrap: wrap;
+}
+.ButtonAbout{
+  padding: 20px;
+  width: 220px;
+  margin: 5px 10px;
+  font-size: 20px;
+  border: solid 0.5px #37474F;
+  background: none;
+  cursor: pointer;
+  color: #37474F;
+  outline:none;
+}
+.ButtonAbout:hover,.ButtonAbout:focus{
+  background: #37474F;
+  color:#ffffff;
+}
+.AboutWorker{
+  text-align:center;
+  margin: 50px 0px 120px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ImgAbout{
+  border-radius: 50%;
+  margin: 12px 0px 5px;
+  object-fit: cover;
+}
+.AboutMargin{
+  margin: 20px 60px;
+}
