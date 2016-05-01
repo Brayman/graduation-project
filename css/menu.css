@@ -103,10 +103,10 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.RowFlex{
-  width: 100%;
-  flex-direction:row;
-  justify-content:space-around;
-  flex-wrap: wrap;
-  display: flex;
-}
+/*.RowFlex{*/
+  /*width: 100%;*/
+  /*flex-direction:row;*/
+  /*justify-content:space-around;*/
+  /*flex-wrap: wrap;*/
+  /*display: flex;*/
+/*}*/

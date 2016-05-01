@@ -3,6 +3,7 @@
   height: 65px;
   margin: 0em;
   padding: 0em;
+  width: auto;
 }
 .app{
     display: flex;
@@ -31,8 +32,8 @@
     display: flex;
 }
 .MenuLeftBtn{
-  margin: 18px 0px 0px 0px;
-  font-size: 20px;
+  margin: 16px 0px 0px 0px;
+  font-size: 30px;
   cursor: pointer;
   -moz-user-select: -moz-none;
   -o-user-select: none;
@@ -45,7 +46,7 @@
 }
 .MenuRightBtn{
   margin: 20px 0px 0px 0px;
-  padding: 14px 1px;
+  padding: 14px 5px;
   font-size: 15px;
   cursor: pointer;
   -moz-user-select: -moz-none;

@@ -36,7 +36,7 @@ export function login(data) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], loginReq(data));
 }
 export function getProfileData(user) {
-    return routeAction(['OPEN_PROFILE', 'LOAD_PROFILE_SUCCESS', 'LOAD_PROFILE_FAILURE'], `/${user}`, loadProfile(user));
+    return requestAction(['OPEN_PROFILE', 'LOAD_PROFILE_SUCCESS', 'LOAD_PROFILE_FAILURE'], loadProfile(user));
 }
 export function InitialUser(user) {
     return requestAction(['LOGIN', 'LOGIN_SUCCESS', 'LOGIN_FAILURE'], initialUser(user));
@@ -104,15 +104,15 @@ function loadProfile(user) {
 function searchReq(params) {
     return req(`${url}search${params}`);
 }
-function openProfile(user) {
+export function openProfile(user) {
+    browserHistory.push(`/${user}`);
     return {
-        type: 'OPEN_PROFILE',
-        promise: browserHistory.push(`/${user}`)
+        type: 'OPEN_PROFILE'
     };
 }
 export function openSearch() {
+    browserHistory.push('/search');
     return {
-        type: 'OPEN_SEARCH',
-        promise: browserHistory.push('/search')
+        type: 'OPEN_SEARCH'
     };
 }

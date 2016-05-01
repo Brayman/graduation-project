@@ -21,7 +21,7 @@ var HomePage = React.createClass({
                     <div>
                         {post.map(function (post) {
                             return (
-                                <ListInfo key={post._id} data={post} action={action => actions.getProfileData(action)}/>
+                                <ListInfo key={post._id} data={post} action={action => actions.openProfile(action)}/>
                             );
                         })}
                     </div>

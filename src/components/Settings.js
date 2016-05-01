@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {saveChanges} from '../actions';
+import {browserHistory} from 'react-router';
 import '../../css/settings.css';
 
 var Settings = React.createClass({
@@ -87,75 +88,6 @@ var Settings = React.createClass({
     render: function () {
         let panel = function (a, e, Save, state) {
             switch (a) {
-                case 'profile':
-                    return (
-                        <div>
-                            <div className="SettingTextInput">Profile pictures</div>
-                            <div>
-                                <input className="SettingsInput"
-                                       name="picture"
-                                       value={state.picture}
-                                       type="text"
-                                       placeholder="write URL on image..."
-                                       onChange={e}
-                                /></div>
-                            <div className="SettingTextInput">Name</div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.name}
-                                       name="name"
-                                       type="text"
-                                       placeholder="Write..."
-                                       onChange={e}
-                                />
-                            </div>
-                            <div className="SettingTextInput">Sex</div>
-                            <div>
-                              <input className="RadioButton" type="radio" id="female" name="sex"/>
-                              female
-                              <input className="RadioButton" type="radio" id="male" name="sex"/>
-                              male
-                            </div>
-                            <div className="SettingTextInput">Company</div>
-                            <div><input className="SettingsInput"
-                                        type="text"
-                                        placeholder="Write..."
-                                        onChange={e}
-                            /></div>
-                            <div className="SettingTextInput">Location</div>
-                            <div><input className="SettingsInput"
-                                        value={state.location}
-                                        name="location"
-                                        type="text"
-                                        placeholder="City"
-                                        onChange={e}
-                            /></div>
-                            <div className="SettingTextInput">Birthdate</div>
-                            <div>
-                                <input className="SettingsInput"
-                                       type="date"
-                                       placeholder="Write..."
-                                />
-                            </div>
-                            <div className="SettingTextInput">about</div>
-                            <div>
-                                <textarea className="SettingsInput"
-                                          value={state.description}
-                                          type="text"
-                                          name="description"
-                                          placeholder="Write..."
-                                          onChange={e}
-                                />
-                            </div>
-                            <div>
-                                <button className="SettingUpdate"
-                                         onClick={Save}
-                                >
-                                    Update profile
-                                </button>
-                            </div>
-                        </div>
-                    );
                 case 'contacts':
                     return (
                           <div>
@@ -278,14 +210,19 @@ var Settings = React.createClass({
             <div className="RowFlexBetween  ">
                 <div className="LeftPanelSetting item1s">
                     <div className="SettingsInfoText">Personal Settings</div>
-                    <div className="SettingsExpander" id="profile" onClick={this.Vibor}>profile</div>
+                    <div className="SettingsExpander"
+                         id="profile"
+                         onClick={() => browserHistory.push('settings/profile')}
+                    >
+                        profile
+                    </div>
                     <div className="SettingsExpander" id="contacts" onClick={this.Vibor}>contacts</div>
                     <div className="SettingsExpander" id="account" onClick={this.Vibor}>account</div>
                     <div className="SettingsExpander" id="mail" onClick={this.Vibor}>mail</div>
                 </div>
                 <div className="RightPanelSetting item2s">
                     <div className="SettingsInfoText">Setting</div>
-                    {panel(this.state.panel, this.NewValue, this.Save, this.state.settings)}
+                    {this.props.children}
                 </div>
             </div>
         );
