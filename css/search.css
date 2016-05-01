@@ -6,6 +6,10 @@
   border-right: none;
   margin:15px 0px 15px 15px;
 }
+.SearchBody {
+    background-color: #FAFAFA;
+    height: 100%;
+}
 .InputSearch:focus {
   border: solid 1px #edeeee;
   border-right: none;
@@ -17,6 +21,7 @@
 }
 .JCC{
   justify-content: center;
+  background-color: white;
 }
 .BorderBottom{
   border-bottom: solid 1px #edeeee;

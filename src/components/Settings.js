@@ -88,77 +88,6 @@ var Settings = React.createClass({
     render: function () {
         let panel = function (a, e, Save, state) {
             switch (a) {
-                case 'contacts':
-                    return (
-                          <div>
-                            <div className="SettingTextInput">
-                                Mail
-                            </div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.contacts.mail}
-                                       type="mail"
-                                       name="mail"
-                                       placeholder="Write..."
-                                       onChange={e}/>
-                            </div>
-                            <div className="SettingTextInput">
-                                Phone
-                            </div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.contacts.phone}
-                                       name="phone"
-                                       type="text"
-                                       placeholder="Write..."
-                                       onChange={e}
-                                />
-                            </div>
-                            <div className="SettingTextInput">
-                                Twitter
-                            </div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.contacts.twitter}
-                                       name="twitter"
-                                       type="text"
-                                       placeholder="Write..."
-                                       onChange={e}
-                                />
-                            </div>
-                            <div className="SettingTextInput">
-                                VK
-                            </div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.contacts.vk}
-                                       name="vk"
-                                       type="text"
-                                       placeholder="Write..."
-                                       onChange={e}
-                                />
-                            </div>
-                            <div className="SettingTextInput">
-                                Facebook
-                            </div>
-                            <div>
-                                <input className="SettingsInput"
-                                       value={state.contacts.facebook}
-                                       name="facebook"
-                                       type="text"
-                                       placeholder="Write..."
-                                       onChange={e}
-                                />
-                            </div>
-                            <div>
-                                <button className="SettingUpdate"
-                                        onClick={Save}
-                                >
-                                    Update contacts
-                                </button>
-                            </div>
-                          </div>
-                    );
                 case 'account':
                     return (
                         <div>
@@ -212,11 +141,14 @@ var Settings = React.createClass({
                     <div className="SettingsInfoText">Personal Settings</div>
                     <div className="SettingsExpander"
                          id="profile"
-                         onClick={() => browserHistory.push('settings/profile')}
+                         onClick={() => browserHistory.push('/settings/profile')}
                     >
                         profile
                     </div>
-                    <div className="SettingsExpander" id="contacts" onClick={this.Vibor}>contacts</div>
+                    <div className="SettingsExpander"
+                         id="contacts"
+                         onClick={() => browserHistory.push('/settings/contacts')}
+                    >contacts</div>
                     <div className="SettingsExpander" id="account" onClick={this.Vibor}>account</div>
                     <div className="SettingsExpander" id="mail" onClick={this.Vibor}>mail</div>
                 </div>

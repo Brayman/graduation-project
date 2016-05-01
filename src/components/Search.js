@@ -2,7 +2,7 @@ import React from 'react';
 import {search} from '../actions';
 import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
-import HomePage from './HomePage';
+import List from './ListInfo';
 import '../../css/search.css';
 
 const Search = React.createClass({
@@ -67,12 +67,15 @@ const Search = React.createClass({
                   <input className="SI" type="text"/>
                 </div>
                 <div className="item1">
-                  <div className="BorderBottom">
-                    <input className="InputSearch" type="text" ref='text'/>
-                    <button className="BtnSearch" onClick={this.search}>
-                      <i className="search icon"/>
-                    </button>
-                  </div>
+                    <div className="BorderBottom">
+                        <input className="InputSearch" type="text" ref='text'/>
+                        <button className="BtnSearch" onClick={this.search}>
+                            <i className="search icon"/>
+                        </button>
+                    </div>
+                    <div className="SearchBody">
+                        <List data={this.props.userData}/>
+                    </div>
                 </div>
             </div>
 

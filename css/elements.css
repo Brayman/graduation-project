@@ -39,7 +39,8 @@ input {
   margin: 3px 0px;
 }
 input:focus {
-  background-color: white;
+    color: black;
+    background-color: white;
 }
 textarea {
   color: #6F7276;

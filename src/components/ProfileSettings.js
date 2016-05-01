@@ -1,7 +1,9 @@
 import React from 'react';
 var Profile = React.createClass({
+    getInitialState() {
+        return this.props.route.dop.getState()
+    },
     componentWillMount() {
-        this.setState(this.props.route.dop.getState());
     },
     NewValue: function (event) {
         switch (event.target.name) {

@@ -11,6 +11,7 @@ import SignIn from './components/SignIn';
 import Settings from './components/Settings';
 import Search from './components/Search';
 import SetProf from './components/ProfileSettings';
+import SetCont from './components/ProfileContacts';
 import store from './state';
 import About from './components/About';
 
@@ -24,6 +25,7 @@ ReactDOM.render(
                 <Route path="signin" component={SignIn}/>
                 <Route path="settings" component={Settings}>
                        <Route path="profile" component={SetProf} dop={store}/>
+                       <Route path="contacts" component={SetCont} dop={store}/>
                 </Route>
                 <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>

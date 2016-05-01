@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {Link, browserHistory} from 'react-router';
 import '../../css/header-footer.css';
-var Header = React.createClass({
+var App = React.createClass({
     getInitialState: function () {
         return {open: false};
     },
@@ -16,10 +16,21 @@ var Header = React.createClass({
         this.props.actions.signout();
     },
     goTo: function () {
-        browserHistory.push(`/${this.props.userData._id}`);
+
         console.log(this.props);
     },
     render: function () {
+        return (
+              <div className='app'>
+                  <Header userData={this.props.userData}/>
+                  {this.props.children}
+                  <Footer/>
+            </div>
+        );
+    }
+});
+const Header = React.createClass({
+    render() {
         let panel = function (Click, props, goTo) {
             if (props.userData.login == null) {
                 return (
@@ -41,7 +52,7 @@ var Header = React.createClass({
                 return (
                     <div className="LeftBtnPanel">
                         <div className="MenuRightBtn"
-                                 onClick={() => props.actions.openSearch()}
+                             onClick={() => browserHistory.push('/search')}
                         >
                             Search
                         </div>
@@ -55,46 +66,49 @@ var Header = React.createClass({
                             signout
                         </div>
 
-                            <div className="MenuRightBtn"
-                                 onClick={() => props.actions.getProfileData(props.userData._id)}
-                            >
-                                {props.userData.login}
-                            </div>
+                        <div className="MenuRightBtn"
+                             onClick={() => browserHistory.push(`/${props.userData._id}`)}
+                        >
+                            {props.userData.login}
+                        </div>
 
                     </div>
                 );
             }
         };
-        return (
-              <div className='app'>
-                <div className="Nav">
-                    <div className="Menu RowFlex">
-                        <Link to="/">
-                            <div className="MenuLeftBtn MenuBtn">JobBox</div>
-                        </Link>
+        return(
+            <div className="Nav">
+                <div className="Menu RowFlex">
+                    <Link to="/">
+                        <div className="MenuLeftBtn MenuBtn">JobBox</div>
+                    </Link>
 
-                        {panel(this.Click, this.props, this.goTo)}
-                    </div>
-                </div>
-                  {this.props.children}
-                  <div className="footer">
-                    <div className="FooterButtonPosition">
-                      <Link to="/about">
-                        <div className="FooterButton">
-                          About
-                        </div>
-                      </Link>
-                      <div className="FooterButton">
-                        Support
-                      </div>
-                      <div className="FooterButton">
-                        Version 0.1.1
-                      </div>
-                    </div>
-                    <div>&copy; 220V</div>
+                    {panel(this.Click, this.props, this.goTo)}
                 </div>
             </div>
-        );
+        )
+    }
+});
+const Footer = React.createClass({
+    render() {
+        return(
+            <div className="footer">
+                <div className="FooterButtonPosition">
+                    <Link to="/about">
+                        <div className="FooterButton">
+                            About
+                        </div>
+                    </Link>
+                    <div className="FooterButton">
+                        Support
+                    </div>
+                    <div className="FooterButton">
+                        Version 0.1.1
+                    </div>
+                </div>
+                <div>&copy; 220V</div>
+            </div>
+        )
     }
 });
 function states(state) {
@@ -108,4 +122,4 @@ function actions(dispatch) {
         actions: bindActionCreators(Actions, dispatch)
     };
 }
-export default connect(states, actions)(Header);
+export default connect(states, actions)(App);
