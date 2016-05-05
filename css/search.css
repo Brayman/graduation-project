@@ -4,7 +4,7 @@
   border-radius: 5px 0px 0px 5px;
   border: solid 1px #37474F;
   border-right: none;
-  margin: 14.5px 0px 15px 15px;
+  margin: 14px 0px 15px 15px;
   vertical-align: top;
 }
 .SearchBody {
@@ -19,7 +19,7 @@
   border-radius: 0px 5px 5px 0px;
   border: solid 1px #37474F;
   padding: 8px;
-  margin: 14.5px 14.5px 15px 0px;
+  margin: 14px 14.5px 15px 0px;
 }
 .JCC{
   justify-content: center;

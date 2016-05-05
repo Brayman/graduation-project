@@ -49,6 +49,7 @@ div.TextHistory:before, div.TextHistory:after {
     cursor: default;
 }
 .ColorAbout{
+  flex-direction: column;
   color:#ffffff;
   background-color: #37474f;
   margin-top: -2px;

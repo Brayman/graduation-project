@@ -102,6 +102,25 @@ var Profile = React.createClass({
                         Update profile
                     </button>
                 </div>
+                <div className="SettingTextInput">Teg search</div>
+                <div>
+                    <select className="SettingSelect">
+                        <option>Ремонт</option>
+                        <option>Питание</option>
+                        <option>Развлечение</option>
+                        <option>Дизайн</option>
+                        <option>Продукты</option>
+                    </select>
+                </div>
+                <div className="SettingTextInput">Description tegs</div>
+                <div><input className="SettingsInput"
+                name="location" type="text" placeholder="Pleas write description (PC,clock or other)..."/>
+                </div>
+                <div>
+                    <button className="SettingUpdate">
+                        Update profile
+                    </button>
+                </div>
             </div>
         );
     }
@@ -110,4 +129,3 @@ export default Profile;
 /**
      * Created by xolod on 30.04.2016.
      */
-

@@ -37,6 +37,15 @@
 .SettingsExpander:hover{
     background: #4CAF50;
 }
+.SettingSelect{
+    padding: 5px 10px;
+    font-size: 18px;
+    margin: 5px 0px 0px 20px;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px #A9A9A9;
+    width: 86%;
+}
 .SettingsInput{
     padding: 5px 10px;
     font-size: 18px;
@@ -182,4 +191,10 @@
 }
 .text{
   margin-bottom: 6px;
+}
+.RadioButton{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 20px;
 }
