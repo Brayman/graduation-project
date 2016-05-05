@@ -3,7 +3,7 @@ import '../../css/about.css';
 var About = React.createClass({
     render: function () {
         return (
-          <div>
+          <div className="content">
             <div className="RowFlex ColorAbout">
               <div className="TextAbout">
                 About us

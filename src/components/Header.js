@@ -36,7 +36,7 @@ const Header = React.createClass({
                 return (
                     <div className="LeftBtnPanel">
                         <div className="MenuRightBtn"
-                             onClick={() => props.actions.openSearch()}
+                             onClick={() => browserHistory.push(`/search`)}
                         >
                             Search
                         </div>

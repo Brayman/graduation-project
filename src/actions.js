@@ -3,29 +3,14 @@ const url = 'https://gentle-meadow-48046.herokuapp.com/';
 import {browserHistory} from 'react-router';
 import fetch from 'isomorphic-fetch';
 
-export function routeAction(actions, url, promise) {
-    return {
-        type: 'ROUTING',
-        actions,
-        url,
-        promise
-    };
-}
 export function requestAction(actions, promise) {
     return {
         type: 'REQUEST',
         actions,
         promise
     };
-}
-export function redirectAction(actions, promise) {
-    return {
-        type: 'REQUEST',
-        actions,
-        promise
-    };
-}
 //--middleware
+}
 export function getPost() {
     return requestAction(['LOAD_POST', 'LOAD_POST_SUCCESS', 'LOAD_POST_FAILURE'], loadPost());
 }
@@ -49,9 +34,6 @@ export function signout() {
 }
 export function getCompanys() {
     return requestAction(['LOAD', 'LOAD_COMP_SUCCESS', 'LOAD_COMP_FAILURE'], loadCompanys());
-}
-export function search(params) {
-    return requestAction(['SEARCH', 'SEARCH_SUCCESS', 'SEARCH_FAILURE'], searchReq(params));
 }
 //--requests
 function headers(data) {
@@ -110,9 +92,31 @@ export function openProfile(user) {
         type: 'OPEN_PROFILE'
     };
 }
-export function openSearch() {
-    browserHistory.push('/search');
+export function setTag(tag) {
+    //return searchAction (['SET_TAG', 'SEARCH'], selectMap())
     return {
-        type: 'OPEN_SEARCH'
+        type: 'SET_TAG',
+        tag
     };
+}
+export function cancelTag(tag) {
+    //return searchAction (['SET_TAG', 'SEARCH'], selectMap())
+    return {
+        type: 'CANCEL_TAG',
+        tag
+    };
+}
+
+function searchAction(actions, promise) {
+    return {
+        type: 'SEARCH',
+        actions,
+        promise
+    };
+}
+export function search(url) {
+    return requestAction(['SEARCHING', 'RESULT', 'ERROR'], serchRequest(url));
+}
+function serchRequest(query) {
+    return req(`${url}search${query}`);
 }

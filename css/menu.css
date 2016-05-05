@@ -1,9 +1,7 @@
 .TextHome{
   text-align: center;
-  margin: 5px;
+  margin: 0px 5px 5px 5px;
 }
-
-
 .Van{
   position: fixed;
   left: 0; bottom: 0; /* Левый нижний угол */
@@ -12,8 +10,6 @@
   width: 100%;
   height: 65px;
 }
-
-
 
 .SignInTextRight{
   text-align: center;
@@ -25,6 +21,10 @@
   user-select: none;
   font-size: 20px;
   cursor: default;
+}
+.NewsColumn{
+  background-color: #FAFAFA;
+  padding: 5px;
 }
 .SignInTextDisription{
   text-align: center;

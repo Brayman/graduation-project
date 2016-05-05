@@ -24,6 +24,7 @@
 .JCC{
   justify-content: center;
   background-color: white;
+  flex-wrap: wrap;
 }
 .BorderBottom{
   border-bottom: solid 1px #edeeee;

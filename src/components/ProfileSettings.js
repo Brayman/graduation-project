@@ -1,7 +1,8 @@
 import React from 'react';
+import {saveChanges} from '../actions';
 var Profile = React.createClass({
     getInitialState() {
-        return this.props.route.dop.getState()
+        return this.props.route.dop.getState();
     },
     componentWillMount() {
     },
@@ -96,6 +97,7 @@ var Profile = React.createClass({
                 </div>
                 <div>
                     <button className="SettingUpdate"
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
                     >
                         Update profile
                     </button>

@@ -1,25 +1,16 @@
 import {browserHistory} from 'react-router';
 const routing = store => next => action =>{
-    if (action.type !== 'ROUTING') {
+    if (action.type !== 'SEARCH') {
         return next(action);
     }
     const [startAction, successAction, failAction] = action.actions;
     store.dispatch({
-        type: startAction
+        type: startAction,
+        tag: action.tag
     });
-    browserHistory.push(action.url);
-    action.promise.then(
-        (data)=>{
-            browserHistory.goBack();
-            store.dispatch({
-                type: successAction,
-                data
-            });
-        },
-        (error)=> store.dispatch({
-            type: failAction,
-            error: error
-        })
+
+    action.promise((data) =>
+        browserHistory.push(data)
     );
 };
 export default routing;

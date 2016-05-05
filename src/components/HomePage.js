@@ -3,9 +3,10 @@ import ListInfo from './ListInfo';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {connect} from 'react-redux';
+import '../../css/home.css';
 var HomePage = React.createClass({
     componentWillMount() {
-        //this.props.actions.getPost();
+        this.props.actions.getPost();
         //this.props.actions.getCompanys();
     },
 
@@ -13,7 +14,7 @@ var HomePage = React.createClass({
         var actions = this.props.actions;
         var post = this.props.posts;
         return (
-          <div>
+          <div className="content home">
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
                 <div className="Post">

@@ -86,57 +86,8 @@ var Settings = React.createClass({
         this.props.dispatch(saveChanges(this.state.settings));
     },
     render: function () {
-        let panel = function (a, e, Save, state) {
-            switch (a) {
-                case 'account':
-                    return (
-                        <div>
-                            <div className="SettingTextInput">Old password</div>
-                            <div><input className="SettingsInput"
-                                        type="password" placeholder="Write..."/></div>
-                            <div className="SettingTextInput">New password</div>
-                            <div><input className="SettingsInput"
-                                        type="password" placeholder="Write..."/></div>
-                            <div className="SettingTextInput">Confirm new password</div>
-                            <div><input className="SettingsInput"
-                                        type="password" placeholder="Write..."/></div>
-                            <div>
-                                <button className="SettingUpdate">Update password</button>
-                                <button className="SettingDontKnow">I forgot my password</button>
-                            </div>
-                        </div>
-                    );
-                case 'mail':
-                    return (
-                        <div>
-                            <div className="SettingTextInput">Show email adress?</div>
-                            <div>
-                              <input className="RadioButton" type="radio" id="Yes" name="EmailShow"/>
-                              Yes
-                              <input className="RadioButton" type="radio" id="No" name="EmailShow"/>
-                              No
-                            </div>
-                            <div className="SettingTextInput">Add email adress</div>
-                            <div><input className="SettingsInput"
-                                        type="mail"
-                                        placeholder="Write..."
-                                        name="mail"
-                                        onChange={e}
-                            /></div>
-                            <div>
-                                <button className="SettingUpdate" onClick={Save}
-                                >
-                                    Update email
-                                </button>
-                            </div>
-                        </div>
-                    );
-                default:
-                    return null;
-            }
-        };
         return (
-            <div className="RowFlexBetween  ">
+            <div className="RowFlexBetween content">
                 <div className="LeftPanelSetting item1s">
                     <div className="SettingsInfoText">Personal Settings</div>
                     <div className="SettingsExpander"
@@ -148,9 +99,15 @@ var Settings = React.createClass({
                     <div className="SettingsExpander"
                          id="contacts"
                          onClick={() => browserHistory.push('/settings/contacts')}
-                    >contacts</div>
-                    <div className="SettingsExpander" id="account" onClick={this.Vibor}>account</div>
-                    <div className="SettingsExpander" id="mail" onClick={this.Vibor}>mail</div>
+                    >
+                        contacts
+                    </div>
+                    <div className="SettingsExpander"
+                         id="account"
+                         onClick={() => browserHistory.push('/settings/account')}
+                    >
+                        account
+                    </div>
                 </div>
                 <div className="RightPanelSetting item2s">
                     <div className="SettingsInfoText">Setting</div>

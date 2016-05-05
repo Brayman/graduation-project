@@ -11,58 +11,47 @@ const cswm = applyMiddleware(sendData, routing, logger)(createStore);
 
 const store = cswm(reducer, {
     status: null,
-    userData: {
-        _id: "5719ed2fe72bf34e185f88a2",
-        birthday: "2016-04-09",
-        company: false,
-        contacts: {
-            facebook: "Braymanrun",
-            mail: "tapakah96@gmail.com",
-            phone: 8292913,
-            twitter: "@Tapakah"
-        },
-        dateRegistration: "2016-04-22T09:21:51.289Z",
-        description: "Я начинающий JavaScript разработчик.Окончил  среднюю школу, готовлюсь к поступлению в Вуз. В будущем хочу стать front-end разработчиком.",
-        location: "Brest",
-        login: "artem",
-        name: "Artem Rakitski",
-        picture: "https://pp.vk.me/c633725/v633725197/ca88/LQl_1uBEBv4.jpg"
-    },
+    userData: {},
     Profile: {
-        _id: "5719ed2fe72bf34e185f88a2",
-        birthday: "2016-04-09",
-        company: false,
+        _id: null,
+        login: null,
+        name: null,
+        type: null,
+        description: null,
         contacts: {
-            facebook: "Braymanrun",
-            mail: "tapakah96@gmail.com",
-            phone: 8292913,
-            twitter: "@Tapakah"
-        },
-        dateRegistration: "2016-04-22T09:21:51.289Z",
-        description: "Я начинающий JavaScript разработчик.Окончил  среднюю школу, готовлюсь к поступлению в Вуз. В будущем хочу стать front-end разработчиком.",
-        location: "Brest",
-        login: "artem",
-        name: "Artem Rakitski",
-        picture: "https://pp.vk.me/c633725/v633725197/ca88/LQl_1uBEBv4.jpg"
-    },
-    posts: [
-        {
-            _id: "5719ed2fe72bf34e185f88a2",
-            birthday: "2016-04-22T09:21:51.289Z",
-            company: false,
-            contacts: {
-                facebook: "Braymanrun",
-                mail: "tapakah96@gmail.com",
-                phone: 8292913,
-                twitter: "@Tapakah"
-            },
-            dateRegistration: "2016-04-22T09:21:51.289Z",
-            description: "Я начинающий JavaScript разработчик.Окончил  среднюю школу, готовлюсь к поступлению в Вуз. В будущем хочу стать front-end разработчиком.",
-            location: "Brest",
-            login: "artem",
-            name: "Artem Rakitski",
-            picture: "https://pp.vk.me/c633725/v633725197/ca88/LQl_1uBEBv4.jpg"
+            facebook: null,
+            twitter: null,
+            mail: null,
+            phone: null
         }
-    ]
+    },
+    tags: [
+        {
+            id: 1,
+            select: false,
+            tag: 'ремонт'
+        },
+        {
+            id: 2,
+            select: false,
+            tag: 'питание'
+        },
+        {
+            id: 3,
+            select: false,
+            tag: 'развлечения'
+        },
+        {
+            id: 4,
+            select: false,
+            tag: 'дизайн'
+        },
+        {
+            id: 5,
+            select: false,
+            tag: 'продукты'
+        }
+    ],
+    posts: []
 });
 export default store;

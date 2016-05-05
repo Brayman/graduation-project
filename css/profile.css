@@ -1,4 +1,7 @@
 .profile {
+    background-color: white;
+}
+.profile {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -30,7 +33,7 @@
     border-radius: 5px;
     display: flex;
 }
-.content {
+.wall {
     flex-wrap: wrap;
     flex-grow: 3;
     flex-basis: 450px;

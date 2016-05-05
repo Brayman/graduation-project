@@ -1,5 +1,5 @@
 import React from 'react';
-import {search} from '../actions';
+import {setTag, cancelTag, search} from '../actions';
 import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
 import List from './ListInfo';
@@ -7,60 +7,55 @@ import '../../css/search.css';
 
 const Search = React.createClass({
     search() {
-        this.props.dispatch(search(this.props.location.search));
+        let strings = this.props.tags.map(tag => {
+            if (tag.select === true) {
+                return `tag=${tag.tag}&`;
+            }
+        });
+        browserHistory.push(`search?${strings.join('')}`)
+        this.props.dispatch(search(`?${strings.join('')}`))
     },
     tags(e) {
-        if (!e.target.checked) {
-            return browserHistory.push('/search');
+        if (e.target.checked) {
+            return this.props.dispatch(setTag(this.props.tags[e.target.id - 1]));
         }
-        switch (e.target.id) {
-            case '1':
-                return browserHistory.push(`/search?rm=${e.target.id}`);
-            case '2':
-                return browserHistory.push(`/search?eat=${e.target.id}`);
-            case '3':
-                return browserHistory.push(`/search?fun=${e.target.id}`);
-            case '4':
-                return browserHistory.push(`/search?des=${e.target.id}`);
-            case '5':
-                return browserHistory.push(`/search?pr=${e.target.id}`);
-        }
+        return this.props.dispatch(cancelTag(this.props.tags[e.target.id - 1]));
     },
     render() {
         return (
 
-            <div className="RowFlex JCC">
+            <div className="content RowFlex JCC">
                 <div className="item2 BorderRight">
                   <h2 className="BorderBottom h2">Критерии поиска </h2>
                   <h4 className="h4SC">Теги</h4>
                   <div className="SearchChet">
                     <div className="toggle">
                       <input type="checkbox" id="1" onClick={this.tags}/>
-                      <label htmlFor="1"></label>
+                      <label htmlFor="1"/>
                     </div><span className="SD">Ремонт</span>
                   </div>
                   <div className="SearchChet">
                     <div className="toggle">
                       <input type="checkbox" id="2" onClick={this.tags}/>
-                      <label htmlFor="2"></label>
+                      <label htmlFor="2"/>
                     </div><span className="SD">Питание</span>
                   </div>
                   <div className="SearchChet">
                     <div className="toggle">
                       <input type="checkbox" id="3" onClick={this.tags}/>
-                      <label htmlFor="3"></label>
+                      <label htmlFor="3"/>
                     </div><span className="SD">Развлечения</span>
                   </div>
                   <div className="SearchChet">
                     <div className="toggle">
                       <input type="checkbox" id="4" onClick={this.tags}/>
-                      <label htmlFor="4"></label>
+                      <label htmlFor="4"/>
                     </div><span className="SD">Дизайн</span>
                   </div>
                   <div className="SearchChet BorderBottom">
                     <div className="toggle">
                       <input type="checkbox" id="5" onClick={this.tags}/>
-                      <label htmlFor="5"></label>
+                      <label htmlFor="5"/>
                     </div><span className="SD">Продукты</span>
                   </div>
                   <h4 className="h4S">Местоположение</h4>
@@ -85,7 +80,8 @@ const Search = React.createClass({
 export default connect(
     (state)=> {
         return {
-            userData: state.userData
+            userData: state.userData,
+            tags: state.tags
         };
     }
 )(Search);

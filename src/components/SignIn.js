@@ -25,7 +25,7 @@ var SignIn = React.createClass({
     },
     render: function () {
                 return (
-                  <div className="RowFlex SignColore">
+                  <div className="content signin">
                     <div className="SignUp">
                       <div className="SignInTextCompany">J O B B O X</div>
                       <div className="SignInTextDisription">Frilans service for company  and</div>
@@ -37,9 +37,7 @@ var SignIn = React.createClass({
                     <div className="SignIn">
                      <div className="PaddingSignIn">
                         <div className="SignInTextRight">USERNAME</div>
-                      <div>
                          <input className="SignInput" type="text" ref="username"/>
-                      </div>
                       <div className="SignInTextRight">PASSWORD</div>
                         <div>
                          <input className="SignInput" type="password" ref="password"/>

@@ -9,9 +9,9 @@ var Contacts = React.createClass({
         switch (event.target.name) {
             case 'mail':
                 this.setState({
-                    settings: Object.assign({}, this.state.settings,
+                    userData: Object.assign({}, this.state.userData,
                         {
-                            contacts: Object.assign(this.state.settings.contacts, {
+                            contacts: Object.assign(this.state.userData.contacts, {
                                 mail: event.target.value
                             })
                         })
@@ -19,9 +19,9 @@ var Contacts = React.createClass({
                 break;
             case 'phone':
                 this.setState({
-                    settings: Object.assign({}, this.state.settings,
+                    userData: Object.assign({}, this.state.userData,
                         {
-                            contacts: Object.assign(this.state.settings.contacts, {
+                            contacts: Object.assign(this.state.userData.contacts, {
                                 phone: event.target.value
                             })
                         })
@@ -29,9 +29,9 @@ var Contacts = React.createClass({
                 break;
             case 'twitter':
                 this.setState({
-                    settings: Object.assign({}, this.state.settings,
+                    userData: Object.assign({}, this.state.userData,
                         {
-                            contacts: Object.assign(this.state.settings.contacts, {
+                            contacts: Object.assign(this.state.userData.contacts, {
                                 twitter: event.target.value
                             })
                         })
@@ -39,9 +39,9 @@ var Contacts = React.createClass({
                 break;
             case 'vk':
                 this.setState({
-                    settings: Object.assign({}, this.state.settings,
+                    userData: Object.assign({}, this.state.userData,
                         {
-                            contacts: Object.assign(this.state.settings.contacts, {
+                            contacts: Object.assign(this.state.userData.contacts, {
                                 vk: event.target.value
                             })
                         })
@@ -49,9 +49,9 @@ var Contacts = React.createClass({
                 break;
             case 'facebook':
                 this.setState({
-                    settings: Object.assign({}, this.state.settings,
+                    userData: Object.assign({}, this.state.userData,
                         {
-                            contacts: Object.assign(this.state.settings.contacts, {
+                            contacts: Object.assign(this.state.userData.contacts, {
                                 facebook: event.target.value
                             })
                         })

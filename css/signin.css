@@ -1,3 +1,9 @@
+.signin {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 0px;
+  background: #5C6BC0;
+}
 .SignInTextRight{
   text-align: center;
   margin: 10px 0px;
@@ -47,10 +53,6 @@
   border:solid 1px #37474F;
   border-radius: 3px;
   background-color: #ffffff;
-}
-.SignColore{
-  padding: 80px 0px;
-  background: #5C6BC0;
 }
 .SignInButton{
   background-color: #37474F;

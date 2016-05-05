@@ -1,12 +1,12 @@
 var React = require('react');
 import {connect} from 'react-redux';
 import {registration} from '../actions';
-import '../../css/registration.css';
+import '../../css/signup.css';
 
 var Registration = React.createClass({
     render: function () {
         return (
-            <div className="RegBlok">
+            <div className="content RegBlok">
                 <div className="text">
                     <div className="TextRegCompany">JobBox</div>
                     <div className="TextRegInfo">Frilans info service for employee </div>

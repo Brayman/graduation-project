@@ -2,6 +2,7 @@
  * Created by Artsiom_Rakitski on 2/26/2016.
  */
 //import posts from './posts'
+import {browserHistory} from 'react-router';
 import userData from './user';
 const defaultState = {
     login: null,
@@ -9,11 +10,32 @@ const defaultState = {
     description: null,
     rating: null,
     contacts: {
+        facebook: null,
         twitter: null,
         mail: null,
         phone: null
     }
 };
+export function tags(state = [], action) {
+    switch (action.type) {
+        case 'SET_TAG':
+            return state.map(tag => {
+                if (action.tag.id === tag.id) {
+                    return Object.assign({}, action.tag, {select: true});
+                }
+                return tag;
+            });
+        case 'CANCEL_TAG':
+            return state.map(tag => {
+                if (action.tag.id === tag.id) {
+                    return Object.assign({}, action.tag, {select: false});
+                }
+                return tag;
+            });
+        default:
+            return state;
+    }
+}
 export function posts(state = [], action) {
     switch (action.type) {
         case 'LOAD_POST_SUCCESS':
@@ -45,15 +67,7 @@ export function status(state = '', action) {
 export function Profile(state = defaultState, action) {
     switch (action.type) {
         case 'LOAD_PROFILE_SUCCESS':
-            return Object.assign({}, state, {
-                login: action.data.login,
-                picture: action.data.picture,
-                name: action.data.name,
-                description: action.data.description || 'Тут пока что пусто',
-                location: action.data.location,
-                company: action.data.company,
-                contacts: action.data.contacts
-            });
+            return action.data;
         default:
             return state;
     }

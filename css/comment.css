@@ -1,4 +1,4 @@
-/*@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);*/
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 fieldset, label { margin: 0; padding: 0; }
 
 /****** Style Star Rating Widget *****/
@@ -10,6 +10,12 @@ fieldset, label { margin: 0; padding: 0; }
 }
 .TextComent{
   margin-top: 35px;
+}
+.BlockImg{
+  padding: 10px;
+  background: #ffffff;
+  margin: 0px 5px 0px 0px;
+  border:solid 1px rgba(118, 118, 118, 0.3);
 }
 .rating > input { display: none; }
 .rating > label:before {

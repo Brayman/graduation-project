@@ -1,4 +1,6 @@
-
+.content {
+  flex-grow: 1;
+}
 .Nav{
   height: 65px;
   margin: 0em;
@@ -8,7 +10,8 @@
 .app{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-width: 480px;
+   min-height: 799px;
     justify-content: space-between;
 }
 .RowFlex{
@@ -111,10 +114,12 @@ a.MenuName:active,a.MenuName:focus{
      text-transform: uppercase;
    }
    .FooterButton:hover{
-     background: #edeeee;
-     color: #37474f;
+     background: #5c6bc0;
+     color: white;
    }
    .FooterButtonPosition{
+     display: flex;
      justify-content:center;
+     margin-bottom: 5px;
    }
    

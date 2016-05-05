@@ -9,6 +9,7 @@ const defaultState = {
         type: null,
         description: null,
         contacts: {
+            facebook: null,
             twitter: null,
             mail: null,
             phone: null

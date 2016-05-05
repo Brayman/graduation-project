@@ -1,5 +1,6 @@
 var React = require('react');
 import {Link} from 'react-router';
+import '../../css/card.css';
 var ListInfo = React.createClass({
     render: function () {
         return (

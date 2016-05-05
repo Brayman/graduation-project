@@ -1,66 +1,6 @@
+
 .NameText{
   margin:15px 0px;
-}
-.BlockComent{
-  padding: 10px;
-  background: #ffffff;
-  min-width: 400px;
-  border:solid 5px rgba(118, 118, 118, 0.3);
-}
-.BlockImg{
-  padding: 10px;
-  background: #ffffff;
-  margin: 0px 5px 0px 0px;
-  border:solid 1px rgba(118, 118, 118, 0.3);
-}
-.TextComent {
-  margin-top: 31px;
-}
-.card {
-  background-color: white;
-  width: 98%;
-  margin: 1%;
-  border: solid 1px #edeeee;
-  border-radius: 5px;
-}
-header.card-header {
-  padding: 5px 20px;
-  border-bottom: solid 1px #edeeee;
-}
-.card-body {
-  display: flex;
-  justify-content: space-between;
-}
-.card-image {
-  flex-basis: 150px;
-  padding: 5px;
-}
-.card-info1 {
-  flex-grow: 1;
-  padding: 5px;
-  border: solid 1px #edeeee;
-  border-left: none;
-  margin: 0px -1px -1px 0;
-  flex-basis: 150px;
-}
-.card-info {
-  margin: -1px 0px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  border: solid 1px #edeeee;
-  border-top: none;
-  border-left: none;
-  flex-wrap: wrap;
-}
-img.card-image {
-  max-height: 120px;
-  max-width: 120px;
-}
-button.card-button {
-  width: 120px;
-  margin: 5px 5px 10px 5px;
-  padding: 9px;
 }
 @font-face{
     font-family: Ubuntu;
