@@ -25,6 +25,10 @@ var Profile = React.createClass({
                 this.setState({
                     userData: Object.assign({}, this.state.userData, {birthday: event.target.value})});
                 break;
+            case 'tag':
+                this.setState({
+                    userData: Object.assign({}, this.state.userData, {tags: event.target.value})});
+                break;
             default:
                 console.log(event.target.value);
                 break;
@@ -104,12 +108,15 @@ var Profile = React.createClass({
                 </div>
                 <div className="SettingTextInput">Teg search</div>
                 <div>
-                    <select className="SettingSelect">
-                        <option>Ремонт</option>
-                        <option>Питание</option>
-                        <option>Развлечение</option>
-                        <option>Дизайн</option>
-                        <option>Продукты</option>
+                    <select className="SettingSelect"
+                            name="tag"
+                            onChange={this.NewValue}
+                    >
+                        <option>ремонт</option>
+                        <option>питание</option>
+                        <option>развлечения</option>
+                        <option>дизайн</option>
+                        <option>продукты</option>
                     </select>
                 </div>
                 <div className="SettingTextInput">Description tegs</div>

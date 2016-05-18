@@ -26,17 +26,17 @@ ReactDOM.render(
                 <Route path="signin" component={SignIn}/>
                 <Route path="settings" component={Settings}>
                        <Route path="profile" component={SetProf} dop={store}/>
-                       <Route path="contacts"
-                              component={SetCont}
-                              dop={store}
-                              save={data => store.dispatch(saveChanges(data))}/>
+                       <Route path="contacts" component={SetCont} dop={store}/>
                        <Route path="account" component={SetAcc} dop={store}/>
                 </Route>
                 <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>
                 <Route path=":user"
                        component={Profile}
-                       onEnter={user => store.dispatch(getProfileData(user))}
+                       onEnter={({params}) => {
+                       console.log(params)
+                       store.dispatch(getProfileData(params.user));
+                       }}
                 />
             </Route>
         </Router>

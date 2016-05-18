@@ -13,7 +13,8 @@ header.card-header {
     justify-content: space-between;
 }
 .card-image {
-    flex-basis: 150px;
+    flex-grow: 0;
+    flex-basis: 130px;
     padding: 5px;
 }
 .card-info1 {

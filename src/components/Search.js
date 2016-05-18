@@ -22,6 +22,7 @@ const Search = React.createClass({
         return this.props.dispatch(cancelTag(this.props.tags[e.target.id - 1]));
     },
     render() {
+        var post = this.props.posts;
         return (
 
             <div className="content RowFlex JCC">
@@ -69,7 +70,11 @@ const Search = React.createClass({
                         </button>
                     </div>
                     <div className="SearchBody">
-                        <List data={this.props.userData}/>
+                        {post.map(function (post) {
+                            return (
+                                <List key={post._id} data={post}/>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
@@ -81,7 +86,8 @@ export default connect(
     (state)=> {
         return {
             userData: state.userData,
-            tags: state.tags
+            tags: state.tags,
+            posts: state.posts
         };
     }
 )(Search);

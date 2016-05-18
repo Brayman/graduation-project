@@ -6,13 +6,8 @@ import Comment from './Comment';
 import '../../css/profile.css';
 
 var Profile = React.createClass({
-    componentWillMount() {
-        //this.props.dispatch(getProfileData(this.props.params.user));
-        this.props.route.onEnter(this.props.params.user);
-        console.log(this.props)
-    },
-    go() {
-        this.props.dispatch(getProfileData(this.props.params.user));
+    componentDidMount() {
+        //this.props.route.onEnter(this.props.params.user);
     },
     render: function () {
 
@@ -57,7 +52,7 @@ var Profile = React.createClass({
                 <div className='profile-body'>
                     <div className='contacts'>
                         <div>
-                            {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
+                            {this.props.Profile.contacts.facebook || this.props.Profile.contacts ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
                                 <i className="facebook icon"/>
                                     {this.props.Profile.contacts.facebook}
                             </a>) : null}

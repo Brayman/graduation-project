@@ -115,7 +115,7 @@ function searchAction(actions, promise) {
     };
 }
 export function search(url) {
-    return requestAction(['SEARCHING', 'RESULT', 'ERROR'], serchRequest(url));
+    return requestAction(['SEARCHING', 'LOAD_POST_SUCCESS', 'ERROR'], serchRequest(url));
 }
 function serchRequest(query) {
     return req(`${url}search${query}`);
