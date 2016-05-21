@@ -10,6 +10,7 @@
 .SearchBody {
     background-color: #FAFAFA;
     height: 100%;
+    margin: 0px 10px;
 }
 .InputSearch:focus {
   border: solid 1px #edeeee;

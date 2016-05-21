@@ -28,10 +28,10 @@ var SignIn = React.createClass({
                   <div className="content signin">
                     <div className="SignUp">
                       <div className="SignInTextCompany">J O B B O X</div>
-                      <div className="SignInTextDisription">Frilans service for company  and</div>
-                      <div className="SignInTextDisription">employee.</div>
+                      <div className="SignInTextDisription">Фриланс сервис для компаний</div>
+                      <div className="SignInTextDisription">и работникок.</div>
                       <Link to='/signup'>
-                        <button className="SignBtton SignUpButton">Sign up</button>
+                        <button className="SignBtton SignUpButton">Регистрация</button>
                       </Link>
                     </div>
                     <div className="SignIn">
@@ -43,11 +43,11 @@ var SignIn = React.createClass({
                          <input className="SignInput" type="password" ref="password"/>
                         </div>
                         <div className="SettingDontKnow">
-                          <button className="SettingDontKnow">I forgot my password </button>
+                          <button className="SettingDontKnow">Я забыл свой пароль</button>
                         </div>
                         <button className="SignBtton SignInButton"
                         onClick={this.onLogInClick}>
-                          Sign in
+                          Войти
                         </button>
                     </div>
                   </div>

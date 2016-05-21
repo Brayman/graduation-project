@@ -92,10 +92,10 @@ input[type=date]::-webkit-clear-button{
   display: none;
 }
 .toggle{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    margin-left: 30px;
-    margin-top: 11px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  margin-left: -40px;
+  margin-top: 11px;
 }
 .toggle input[type="checkbox"]{
     visibility: hidden;

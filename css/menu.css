@@ -48,15 +48,6 @@
   user-select: none;
   cursor: default;
 }
-.SignBtton{
-  padding: 15px 20px;
-  margin: 20px 0px 100px 160px;
-  cursor: pointer;
-  outline: none;
-  font-size: 17px;
-  border-radius: 5px;
-  border: solid 2px;
-}
 .SignInput{
   width: 400px;
   font-size: 20px;
@@ -73,11 +64,13 @@
   background-color: #37474F;
   border-color: #37474F;
   color: #ffffff;
+  width: 145px;
 }
 .SignUpButton{
   background-color: #ffffff;
   border-color: #37474F;
   color:#37474F;
+  width: 145px;
 }
 .SignUpButton:hover{
   background-color: #37474F;

@@ -44,7 +44,8 @@
   text-align: center;
 }
 .InputCheckBoxText{
-  text-align: center;
   font-size: 17px;
-  color: #edeeee;
+    color: #edeeee;
+    margin-left: 48px;
+    margin-top: 2px;
 }
