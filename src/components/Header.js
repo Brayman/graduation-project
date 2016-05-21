@@ -38,13 +38,13 @@ const Header = React.createClass({
                         <div className="MenuRightBtn"
                              onClick={() => browserHistory.push(`/search`)}
                         >
-                            Search
+                            поиск
                         </div>
                         <Link to="signup">
-                            <div className="MenuRightBtn">signup</div>
+                            <div className="MenuRightBtn">регистрация</div>
                         </Link>
                         <Link to="signin">
-                            <div className="MenuRightBtn">signin</div>
+                            <div className="MenuRightBtn">вход</div>
                         </Link>
                     </div>
                 );
@@ -54,7 +54,7 @@ const Header = React.createClass({
                         <div className="MenuRightBtn"
                              onClick={() => browserHistory.push('/search')}
                         >
-                            Search
+                            поиск
                         </div>
                         <Link to="signin">
                             <div className="MenuRightBtn">Message</div>
@@ -63,7 +63,7 @@ const Header = React.createClass({
                              id="out"
                              onClick={Click}
                         >
-                            signout
+                            выход
                         </div>
 
                         <div className="MenuRightBtn"
@@ -96,14 +96,14 @@ const Footer = React.createClass({
                 <div className="FooterButtonPosition">
                     <Link to="/about">
                         <div className="FooterButton">
-                            About
+                            О нас
                         </div>
                     </Link>
                     <div className="FooterButton">
-                        Support
+                        поддержка
                     </div>
                     <div className="FooterButton">
-                        Version 0.1.1
+                        Версия 0.1.1
                     </div>
                 </div>
                 <div>&copy; 220V</div>

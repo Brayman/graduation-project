@@ -18,7 +18,6 @@ var HomePage = React.createClass({
           {/*<Message status={this.props.status}/>*/}
             <div className="NewsColumn">
                 <div className="Post">
-                    <h2 className="TextHome">Users</h2>
                     <div>
                         {post.map(function (post) {
                             return (

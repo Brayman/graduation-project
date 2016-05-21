@@ -95,7 +95,7 @@ a.MenuName:active,a.MenuName:focus{
     background-color: #37474f;
     text-align: center;
     color: #fff;
-    padding-bottom: 11px;
+    padding-bottom: 5px;
     align-self: flex-end;
     width: 100%
   }
@@ -104,7 +104,7 @@ a.MenuName:active,a.MenuName:focus{
    }
    .FooterButton{
      margin:0px;
-     padding:14px 10px;
+     padding:7px 10px;
      font-size: 15px;
      cursor: pointer;
      -moz-user-select: -moz-none;
@@ -121,6 +121,4 @@ a.MenuName:active,a.MenuName:focus{
    .FooterButtonPosition{
      display: flex;
      justify-content:center;
-     margin-bottom: 5px;
    }
-   
