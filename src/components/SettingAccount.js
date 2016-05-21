@@ -1,4 +1,5 @@
 import React from 'react';
+import {saveChanges} from '../actions';
 var Settings = React.createClass({
     getInitialState() {
         return this.props.route.dop.getState();
@@ -34,8 +35,9 @@ var Settings = React.createClass({
                 /></div>
                 <div>
                     <button className="SettingUpdate"
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
                     >
-                        Update email
+                        Update profile
                     </button>
                 </div>
             </div>
