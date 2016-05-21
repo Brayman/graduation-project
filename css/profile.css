@@ -78,3 +78,20 @@ button.settings {
     border-radius: 5px;
     object-fit: cover;
 }
+.WhiteBackgroundR{
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.TextComponent{
+  width: 97%;
+  padding: 5px 10px;
+  border: solid 1px #edeeee;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: Ubuntu;
+}
+.CentrPositionR{
+  text-align: center;
+  margin-bottom: 5px;
+}

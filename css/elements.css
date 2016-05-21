@@ -42,6 +42,22 @@ input:focus {
     color: black;
     background-color: white;
 }
+select {
+  color: #6F7276;
+  outline: none;
+  background-color: #fafafa;
+  margin: 3px 0px;
+  padding: 5px;
+  border: solid 1px #edeeee;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: Ubuntu;
+}
+
+select:focus {
+    color: black;
+    background-color: white;
+}
 textarea {
   color: #6F7276;
   font-size: 20px;

@@ -89,6 +89,74 @@ var Profile = React.createClass({
                             {this.props.Profile.description || 'Здесь пока пусто.'}
                         </div>
                         <div className='comments'>
+                          <div className="WhiteBackgroundR">
+                            <div className="TextDataTime">
+                                Заголовок коментария
+                            </div>
+                            <div>
+                              <input className="TextComponent"/>
+                            </div>
+                            <div className="TextDataTime">
+                                Текст отзыва
+                            </div>
+                            <div>
+                              <textarea className="TextComponent"></textarea>
+                            </div>
+                            <div className="TextDataTime">
+                                Оценка обслуживания
+                            </div>
+                            <div className="CentrPositionR">
+                              <span className="TextDataTime">
+                                  Отзывчивость персонала
+                              </span>
+                              <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                              </select>
+                              <span className="TextDataTime">
+                                  Качество
+                              </span>
+                              <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                              </select>
+                              <span className="TextDataTime">
+                                  Цена-Качество
+                              </span>
+                              <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                              </select>
+                            </div>
+                            <div>
+                            <button className="ButtonForRating">Принять</button>
+                            <button className="ButtonForRating">Отмена</button>
+                            </div>
+                          </div>
                             <Comment/>
                             <Comment/>
                             <Comment/>
