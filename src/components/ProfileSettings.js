@@ -99,19 +99,13 @@ var Profile = React.createClass({
                                           onChange={this.NewValue}
                                 />
                 </div>
-                <div>
-                    <button className="SettingUpdate"
-                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
-                    >
-                        Update profile
-                    </button>
-                </div>
                 <div className="SettingTextInput">Teg search</div>
                 <div>
                     <select className="SettingSelect"
                             name="tag"
                             onChange={this.NewValue}
                     >
+                        <option disabled selected>{this.state.userData.tags}</option>
                         <option>ремонт</option>
                         <option>питание</option>
                         <option>развлечения</option>
@@ -119,12 +113,14 @@ var Profile = React.createClass({
                         <option>продукты</option>
                     </select>
                 </div>
-                <div className="SettingTextInput">Description tegs</div>
+                <div className="SettingTextInput">Description tags</div>
                 <div><input className="SettingsInput"
                 name="location" type="text" placeholder="Pleas write description (PC,clock or other)..."/>
                 </div>
                 <div>
-                    <button className="SettingUpdate">
+                    <button className="SettingUpdate"
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
+                    >
                         Update profile
                     </button>
                 </div>

@@ -3,6 +3,7 @@ body{
   padding: 0em;
   background-color: #FAFAFA;
   font-family: Ubuntu;
+  min-width: 480px;
 }
 @font-face{
     font-family: Ubuntu;
