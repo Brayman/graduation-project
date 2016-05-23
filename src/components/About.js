@@ -6,9 +6,9 @@ var About = React.createClass({
           <div className="content">
             <div className="RowFlex ColorAbout">
               <div className="TextAbout">
-                About us
+                О н ас
               </div>
-              <div className="TextHistory">HISTORY OF CREATION</div>
+              <div className="TextHistory">ИСТОРИЯ СОЗДАНИЯ</div>
               <div className="TextHistoryDescription">
                 Около полугода назад мы задумались, как можно помочь людям найти организацию для решения каких либо
                  проблем. При этом расчитывать не на красивые, и к сожелению иногда лживые, слова рекламщиков. И мы
@@ -19,29 +19,29 @@ var About = React.createClass({
               </div>
             </div>
               <div className="TextTeam">
-                Join the team
+                Присоеденится к разработке
               </div>
               <div className="PanelAbout">
-                <button className="ButtonAbout">Design engineer</button>
-                <button className="ButtonAbout">Software engineer</button>
+                <button className="ButtonAbout">Дизайн разработчик</button>
+                <button className="ButtonAbout">Системный инженер</button>
               </div>
             <div className="AboutWorker">
               <div className="AboutMargin">
-                <div className="MenuName">Design developer</div>
+                <div className="MenuName">Дизайн разработчи</div>
                 <div>
                   <img className="ImgAbout" src="http://cs629530.vk.me/v629530469/333ed/XGMm17hCMUU.jpg" width="180px" height="180px"/>
                 </div>
                 <a className="MenuName" href="https://www.facebook.com/profile.php?id=100003799963785">Vlad Salinov</a>
               </div>
               <div className="AboutMargin">
-                <div className="MenuName">Frontend engineer</div>
+                <div className="MenuName">Фронтенд разработчик</div>
                 <div>
                   <img className="ImgAbout" src="http://cs628025.vk.me/v628025197/32b3d/ymDqlPLtNvI.jpg" width="180px" height="180px"/>
                 </div>
                 <a className="MenuName" href="https://www.facebook.com/Braymanrun">Artem Rakitski</a>
               </div>
               <div className="AboutMargin">
-                <div className="MenuName">Backend engineer</div>
+                <div className="MenuName">Бэкэнд разработчик</div>
                 <div>
                   <img className="ImgAbout" src="http://cs628623.vk.me/v628623703/124a3/LfYfm5_XhDE.jpg" width="180px" height="180px"/>
                 </div>

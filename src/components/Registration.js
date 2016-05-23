@@ -9,8 +9,8 @@ var Registration = React.createClass({
             <div className="content RegBlok">
                 <div className="text">
                     <div className="TextRegCompany">JobBox</div>
-                    <div className="TextRegInfo">Frilans info service for employee </div>
-                    <div className="TextRegInfo">and company.</div>
+                    <div className="TextRegInfo">Информационный фриланс сервер</div>
+                    <div className="TextRegInfo">для работников и компаний.</div>
                 </div>
                 <Inputs registrData={data => this.props.dispatch(registration(data))}/>
             </div>
@@ -42,13 +42,13 @@ var Inputs = React.createClass({
             <div>
 
                 <div>
-                    <input className="InputReg" type="text" ref="username" placeholder="Pick a username"/>
+                    <input className="InputReg" type="text" ref="username" placeholder="Введите ваш юзернейс"/>
                 </div>
                 <div>
                     <input className="InputReg"
                            type="email"
                            ref="email"
-                           placeholder="Your email address"
+                           placeholder="Введите e-mail адрес"
                     />
                 </div>
                 <div style={{backgroundColor: 'red'}}
@@ -59,10 +59,10 @@ var Inputs = React.createClass({
                     {this.state.err}
                 </div>
                 <div>
-                    <input className="InputReg" type="password" ref="password" placeholder="Create a password"/>
+                    <input className="InputReg" type="password" ref="password" placeholder="Придумайте пароль"/>
                 </div>
                 <div>
-                    <input className="InputReg" type="password" ref="password2" placeholder="Confirm a password"/>
+                    <input className="InputReg" type="password" ref="password2" placeholder="Повтарите пароль"/>
                 </div>
                 <div className="InputCheckBoxText">
                   <div className="toggle">
@@ -72,7 +72,7 @@ var Inputs = React.createClass({
                           this.setState({company: e.target.checked});
                       }}/>
                       <label htmlFor="checktoggle"></label>
-                  </div>sign up how company
+                  </div>Зарегистрироваться как компания
                 </div>
                 <div>
                         <button onClick={this.GetValues}

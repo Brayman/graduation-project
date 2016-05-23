@@ -17,14 +17,14 @@ var ListInfo = React.createClass({
                     <div className='card-info1'>
                         {this.props.data.description}
                     </div>
-                    <div className='card-info1'>
-                        <h4>Contacts:</h4>
+                    <div className='card-info2'>
+                        <h4>Контакты:</h4>
                         {this.props.data.contacts ? <div><i className="phone icon"/>{this.props.data.contacts.phone}</div> : null}
                         {this.props.data.contacts ? <div><i className="at icon"/>{this.props.data.contacts.mail}</div> : null}
                         {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location}</div> : null}
                     </div>
                 </div>
-                <div className='card-image'>
+                <div className='card-image1'>
                     <img className="card-image"
                          src={this.props.data.picture}
                     width="150px" height="150px"/>
@@ -32,7 +32,7 @@ var ListInfo = React.createClass({
                         <button className="primary card-button"
                                 onClick={() => this.props.action(this.props.data._id)}
                         >
-                            view profile
+                            Открыть профиль
                         </button>
                 </div>
             </div>

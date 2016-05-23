@@ -17,12 +17,31 @@ header.card-header {
     flex-basis: 130px;
     padding: 5px;
 }
+.card-image1 {
+  flex-grow: 0;
+  flex-basis: 130px;
+  padding: 5px;
+  border-left: solid 1px #edeeee;
+}
 .card-info1 {
     flex-grow: 1;
     padding: 5px;
+    border-bottom: solid 1px #edeeee;
     border-right: solid 1px #edeeee;
     margin: 0px -1px -1px 0;
     flex-basis: 150px;
+    height: 265px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-info2 {
+    flex-grow: 1;
+    padding: 5px;
+    margin:0px -1px 10px 0;
+    flex-basis: 150px;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .card-info {
     margin: -1px 0px;
@@ -32,11 +51,11 @@ header.card-header {
     flex-wrap: wrap;
 }
 img.card-image {
-    max-height: 120px;
-    max-width: 120px;
+    height: 195px;
+    width: 195px
 }
 button.card-button {
-    width: 120px;
+    width: 195px;
     margin: 5px 5px 10px 5px;
     padding: 9px;
 }

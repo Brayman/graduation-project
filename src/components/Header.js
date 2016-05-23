@@ -9,15 +9,9 @@ var App = React.createClass({
         return {open: false};
     },
     componentWillMount() {
-        // this.props.dispatch(Actions.InitialUser());
         this.props.actions.InitialUser();
     },
-
-    goTo: function () {
-
-        console.log(this.props);
-    },
-    render: function () {
+    render() {
         return (
               <div className='app'>
                   <Header user={this.props.user} signout={() => this.props.actions.signout()}/>
@@ -29,24 +23,23 @@ var App = React.createClass({
 });
 const Header = React.createClass({
     SignOut: function () {
-        console.log('hi')
         this.props.signout();
     },
     render() {
-        let panel = function (Click, props, goTo) {
+        let panel = function (Click, props) {
             if (props.user.login == null) {
                 return (
                     <div className="LeftBtnPanel">
                         <div className="MenuRightBtn"
                              onClick={() => browserHistory.push(`/search`)}
                         >
-                            Search
+                            поиск
                         </div>
                         <Link to="signup">
-                            <div className="MenuRightBtn">signup</div>
+                            <div className="MenuRightBtn">регистрация</div>
                         </Link>
                         <Link to="signin">
-                            <div className="MenuRightBtn">signin</div>
+                            <div className="MenuRightBtn">вход</div>
                         </Link>
                     </div>
                 );
@@ -56,12 +49,12 @@ const Header = React.createClass({
                         <div className="MenuRightBtn"
                              onClick={() => browserHistory.push('/search')}
                         >
-                            Search
+                            поиск
                         </div>
                         <div className="MenuRightBtn"
                              onClick={Click}
                         >
-                            signout
+                            выход
                         </div>
                         <div className="MenuRightBtn"
                              onClick={() => browserHistory.push(`/${props.user._id}`)}
@@ -79,7 +72,7 @@ const Header = React.createClass({
                     <Link to="/">
                         <div className="MenuLeftBtn MenuBtn">JobBox</div>
                     </Link>
-                    {panel(this.SignOut, this.props, this.goTo)}
+                    {panel(this.SignOut, this.props)}
                 </div>
             </div>
         );
@@ -92,14 +85,14 @@ const Footer = React.createClass({
                 <div className="FooterButtonPosition">
                     <Link to="/about">
                         <div className="FooterButton">
-                            About
+                            О нас
                         </div>
                     </Link>
                     <div className="FooterButton">
-                        Support
+                        поддержка
                     </div>
                     <div className="FooterButton">
-                        Version 0.1.1
+                        Версия 0.1.1
                     </div>
                 </div>
                 <div>&copy; 220V</div>
