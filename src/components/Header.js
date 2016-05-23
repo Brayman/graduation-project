@@ -12,9 +12,7 @@ var App = React.createClass({
         // this.props.dispatch(Actions.InitialUser());
         this.props.actions.InitialUser();
     },
-    Click: function () {
-        this.props.actions.signout();
-    },
+
     goTo: function () {
 
         console.log(this.props);
@@ -22,7 +20,7 @@ var App = React.createClass({
     render: function () {
         return (
               <div className='app'>
-                  <Header userData={this.props.userData}/>
+                  <Header user={this.props.user} signout={() => this.props.actions.signout()}/>
                   {this.props.children}
                   <Footer/>
             </div>
@@ -30,9 +28,13 @@ var App = React.createClass({
     }
 });
 const Header = React.createClass({
+    SignOut: function () {
+        console.log('hi')
+        this.props.signout();
+    },
     render() {
         let panel = function (Click, props, goTo) {
-            if (props.userData.login == null) {
+            if (props.user.login == null) {
                 return (
                     <div className="LeftBtnPanel">
                         <div className="MenuRightBtn"
@@ -56,42 +58,36 @@ const Header = React.createClass({
                         >
                             Search
                         </div>
-                        <Link to="signin">
-                            <div className="MenuRightBtn">Message</div>
-                        </Link>
                         <div className="MenuRightBtn"
-                             id="out"
                              onClick={Click}
                         >
                             signout
                         </div>
-
                         <div className="MenuRightBtn"
-                             onClick={() => browserHistory.push(`/${props.userData._id}`)}
+                             onClick={() => browserHistory.push(`/${props.user._id}`)}
                         >
-                            {props.userData.login}
+                            {props.user.login}
                         </div>
 
                     </div>
                 );
             }
         };
-        return(
+        return (
             <div className="Nav">
                 <div className="Menu RowFlex">
                     <Link to="/">
                         <div className="MenuLeftBtn MenuBtn">JobBox</div>
                     </Link>
-
-                    {panel(this.Click, this.props, this.goTo)}
+                    {panel(this.SignOut, this.props, this.goTo)}
                 </div>
             </div>
-        )
+        );
     }
 });
 const Footer = React.createClass({
     render() {
-        return(
+        return (
             <div className="footer">
                 <div className="FooterButtonPosition">
                     <Link to="/about">
@@ -108,12 +104,12 @@ const Footer = React.createClass({
                 </div>
                 <div>&copy; 220V</div>
             </div>
-        )
+        );
     }
 });
 function states(state) {
     return {
-        userData: state.userData
+        user: state.user
     };
 }
 

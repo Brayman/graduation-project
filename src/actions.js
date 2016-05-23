@@ -107,11 +107,9 @@ export function cancelTag(tag) {
     };
 }
 
-function searchAction(actions, promise) {
+export function closeMessage() {
     return {
-        type: 'SEARCH',
-        actions,
-        promise
+        type: 'CLOSE_MESSAGE'
     };
 }
 export function search(url) {

@@ -1,9 +1,7 @@
 /**
  * Created by Artsiom_Rakitski on 2/26/2016.
  */
-//import posts from './posts'
-import {browserHistory} from 'react-router';
-import userData from './user';
+import user from './user';
 const defaultState = {
     login: null,
     name: null,
@@ -44,7 +42,7 @@ export function posts(state = [], action) {
             return state;
     }
 }
-export function companys(state = [], action) {
+export function comments(state = [], action) {
     switch (action.type) {
         case 'LOAD_COMP_SUCCESS':
             return action.data;
@@ -55,11 +53,21 @@ export function companys(state = [], action) {
 export function status(state = '', action) {
     switch (action.type) {
         case 'LOAD_POST_SUCCESS':
-            return 'всё хорошо';
+            return {
+                show: true,
+                text: 'успешно',
+                type: 'checkmark'
+            };
         case 'LOAD_POST_FAILURE':
-            return action.error.message;
+            return {
+                show: true,
+                text: 'неудалось подключиться к серверу',
+                type: 'warning sign'
+            };
         case 'SEND_LOGIN_DATA_FAILURE':
             return action.error.message;
+        case 'CLOSE_MESSAGE':
+            return Object.assign({}, state, {show: false});
         default:
             return state;
     }
@@ -73,4 +81,4 @@ export function Profile(state = defaultState, action) {
     }
 }
 //export {posts};
-export {userData};
+export {user};

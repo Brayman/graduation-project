@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {connect} from 'react-redux';
 import '../../css/home.css';
+import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.actions.getPost();
@@ -15,7 +16,7 @@ var HomePage = React.createClass({
         var post = this.props.posts;
         return (
           <div className="content home">
-          {/*<Message status={this.props.status}/>*/}
+          <Message status={this.props.status} close={() => actions.closeMessage()}/>
             <div className="NewsColumn">
                 <div className="Post">
                     <h2 className="TextHome">Users</h2>
@@ -45,7 +46,6 @@ function ratingSort(a, b) {
 function states(state) {
     return {
         status: state.status,
-        companys: state.companys,
         posts: state.posts
     };
 }

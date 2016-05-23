@@ -6,13 +6,15 @@ import Comment from './Comment';
 import '../../css/profile.css';
 
 var Profile = React.createClass({
-    componentDidMount() {
-        //this.props.route.onEnter(this.props.params.user);
+    getInitialState() {
+        return {review: {}};
     },
-    render: function () {
-
+    Review() {
+        this.setState(Object.assign({}, this.state.review, {rating: rating}));
+    },
+    render() {
         var settings;
-        if (this.props.userData.login === this.props.Profile.login) {
+        if (this.props.user.login === this.props.Profile.login) {
             settings = <Settings/>;
         }
         return (
@@ -94,13 +96,21 @@ var Profile = React.createClass({
                                 Заголовок коментария
                             </div>
                             <div>
-                              <input className="TextComponent"/>
+                              <input className="TextComponent"
+                                     onChange={(e) => this.setState(
+                                     Object.assign({}, this.state.review, {title: e.target.value})
+                                     )}
+                              />
                             </div>
                             <div className="TextDataTime">
                                 Текст отзыва
                             </div>
                             <div>
-                              <textarea className="TextComponent"></textarea>
+                              <textarea className="TextComponent"
+                                        onChange={(e) => this.setState(
+                                        Object.assign({}, this.state.review, {text: e.target.value})
+                                        )}
+                              />
                             </div>
                             <div className="TextDataTime">
                                 Оценка обслуживания
@@ -109,7 +119,7 @@ var Profile = React.createClass({
                               <span className="TextDataTime">
                                   Отзывчивость персонала
                               </span>
-                              <select>
+                              <select ref="personal" onChange={(e) => console.log(e.target.value)}>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -124,7 +134,7 @@ var Profile = React.createClass({
                               <span className="TextDataTime">
                                   Качество
                               </span>
-                              <select>
+                              <select ref="kat">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -139,7 +149,7 @@ var Profile = React.createClass({
                               <span className="TextDataTime">
                                   Цена-Качество
                               </span>
-                              <select>
+                              <select ref="cell">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -153,7 +163,9 @@ var Profile = React.createClass({
                               </select>
                             </div>
                             <div>
-                            <button className="ButtonForRating">Принять</button>
+                            <button className="ButtonForRating"
+                                    onClick={this.Review}
+                            >Принять</button>
                             <button className="ButtonForRating">Отмена</button>
                             </div>
                           </div>
@@ -182,7 +194,7 @@ const Settings = React.createClass({
 export default connect(
     (state)=> {
         return {
-            userData: state.userData,
+            user: state.user,
             Profile: state.Profile
         };
     }

@@ -71,27 +71,28 @@ button.settings {
     height: 37px;
     padding: 0px 10px;
 }
-.ImageProfile{
+.ImageProfile {
     width: 130px;
     height: 130px;
     margin: 5px;
     border-radius: 5px;
     object-fit: cover;
 }
-.WhiteBackgroundR{
-  background: #fff;
-  margin-bottom: 5px;
-  padding: 10px;
+.WhiteBackgroundR {
+    background: #fff;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #edeeee;
+    border-radius: 5px;
 }
-.TextComponent{
-  width: 97%;
-  padding: 5px 10px;
-  border: solid 1px #edeeee;
-  border-radius: 3px;
-  font-size: 15px;
-  font-family: Ubuntu;
+.TextComponent {
+    width: 97%;
+    padding: 5px 10px;
+    border: solid 1px #edeeee;
+    border-radius: 3px;
+    font-size: 15px;
 }
-.CentrPositionR{
-  text-align: center;
-  margin-bottom: 5px;
+.CentrPositionR {
+    text-align: center;
+    margin-bottom: 5px;
 }

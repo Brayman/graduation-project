@@ -24,7 +24,11 @@ ReactDOM.render(
                 <IndexRoute component={App}/>
                 <Route path="signup" component={Registration}/>
                 <Route path="signin" component={SignIn}/>
-                <Route path="settings" component={Settings}>
+                <Route path="settings"
+                       component={Settings}
+                       onEnter={(store) => {
+                       store.dispatch(getProfileData(params.user));
+                       }}>
                        <Route path="profile" component={SetProf} dop={store}/>
                        <Route path="contacts" component={SetCont} dop={store}/>
                        <Route path="account" component={SetAcc} dop={store}/>
@@ -34,7 +38,6 @@ ReactDOM.render(
                 <Route path=":user"
                        component={Profile}
                        onEnter={({params}) => {
-                       console.log(params)
                        store.dispatch(getProfileData(params.user));
                        }}
                 />

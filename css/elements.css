@@ -65,13 +65,13 @@ textarea {
   padding: 9px;
   outline: none;
   border-radius: 7px;
-  border: solid 2px #edeeee;
+  border: solid 1px #edeeee;
   background-color: #fafafa;
   resize: none;
 }
 textarea:focus {
   color: black;
-  border: solid 2px #edeeee;
+  border: solid 1px #edeeee;
   background-color: white;
 }
 img{

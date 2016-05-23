@@ -10,8 +10,8 @@ const cswm = applyMiddleware(sendData, routing, logger)(createStore);
 
 
 const store = cswm(reducer, {
-    status: null,
-    userData: {},
+    status: {},
+    user: {},
     Profile: {
         _id: null,
         login: null,
