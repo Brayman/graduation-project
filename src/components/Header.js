@@ -57,7 +57,7 @@ const Header = React.createClass({
                             поиск
                         </div>
                         <Link to="signin">
-                            <div className="MenuRightBtn">Message</div>
+                            <div className="MenuRightBtn">сообщения</div>
                         </Link>
                         <div className="MenuRightBtn"
                              id="out"
