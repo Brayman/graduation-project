@@ -32,8 +32,8 @@ export function saveChanges(changes) {
 export function signout() {
     return requestAction(['SIGNOUT', 'SIGNOUT_SUCCESS', 'SIGNOUT_FAILURE'], signoutReq());
 }
-export function getCompanys() {
-    return requestAction(['LOAD', 'LOAD_COMP_SUCCESS', 'LOAD_COMP_FAILURE'], loadCompanys());
+export function sendComment(id, payload) {
+    return requestAction(['SEND', 'SEND_COMMENT_SUCCESS', 'SEND_COMMENT_FAILURE'], comment(id, payload));
 }
 //--requests
 function headers(data) {
@@ -58,9 +58,8 @@ function req(url, headers) {
             }
         );
 }
-
-function loadCompanys() {
-    return req(`${url}companies`);
+function comment(id, payload) {
+    return req(`${url + id}/comments`, headers(payload));
 }
 function signoutReq() {
     return req(`${url}logout`, {credentials: 'include'});
@@ -93,14 +92,12 @@ export function openProfile(user) {
     };
 }
 export function setTag(tag) {
-    //return searchAction (['SET_TAG', 'SEARCH'], selectMap())
     return {
         type: 'SET_TAG',
         tag
     };
 }
 export function cancelTag(tag) {
-    //return searchAction (['SET_TAG', 'SEARCH'], selectMap())
     return {
         type: 'CANCEL_TAG',
         tag

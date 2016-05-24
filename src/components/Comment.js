@@ -6,22 +6,22 @@ const Comment = React.createClass({
             <div className="comment">
                 <div>
                     <h3 className="TextName">
-                        Name
+                        {this.props.data.userName}
                     </h3>
-                    <img className="BlockImg" src="http://cs402225.vk.me/v402225355/335f/0S3hgdCzbaA.jpg" alt="" width="100px" height="100px"/>
+                    <img className="BlockImg" src={this.props.data.userAvatar} alt="" width="100px" height="100px"/>
                 </div>
                 <div>
                     <h3>
-                      Bad
+                        {this.props.data.title}
                       <span className="TextDataTime">
-                        12.10.2016 in 22:10
+                          {this.props.data.date}
                       </span>
                     </h3>
                     <div className="TextReting">
-                        Оценка: 10
+                        Оценка: {this.props.data.rating}
                     </div>
                     <div className="TextComent">
-                        -Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        {this.props.data.text}
                     </div>
                     <div className="InfoComent">
                       <div className="TextDataTime">

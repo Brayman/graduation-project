@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, browserHistory} from 'react-router';
-import {getProfileData} from '../actions';
+import {getProfileData, sendComment} from '../actions';
 import Comment from './Comment';
 import '../../css/profile.css';
 
@@ -10,7 +10,18 @@ var Profile = React.createClass({
         return {review: {}};
     },
     Review() {
-        this.setState(Object.assign({}, this.state.review, {rating: rating}));
+        let date = new Date().toDateString()
+        this.setState({
+            review: Object.assign({}, this.state.review,
+                {
+                    userRated: this.props.user._id,
+                    userName: this.props.user.name || this.props.user.login,
+                    userAvatar: this.props.user.picture,
+                    user: this.props.params.user,
+                    date: date
+                })
+        });
+        this.props.dispatch(sendComment(this.props.params.user, this.state.review));
     },
     render() {
         var settings;
@@ -54,7 +65,7 @@ var Profile = React.createClass({
                 <div className='profile-body'>
                     <div className='contacts'>
                         <div>
-                            {this.props.Profile.contacts.facebook || this.props.Profile.contacts ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
+                            {this.props.Profile.contacts.facebook ? (<a href={`https://www.facebook.com/${this.props.Profile.contacts.facebook}`}>
                                 <i className="facebook icon"/>
                                     {this.props.Profile.contacts.facebook}
                             </a>) : null}
@@ -98,7 +109,7 @@ var Profile = React.createClass({
                             <div>
                               <input className="TextComponent"
                                      onChange={(e) => this.setState(
-                                     Object.assign({}, this.state.review, {title: e.target.value})
+                                     {review: Object.assign({}, this.state.review, {title: e.target.value})}
                                      )}
                               />
                             </div>
@@ -108,48 +119,18 @@ var Profile = React.createClass({
                             <div>
                               <textarea className="TextComponent"
                                         onChange={(e) => this.setState(
-                                        Object.assign({}, this.state.review, {text: e.target.value})
+                                        {review: Object.assign({}, this.state.review, {text: e.target.value})}
                                         )}
                               />
                             </div>
-                            <div className="TextDataTime">
-                                Оценка обслуживания
-                            </div>
                             <div className="CentrPositionR">
                               <span className="TextDataTime">
-                                  Отзывчивость персонала
+                                  Оценка
                               </span>
-                              <select ref="personal" onChange={(e) => console.log(e.target.value)}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                              </select>
-                              <span className="TextDataTime">
-                                  Качество
-                              </span>
-                              <select ref="kat">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                              </select>
-                              <span className="TextDataTime">
-                                  Цена-Качество
-                              </span>
-                              <select ref="cell">
+                              <select
+                                  onClick={(e) => this.setState({
+                                      review: Object.assign({}, this.state.review, {rating: e.target.value})}
+                                        )}>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -169,10 +150,7 @@ var Profile = React.createClass({
                             <button className="ButtonForRating">Отмена</button>
                             </div>
                           </div>
-                            <Comment/>
-                            <Comment/>
-                            <Comment/>
-                            <Comment/>
+                            <Comment data={this.state.review}/>
                         </div>
                     </div>
                 </div>
