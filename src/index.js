@@ -26,9 +26,7 @@ ReactDOM.render(
                 <Route path="signin" component={SignIn}/>
                 <Route path="settings"
                        component={Settings}
-                       onEnter={(store) => {
-                       store.dispatch(getProfileData(params.user));
-                       }}>
+                       >
                        <Route path="profile" component={SetProf} dop={store}/>
                        <Route path="contacts" component={SetCont} dop={store}/>
                        <Route path="account" component={SetAcc} dop={store}/>

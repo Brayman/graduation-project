@@ -9,25 +9,25 @@ var Profile = React.createClass({
     NewValue: function (event) {
         switch (event.target.name) {
             case 'name':
-                this.setState({userData: Object.assign({}, this.state.userData, {name: event.target.value})});
+                this.setState({user: Object.assign({}, this.state.user, {name: event.target.value})});
                 break;
             case 'picture':
-                this.setState({userData: Object.assign({}, this.state.userData, {picture: event.target.value})});
+                this.setState({user: Object.assign({}, this.state.user, {picture: event.target.value})});
                 break;
             case 'location':
-                this.setState({userData: Object.assign({}, this.state.userData, {location: event.target.value})});
+                this.setState({user: Object.assign({}, this.state.user, {location: event.target.value})});
                 break;
             case 'description':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData, {description: event.target.value})});
+                    user: Object.assign({}, this.state.user, {description: event.target.value})});
                 break;
             case 'birthday':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData, {birthday: event.target.value})});
+                    user: Object.assign({}, this.state.user, {birthday: event.target.value})});
                 break;
             case 'tag':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData, {tags: event.target.value})});
+                    user: Object.assign({}, this.state.user, {tags: event.target.value})});
                 break;
             default:
                 console.log(event.target.value);
@@ -43,7 +43,7 @@ var Profile = React.createClass({
                            name="picture"
                            type="text"
                            placeholder="write URL on image..."
-                           value={this.state.userData.picture}
+                           value={this.state.user.picture}
                            onChange={this.NewValue}
                     /></div>
                 <div className="SettingTextInput">Name</div>
@@ -52,7 +52,7 @@ var Profile = React.createClass({
                            name="name"
                            type="text"
                            placeholder="Write..."
-                           value={this.state.userData.name}
+                           value={this.state.user.name}
                            onChange={this.NewValue}
                     />
                 </div>
@@ -67,7 +67,7 @@ var Profile = React.createClass({
                 <div><input className="SettingsInput"
                             type="text"
                             placeholder="Write..."
-                            value={this.state.userData.picture}
+                            value={this.state.user.picture}
                             onChange={this.NewValue}
                 /></div>
                 <div className="SettingTextInput">Location</div>
@@ -75,7 +75,7 @@ var Profile = React.createClass({
                             name="location"
                             type="text"
                             placeholder="City"
-                            value={this.state.userData.location}
+                            value={this.state.user.location}
                             onChange={this.NewValue}
                 /></div>
                 <div className="SettingTextInput">Birthdate</div>
@@ -84,7 +84,7 @@ var Profile = React.createClass({
                            type="date"
                            name="birthday"
                            placeholder="Write..."
-                           value={this.state.userData.birthday}
+                           value={this.state.user.birthday}
                            onChange={this.NewValue}
                     />
                 </div>
@@ -95,7 +95,7 @@ var Profile = React.createClass({
                                           rows="4"
                                           name="description"
                                           placeholder="Write..."
-                                          value={this.state.userData.description}
+                                          value={this.state.user.description}
                                           onChange={this.NewValue}
                                 />
                 </div>
@@ -104,8 +104,8 @@ var Profile = React.createClass({
                     <select className="SettingSelect"
                             name="tag"
                             onChange={this.NewValue}
+                            defaultValue={this.state.user.tags}
                     >
-                        <option disabled selected>{this.state.userData.tags}</option>
                         <option>ремонт</option>
                         <option>питание</option>
                         <option>развлечения</option>
@@ -119,7 +119,7 @@ var Profile = React.createClass({
                 </div>
                 <div>
                     <button className="SettingUpdate"
-                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.user))}
                     >
                         Update profile
                     </button>

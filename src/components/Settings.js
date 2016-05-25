@@ -9,7 +9,7 @@ var Settings = React.createClass({
         return {settings: {}, panel: 'profile'};
     },
     componentDidMount() {
-        this.setState({settings: this.props.userData});
+        this.setState({settings: this.props.user});
     },
     NewValue: function (event) {
         switch (event.target.name) {
@@ -120,7 +120,7 @@ var Settings = React.createClass({
 export default connect(
     (state)=> {
         return {
-            userData: state.userData
+            user: state.user
         };
     }
 )(Settings);

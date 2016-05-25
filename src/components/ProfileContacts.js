@@ -10,9 +10,9 @@ var Contacts = React.createClass({
         switch (event.target.name) {
             case 'mail':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData,
+                    user: Object.assign({}, this.state.user,
                         {
-                            contacts: Object.assign(this.state.userData.contacts, {
+                            contacts: Object.assign(this.state.user.contacts, {
                                 mail: event.target.value
                             })
                         })
@@ -20,9 +20,9 @@ var Contacts = React.createClass({
                 break;
             case 'phone':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData,
+                    user: Object.assign({}, this.state.user,
                         {
-                            contacts: Object.assign(this.state.userData.contacts, {
+                            contacts: Object.assign(this.state.user.contacts, {
                                 phone: event.target.value
                             })
                         })
@@ -30,9 +30,9 @@ var Contacts = React.createClass({
                 break;
             case 'twitter':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData,
+                    user: Object.assign({}, this.state.user,
                         {
-                            contacts: Object.assign(this.state.userData.contacts, {
+                            contacts: Object.assign(this.state.user.contacts, {
                                 twitter: event.target.value
                             })
                         })
@@ -40,9 +40,9 @@ var Contacts = React.createClass({
                 break;
             case 'vk':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData,
+                    user: Object.assign({}, this.state.user,
                         {
-                            contacts: Object.assign(this.state.userData.contacts, {
+                            contacts: Object.assign(this.state.user.contacts, {
                                 vk: event.target.value
                             })
                         })
@@ -50,9 +50,9 @@ var Contacts = React.createClass({
                 break;
             case 'facebook':
                 this.setState({
-                    userData: Object.assign({}, this.state.userData,
+                    user: Object.assign({}, this.state.user,
                         {
-                            contacts: Object.assign(this.state.userData.contacts, {
+                            contacts: Object.assign(this.state.user.contacts, {
                                 facebook: event.target.value
                             })
                         })
@@ -68,7 +68,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <input className="SettingsInput"
-                           value={this.state.userData.contacts.mail}
+                           value={this.state.user.contacts.mail}
                            type="mail"
                            name="mail"
                            placeholder="Write..."
@@ -79,7 +79,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <input className="SettingsInput"
-                           value={this.state.userData.contacts.phone}
+                           value={this.state.user.contacts.phone}
                            name="phone"
                            type="text"
                            placeholder="Write..."
@@ -91,7 +91,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <input className="SettingsInput"
-                           value={this.state.userData.contacts.twitter}
+                           value={this.state.user.contacts.twitter}
                            name="twitter"
                            type="text"
                            placeholder="Write..."
@@ -103,7 +103,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <input className="SettingsInput"
-                           value={this.state.userData.contacts.vk}
+                           value={this.state.user.contacts.vk}
                            name="vk"
                            type="text"
                            placeholder="Write..."
@@ -115,7 +115,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <input className="SettingsInput"
-                           value={this.state.userData.contacts.facebook}
+                           value={this.state.user.contacts.facebook}
                            name="facebook"
                            type="text"
                            placeholder="Write..."
@@ -124,7 +124,7 @@ var Contacts = React.createClass({
                 </div>
                 <div>
                     <button className="SettingUpdate"
-                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.user))}
                     >
                         Update profile
                     </button>

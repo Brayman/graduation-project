@@ -35,7 +35,7 @@ var Settings = React.createClass({
                 /></div>
                 <div>
                     <button className="SettingUpdate"
-                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.userData))}
+                            onClick={() => this.props.route.dop.dispatch(saveChanges(this.state.user))}
                     >
                         Update profile
                     </button>
