@@ -11,17 +11,16 @@ var Profile = React.createClass({
     },
     Review() {
         let date = new Date().toDateString()
-        this.setState({
-            review: Object.assign({}, this.state.review,
-                {
-                    userRated: this.props.user._id,
-                    userName: this.props.user.name || this.props.user.login,
-                    userAvatar: this.props.user.picture,
-                    user: this.props.params.user,
-                    date: date
-                })
-        });
-        this.props.dispatch(sendComment(this.props.params.user, this.state.review));
+        this.props.dispatch(sendComment(this.props.params.user, {
+            userRated: this.props.user._id,
+            userName: this.props.user.name || this.props.user.login,
+            userAvatar: this.props.user.picture,
+            user: this.props.params.user,
+            text: this.state.review.text,
+            title: this.state.review.title,
+            rating: this.state.review.rating,
+            date: date
+        }));
     },
     render() {
         var settings;
@@ -150,7 +149,11 @@ var Profile = React.createClass({
                             <button className="ButtonForRating">Отмена</button>
                             </div>
                           </div>
-                            <Comment data={this.state.review}/>
+                            {this.props.comments.map(function (review) {
+                                return (
+                                    <Comment key={review._id} data={review}/>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -172,6 +175,7 @@ const Settings = React.createClass({
 export default connect(
     (state)=> {
         return {
+            comments: state.comments,
             user: state.user,
             Profile: state.Profile
         };

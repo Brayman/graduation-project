@@ -44,8 +44,8 @@ export function posts(state = [], action) {
 }
 export function comments(state = [], action) {
     switch (action.type) {
-        case 'LOAD_COMP_SUCCESS':
-            return action.data;
+        case 'LOAD_PROFILE_SUCCESS':
+            return action.data.rate;
         default:
             return state;
     }
@@ -75,7 +75,7 @@ export function status(state = '', action) {
 export function Profile(state = defaultState, action) {
     switch (action.type) {
         case 'LOAD_PROFILE_SUCCESS':
-            return action.data;
+            return action.data.user;
         default:
             return state;
     }
