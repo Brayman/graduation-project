@@ -42,6 +42,14 @@ export function posts(state = [], action) {
             return state;
     }
 }
+export function company(state = [], action) {
+    switch (action.type) {
+        case 'LOAD_TOP_SUCCESS':
+            return action.data;
+        default:
+            return state;
+    }
+}
 export function comments(state = [], action) {
     switch (action.type) {
         case 'LOAD_PROFILE_SUCCESS':

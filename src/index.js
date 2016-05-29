@@ -15,6 +15,7 @@ import SetCont from './components/ProfileContacts';
 import SetAcc from './components/SettingAccount';
 import store from './state';
 import About from './components/About';
+import Map from './components/GMap';
 
 
 ReactDOM.render(
@@ -33,6 +34,7 @@ ReactDOM.render(
                 </Route>
                 <Route path="search" component={Search}/>
                 <Route path="about" component={About}/>
+                <Route path="map" component={Map}/>
                 <Route path=":user"
                        component={Profile}
                        onEnter={({params}) => {

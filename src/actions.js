@@ -14,6 +14,9 @@ export function requestAction(actions, promise) {
 export function getPost() {
     return requestAction(['LOAD_POST', 'LOAD_POST_SUCCESS', 'LOAD_POST_FAILURE'], loadPost());
 }
+export function getComp() {
+    return requestAction(['LOAD_TOP', 'LOAD_TOP_SUCCESS', 'LOAD_TOP_FAILURE'], loadComp());
+}
 export function registration(impotantData) {
     return requestAction(['SEND_DATA', 'SEND_DATA_SUCCESS', 'SEND_DATA_FAILURE'], registrUser(impotantData));
 }
@@ -66,6 +69,9 @@ function signoutReq() {
 }
 function loadPost() {
     return req(`${url}users`);
+}
+function loadComp() {
+    return req(`${url}rate`);
 }
 function initialUser() {
     return req(`${url}login`, {credentials: 'include'});

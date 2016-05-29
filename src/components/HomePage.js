@@ -4,11 +4,10 @@ import {bindActionCreators} from 'redux';
 import * as Actions from '../actions';
 import {connect} from 'react-redux';
 import '../../css/home.css';
-import Message from './ErrorMessage';
 var HomePage = React.createClass({
     componentWillMount() {
         this.props.actions.getPost();
-        //this.props.actions.getCompanys();
+        this.props.actions.getComp();
     },
     render: function () {
         var actions = this.props.actions;
@@ -21,21 +20,13 @@ var HomePage = React.createClass({
                   <div className="borderwethe">
                     <div className="top5">
                       <div className="nametop5">Топ компаний:</div>
-                      <div className="rowtop5 LeftBtnPanel">
-                        <div className="toptext">1</div><div className="toptext">Name</div><div className="toptext">rating</div><div className="toptext">10</div>
-                      </div>
-                      <div className="rowtop5 LeftBtnPanel">
-                        <div className="toptext">2</div><div className="toptext">Name</div><div className="toptext">rating</div><div className="toptext">10</div>
-                      </div>
-                      <div className="rowtop5 LeftBtnPanel">
-                        <div className="toptext">3</div><div className="toptext">Name</div><div className="toptext">rating</div><div className="toptext">10</div>
-                      </div>
-                      <div className="rowtop5 LeftBtnPanel">
-                        <div className="toptext">4</div><div className="toptext">Name</div><div className="toptext">rating</div><div className="toptext">10</div>
-                      </div>
-                      <div className="rowtop5 LeftBtnPanel">
-                        <div className="toptext">5</div><div className="toptext">Name</div><div className="toptext">rating</div><div className="toptext">10</div>
-                      </div>
+                        {this.props.company.map(function (company) {
+                            return (
+                                <div className="rowtop5 LeftBtnPanel">
+                                    <div className="toptext">{company.name || company.login}</div><div className="toptext">rating</div><div className="toptext">{company.rating}</div>
+                                </div>
+                            );
+                        })}
                     </div>
                   </div>
                 </div>
@@ -69,7 +60,8 @@ function ratingSort(a, b) {
 function states(state) {
     return {
         status: state.status,
-        posts: state.posts
+        posts: state.posts,
+        company: state.company
     };
 }
 
