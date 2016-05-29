@@ -22,7 +22,7 @@ var About = React.createClass({
                 Присоеденится к разработке
               </div>
               <div className="PanelAbout">
-                <button className="ButtonAbout">Дизайн разработчик</button>
+                <button className="ButtonAbout">Топовый верстальщик</button>
                 <button className="ButtonAbout">Системный инженер</button>
               </div>
             <div className="AboutWorker">

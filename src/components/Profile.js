@@ -4,6 +4,7 @@ import {Link, browserHistory} from 'react-router';
 import {getProfileData, sendComment} from '../actions';
 import Comment from './Comment';
 import '../../css/profile.css';
+import {debounce} from 'throttle-debounce';
 
 var Profile = React.createClass({
     getInitialState() {

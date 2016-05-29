@@ -4,16 +4,18 @@ import {connect} from 'react-redux';
 import {browserHistory} from 'react-router';
 import List from './ListInfo';
 import '../../css/search.css';
+import {debounce} from 'throttle-debounce';
 
 const Search = React.createClass({
     search() {
-        let strings = this.props.tags.map(tag => {
-            if (tag.select === true) {
-                return `tag=${tag.tag}&`;
-            }
-        });
-        browserHistory.push(`search?${strings.join('')}`)
-        this.props.dispatch(search(`?${strings.join('')}`))
+      var searchValue = this.refs.search.value,
+      locationValue = this.refs.location.value;
+      let strings = this.props.tags.filter(t => t.select === true).map(t=>t.tag).join("+");
+            strings = strings && `&tag=${strings}`;
+            searchValue = searchValue && `q=${searchValue}`;
+            locationValue = locationValue && `&location=${locationValue}`;
+            browserHistory.push(`search?${searchValue}${strings}${locationValue}`)
+            this.props.dispatch(search(`?${searchValue}${strings}${locationValue}`))
     },
     tags(e) {
         if (e.target.checked) {
@@ -60,11 +62,11 @@ const Search = React.createClass({
                     </div><span className="SD">Продукты</span>
                   </div>
                   <h4 className="h4S">Местоположение</h4>
-                  <input className="SI" type="text"/>
+                  <input className="SI" type="text" ref="location"/>
                 </div>
                 <div className="item1">
                     <div className="BorderBottom">
-                        <input className="InputSearch" type="text" ref='text'/>
+                        <input className="InputSearch" type="text" ref="search" onKeyUp={debounce(550, this.search)}/>
                         <button className="BtnSearch" onClick={this.search}>
                             <i className="search icon"/>
                         </button>
@@ -91,6 +93,3 @@ export default connect(
         };
     }
 )(Search);
-/**
- * Created by Artsiom_Rakitski on 4/19/2016.
- */
