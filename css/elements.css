@@ -128,3 +128,9 @@ input[type=date]::-webkit-clear-button{
 .toggle input[type="checkbox"]:checked + label{
     background: #5c6bc0;
 }
+h1, h2, p {
+    text-align: center;
+}
+.leaflet-container {
+    height: 400px;
+}

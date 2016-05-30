@@ -15,7 +15,7 @@ import SetCont from './components/ProfileContacts';
 import SetAcc from './components/SettingAccount';
 import store from './state';
 import About from './components/About';
-import Map from './components/GMap';
+import Map from './components/Maps';
 
 
 ReactDOM.render(

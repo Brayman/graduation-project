@@ -1,5 +1,6 @@
 import React from 'react';
 import {saveChanges} from '../actions';
+import Map from './GMap';
 var Profile = React.createClass({
     getInitialState() {
         return this.props.route.dop.getState();
@@ -56,13 +57,6 @@ var Profile = React.createClass({
                            onChange={this.NewValue}
                     />
                 </div>
-                <div className="SettingTextInput">Sex</div>
-                <div>
-                    <input className="RadioButton" type="radio" id="female" name="sex"/>
-                    female
-                    <input className="RadioButton" type="radio" id="male" name="sex"/>
-                    male
-                </div>
                 <div className="SettingTextInput">Company</div>
                 <div><input className="SettingsInput"
                             type="text"
@@ -71,10 +65,11 @@ var Profile = React.createClass({
                             onChange={this.NewValue}
                 /></div>
                 <div className="SettingTextInput">Location</div>
+                <Map location={this.state.user.location} />
                 <div><input className="SettingsInput"
                             name="location"
                             type="text"
-                            placeholder="City"
+                            placeholder="город. улица. дом"
                             value={this.state.user.location}
                             onChange={this.NewValue}
                 /></div>
