@@ -88,9 +88,11 @@ const Footer = React.createClass({
                             О нас
                         </div>
                     </Link>
-                    <div className="FooterButton">
-                        поддержка
-                    </div>
+                    <Link to="/map">
+                        <div className="FooterButton">
+                            карта
+                        </div>
+                    </Link>
                     <div className="FooterButton">
                         Версия 0.1.1
                     </div>
