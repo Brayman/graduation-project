@@ -2,7 +2,7 @@
  * Created by Artsiom_Rakitski on 3/1/2016.
  */
 const defaultState = {
-    userData: {
+    user: {
         _id: null,
         login: null,
         name: null,
@@ -13,6 +13,10 @@ const defaultState = {
             twitter: null,
             mail: null,
             phone: null
+        },
+        location: {
+            position: null,
+            marker: null
         }
     }
 };
@@ -28,9 +32,9 @@ export default function (state = {}, action) {
             }
          );
         case 'LOGIN_SUCCESS':
-            return action.data;
+            return Object.assign({}, state, action.data);
         case 'SIGNOUT':
-            return defaultState.userData;
+            return defaultState;
         case 'REGISTRATION':
             return Object.assign({}, state, {
                 login: action.impotantData.login,

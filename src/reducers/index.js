@@ -12,6 +12,10 @@ const defaultState = {
         twitter: null,
         mail: null,
         phone: null
+    },
+    location: {
+        position: null,
+        marker: [0, 0]
     }
 };
 export function tags(state = [], action) {
@@ -61,15 +65,37 @@ export function comments(state = [], action) {
 export function status(state = '', action) {
     switch (action.type) {
         case 'LOAD_POST_SUCCESS':
+        case 'LOAD_PROFILE_SUCCESS':
+        case 'SEND_DATA_SUCCESS':
             return {
                 show: true,
-                text: 'успешно',
+                text: 'Успешно',
                 type: 'checkmark'
             };
         case 'LOAD_POST_FAILURE':
+        case 'LOAD_PROFILE_FAILURE':
             return {
                 show: true,
                 text: 'неудалось подключиться к серверу',
+                type: 'warning sign'
+            };
+        case 'LOGIN_SUCCESS':
+            return {
+                show: true,
+                text: 'Произведён вход',
+                type: 'checkmark'
+            };
+        case 'LOGIN_FAILURE':
+            if (action.error.message !== '403') {
+                return {
+                    show: true,
+                    text: 'неудалось подключиться к серверу',
+                    type: 'warning sign'
+                };
+            }
+            return {
+                show: true,
+                text: 'Неравильный логин или пароль',
                 type: 'warning sign'
             };
         case 'SEND_LOGIN_DATA_FAILURE':
@@ -80,10 +106,10 @@ export function status(state = '', action) {
             return state;
     }
 }
-export function Profile(state = defaultState, action) {
+export function Profile(state = {}, action) {
     switch (action.type) {
         case 'LOAD_PROFILE_SUCCESS':
-            return action.data.user;
+            return Object.assign({}, state, action.data.user);
         default:
             return state;
     }

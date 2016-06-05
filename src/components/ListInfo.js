@@ -21,7 +21,7 @@ var ListInfo = React.createClass({
                         <h4>Контакты:</h4>
                         {this.props.data.contacts.phone ? <div><i className="phone icon"/>{this.props.data.contacts.phone}</div> : null}
                         {this.props.data.contacts.mail ? <div><i className="at icon"/>{this.props.data.contacts.mail}</div> : null}
-                        {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location}</div> : null}
+                        {this.props.data.location ? <div><i className="marker icon"/>{this.props.data.location.position}</div> : null}
                     </div>
                 </div>
                 <div className='card-image1'>

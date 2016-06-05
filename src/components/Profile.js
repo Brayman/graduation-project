@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, browserHistory} from 'react-router';
-import {getProfileData, sendComment} from '../actions';
+import {getProfileData, sendComment, closeMessage} from '../actions';
 import Comment from './Comment';
+import Map from './GMap';
+import Message from './ErrorMessage';
 import '../../css/profile.css';
-import {debounce} from 'throttle-debounce';
 
 var Profile = React.createClass({
     getInitialState() {
@@ -30,6 +31,7 @@ var Profile = React.createClass({
         }
         return (
             <div className="content profile">
+                <Message status={this.props.status} close={() => this.props.dispatch(closeMessage())}/>
                 <div className='profile-header'>
                     <img src={this.props.Profile.picture}
                          className="ImageProfile" alt=""
@@ -94,8 +96,9 @@ var Profile = React.createClass({
                         </div>) : null}
                         {this.props.Profile.location ? (<div>
                             <i className="marker icon"/>
-                            {this.props.Profile.location}
+                            {this.props.Profile.location.position}
                         </div>) : null}
+                        <Map location={this.props.Profile.location} />
                     </div>
                     <div className='wall'>
                         <div className='about'>
@@ -178,7 +181,8 @@ export default connect(
         return {
             comments: state.comments,
             user: state.user,
-            Profile: state.Profile
+            Profile: state.Profile,
+            status: state.status
         };
     }
 )(Profile);

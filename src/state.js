@@ -11,7 +11,12 @@ const cswm = applyMiddleware(sendData, routing, logger)(createStore);
 
 const store = cswm(reducer, {
     status: {},
-    user: {},
+    user: {
+        location: {
+            position: null,
+            marker: [52.103144366096096, 23.772225379943848]
+        }
+    },
     Profile: {
         _id: null,
         login: null,
@@ -23,6 +28,10 @@ const store = cswm(reducer, {
             twitter: null,
             mail: null,
             phone: null
+        },
+        location: {
+            position: '123',
+            marker: [0, 0]
         }
     },
     tags: [

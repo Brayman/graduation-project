@@ -5,10 +5,13 @@ const Loc = React.createClass({
         return {loc: [52.103144366096096, 23.772225379943848]};
     },
     click(e) {
-        this.setState({loc: [e.latlng.lat, e.latlng.lng]});
+        //this.setState({loc: [e.latlng.lat, e.latlng.lng]});
+        this.props.loc(e);
     },
     render() {
-        return <div className="SettingsInput">
+        //console.log(this.props)
+        //let marker = this.props.location.marker || this.state.loc;
+        return <div >
             <Map center={this.state.loc}
                  maxZoom={16}
                  dragging={true}
@@ -25,7 +28,7 @@ const Loc = React.createClass({
                 <Marker position={this.state.loc}
                 >
                     <Popup>
-                        <span>{this.props.location}</span>
+                        <span>{this.state.loc}</span>
                     </Popup>
                 </Marker>
             </Map>

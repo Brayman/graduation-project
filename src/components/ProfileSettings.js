@@ -7,6 +7,12 @@ var Profile = React.createClass({
     },
     componentWillMount() {
     },
+    setLocation(e) {
+        this.setState({
+            user: Object.assign({}, this.state.user, {
+                location: Object.assign({}, this.state.user.location, {marker: [e.latlng.lat, e.latlng.lng]})
+            })});
+    },
     NewValue: function (event) {
         switch (event.target.name) {
             case 'name':
@@ -16,7 +22,10 @@ var Profile = React.createClass({
                 this.setState({user: Object.assign({}, this.state.user, {picture: event.target.value})});
                 break;
             case 'location':
-                this.setState({user: Object.assign({}, this.state.user, {location: event.target.value})});
+                this.setState({
+                    user: Object.assign({}, this.state.user, {
+                        location: Object.assign({}, this.state.user.location, {position: event.target.value})
+                    })});
                 break;
             case 'description':
                 this.setState({
@@ -65,12 +74,12 @@ var Profile = React.createClass({
                             onChange={this.NewValue}
                 /></div>
                 <div className="SettingTextInput">Location</div>
-                <Map location={this.state.user.location} />
+                <Map location={this.state.user.location} loc={marker => this.setLocation(marker)}/>
                 <div><input className="SettingsInput"
                             name="location"
                             type="text"
                             placeholder="город. улица. дом"
-                            value={this.state.user.location}
+                            value={this.state.user.location.position}
                             onChange={this.NewValue}
                 /></div>
                 <div className="SettingTextInput">Birthdate</div>

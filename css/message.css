@@ -1,0 +1,26 @@
+.message {
+    color: #6F7276;
+    outline: none;
+    background-color: #fafafa;
+    margin: 3px 1px;
+    padding: 5px;
+    border: solid 1px #edeeee;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.message.type-checkmark {
+    color: #00A000;
+    background-color: hsla(120, 87%, 36%, 0.29);
+}
+.message.type-warning {
+    color: #F44336;
+    background-color: rgba(244, 67, 54, 0.34);
+}
+.close-button {
+    float: right;
+    color: #6F7276;
+}
+.close-button:hover {
+    float: right;
+    color: black;
+}
