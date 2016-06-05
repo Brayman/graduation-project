@@ -42,7 +42,7 @@ var Profile = React.createClass({
                                                         <i className="suitcase icon" />
                                                       ) : null}
                         <h2>
-                            {this.props.Profile.name || this.props.Profile.login}
+                            {this.props.Profile.name ? this.props.Profile.name : this.props.Profile.login}
                         </h2>
                         {settings}
 
@@ -50,7 +50,7 @@ var Profile = React.createClass({
                     <div className='header-second'>
 
                         <div className="item">
-                            Rating: {this.props.Profile.rating || 10}
+                            Rating: {this.props.Profile.rating || 'ещё нет'}
                         </div>
                         <div className="item">
                             reviews: {this.props.Profile.rating || 1}
@@ -94,7 +94,7 @@ var Profile = React.createClass({
                             <i className="twitter icon"/>
                             {this.props.Profile.contacts.twitter}
                         </div>) : null}
-                        {this.props.Profile.location ? (<div>
+                        {this.props.Profile.location.position ? (<div>
                             <i className="marker icon"/>
                             {this.props.Profile.location.position}
                         </div>) : null}

@@ -2,20 +2,22 @@ import React from 'react';
 import { Map, Marker, Popup, TileLayer, BaseTileLayer, LayersControl, FeatureGroup, Circle } from 'react-leaflet';
 const Loc = React.createClass({
     getInitialState() {
-        return {loc: [52.103144366096096, 23.772225379943848]};
+        return {
+            location: {
+                marker: [53.710041, 27.953450],
+                position: 'Беларусь'
+            }
+        };
     },
     click(e) {
         //this.setState({loc: [e.latlng.lat, e.latlng.lng]});
-        this.props.loc(e);
+        this.props.loc([e.latlng.lat, e.latlng.lng]);
     },
     render() {
-        //console.log(this.props)
-        //let marker = this.props.location.marker || this.state.loc;
+        let position = this.props.location.position ? this.props.location : this.state.location
         return <div >
-            <Map center={this.state.loc}
-                 maxZoom={16}
+            <Map center={position.marker}
                  dragging={true}
-                 minZoom={16}
                  zoom={16}
                  onClick={this.click}
             >
@@ -25,10 +27,10 @@ const Loc = React.createClass({
                     ZIndex={2}
                     onClick={this.click}
                 />
-                <Marker position={this.state.loc}
+                <Marker position={position.marker}
                 >
                     <Popup>
-                        <span>{this.state.loc}</span>
+                        <span>{position.position}</span>
                     </Popup>
                 </Marker>
             </Map>

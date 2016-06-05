@@ -16,7 +16,7 @@ var HomePage = React.createClass({
           <div className="content home">
           <div className="RowFlex LeftBtnPanel wrapgo">
               <div className="LeftBtnPanel">
-                <div className="borderwethe"><iframe className="wethe" src="http://www.eurometeo.ru/belarus/minskaya-oblast/minsk/export/html/1/data/?d=5&w=150&ft=11&fn=a&bc=cccccc&hb=cccccc&hf=000000&hs=1&fb=cccccc&ff=666666&fs=3&cb=ffffff&c1=999999&c2=000000&cp=eeeeee&cs=1" frameborder="0" scrolling="no"></iframe></div>
+                <div className="borderwethe"><iframe className="wethe" src="http://www.eurometeo.ru/belarus/minskaya-oblast/minsk/export/html/1/data/?d=5&w=150&ft=11&fn=a&bc=cccccc&hb=cccccc&hf=000000&hs=1&fb=cccccc&ff=666666&fs=3&cb=ffffff&c1=999999&c2=000000&cp=eeeeee&cs=1" frameBorder="0" scrolling="no"></iframe></div>
                   <div className="borderwethe">
                     <div className="top5">
                       <div className="nametop5">Топ компаний:</div>
@@ -30,7 +30,7 @@ var HomePage = React.createClass({
                     </div>
                   </div>
                 </div>
-                <iframe className="news" src="http://news.bigmir.net/get_informers_new/0/ru/6/0/green/v/no" allowtransparency="true" frameborder="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                <iframe className="news" src="http://news.bigmir.net/get_informers_new/0/ru/6/0/green/v/no" allowTransparency="true" frameBorder="0" vspace="0" hspace="0" marginWidth="0" marginHeight="0" scrolling="no"></iframe>
               </div>
             <div className="NewsColumn">
                 <div className="Post">

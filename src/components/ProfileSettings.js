@@ -6,12 +6,18 @@ var Profile = React.createClass({
         return this.props.route.dop.getState();
     },
     componentWillMount() {
+
     },
     setLocation(e) {
         this.setState({
-            user: Object.assign({}, this.state.user, {
-                location: Object.assign({}, this.state.user.location, {marker: [e.latlng.lat, e.latlng.lng]})
-            })});
+            user: Object.assign({}, this.state.user,
+                {
+                    location: Object.assign(this.state.user.location, {
+                        marker: e
+                    })
+                })
+        });
+        console.log(e)
     },
     NewValue: function (event) {
         switch (event.target.name) {

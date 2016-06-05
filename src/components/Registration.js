@@ -27,7 +27,7 @@ var Inputs = React.createClass({
         if (name && mail !== null) {
             if (this.refs.password.value === this.refs.password2.value) {
                 var password = this.refs.password.value;
-                this.props.registrData({company: this.state.company, login: name, contacts: {mail: mail}, password: password});
+                this.props.registrData({company: this.state.company, login: name, name: name, contacts: {mail: mail}, password: password});
             } else {
                 this.setState({err: 'пароли не совпадают'});
             }
