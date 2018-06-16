@@ -1,5 +1,4 @@
 const url = 'https://gentle-meadow-48046.herokuapp.com/';
-//const url = 'http://10.26.11.88/';
 import {browserHistory} from 'react-router';
 import fetch from 'isomorphic-fetch';
 
